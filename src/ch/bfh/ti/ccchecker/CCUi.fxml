@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="inputField" prefHeight="450.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/2.2" fx:controller="ch.bfh.ti.ccchecker.UIController">
+    <!-- TODO Add Nodes -->
+    <children>
+        <TextField fx:id="inputField" layoutX="141.0" layoutY="61.0" prefWidth="319.0"/>
+        <Label layoutX="167.0" layoutY="29.0" text="Kreditkartennummer eingeben">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label id="statusLabel" fx:id="vendorLabel" layoutX="13.0" layoutY="218.0" prefWidth="572.0"
+               text="Aussteller: nicht verfügbar" textAlignment="CENTER"/>
+        <Label fx:id="okLabel" labelFor="$okLabel" layoutX="13.0" layoutY="159.0" prefWidth="572.0"
+               text="Die Kreditkarte ist nicht valide!" textAlignment="CENTER" textOverrun="ELLIPSIS" wrapText="false"/>
+        <Button layoutX="268.0" layoutY="111.0" mnemonicParsing="false" onAction="#handleInput" text="Check"/>
+        <Pane id="nokImagePane" fx:id="okImagePane" layoutX="229.0" layoutY="225.0" prefHeight="200.0" prefWidth="200.0"
+              visible="false">
+            <children>
+                <ImageView id="okImage" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="25.0"
+                           pickOnBounds="true" preserveRatio="true" visible="true">
+                    <image>
+                        <Image url="@ok-symbol_17-1009133509.jpg"/>
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane id="okImagePane" fx:id="nokImagePane" layoutX="218.0" layoutY="218.0" prefHeight="200.0"
+              prefWidth="200.0">
+            <children>
+                <ImageView id="okImage" fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="36.0"
+                           pickOnBounds="true" preserveRatio="true" visible="true">
+                    <image>
+                        <Image url="@imgres.jpg"/>
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Label fx:id="typeLabel" layoutX="13.0" layoutY="190.0" prefWidth="572.0" text="Kartentyp: nicht verfügbar"/>
+    </children>
+</AnchorPane>

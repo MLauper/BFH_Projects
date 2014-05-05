@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/2.2" fx:controller="ch.bfh.quizduel.ui.UI_StartController">
+    <children>
+        <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <VBox alignment="CENTER" prefHeight="184.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button id="buttonStartGame" contentDisplay="CENTER" mnemonicParsing="false"
+                                onAction="#gotoCreatePlayer" prefWidth="200.0" text="neuer Spieler erstellen"
+                                VBox.vgrow="ALWAYS">
+                            <VBox.margin>
+                                <Insets bottom="10.0" fx:id="x1"/>
+                            </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#gotoPlayerList" prefWidth="200.0"
+                                text="Spielerliste anzeigen" VBox.margin="$x1"/>
+                        <Button mnemonicParsing="false" prefWidth="200.0" text="neues Duell starten" VBox.margin="$x1"/>
+                        <Button mnemonicParsing="false" prefWidth="200.0" text="laufende Duelle" VBox.margin="$x1"/>
+                    </children>
+                </VBox>
+            </center>
+            <top>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="68.0" prefWidth="600.0"
+                       text="Willkommen beim Quiz Duell"/>
+            </top>
+        </BorderPane>
+    </children>
+</AnchorPane>

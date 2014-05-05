@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/2.2" fx:controller="ch.bfh.quizduel.ui.UI_CreatePlayerController">
+    <children>
+        <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="68.0" prefWidth="600.0"
+                       text="Neuer Spieler erstellen"/>
+                <HBox prefHeight="61.0" prefWidth="600.0">
+                    <children>
+                        <Label contentDisplay="CENTER" prefHeight="46.0" prefWidth="103.00009999999747" text="Name">
+                            <HBox.margin>
+                                <Insets left="10.0"/>
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtNewPlayerName" alignment="CENTER" prefHeight="46.0" prefWidth="369.0"/>
+                    </children>
+                </HBox>
+                <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#doAddNewPlayer" text="OK">
+                            <HBox.margin>
+                                <Insets right="10.0" fx:id="x1"/>
+                            </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#gotoStartPage" text="Zurück" HBox.margin="$x1"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
