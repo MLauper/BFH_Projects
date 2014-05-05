@@ -23,12 +23,12 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(
-                    Main.class.getResource("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/ccchecker/RootLayout.fxml"));
+                    Main.class.getResource("RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
             scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             FXMLLoader loaderstage = new FXMLLoader(
-                    Main.class.getResource("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/ccchecker/CCUi.fxml"));
+                    Main.class.getResource("CCUi.fxml"));
             AnchorPane anchorPane = (AnchorPane) loaderstage.load();
             rootLayout.setCenter(anchorPane);
             primaryStage.show();
