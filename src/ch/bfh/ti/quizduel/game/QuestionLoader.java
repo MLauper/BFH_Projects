@@ -13,7 +13,7 @@ import java.util.Random;
 
 public final class QuestionLoader {
 
-    //shuffle answers because the xml-file lists the correct answer always on position 0
+    //shuffle answers because the tickets-file lists the correct answer always on position 0
     public static ArrayList<Answer> shuffleAnswers(ArrayList<Answer> list) {
         if (list.size() > 0) {
             ArrayList<Answer> copy = new ArrayList<>();
@@ -36,7 +36,7 @@ public final class QuestionLoader {
 
         JAXBContext jc = JAXBContext.newInstance("questionLoader.jaxb");
         Unmarshaller u = jc.createUnmarshaller();
-        Quiz quiz = (Quiz) u.unmarshal(new File("questions.xml"));
+        Quiz quiz = (Quiz) u.unmarshal(new File("questions.tickets"));
 
         //get all questions with answers and save them into an arraylist
         ArrayList<Row> rows = (ArrayList<Row>) quiz.getRow();
