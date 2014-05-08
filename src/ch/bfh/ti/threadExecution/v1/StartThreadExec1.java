@@ -12,6 +12,5 @@ public class StartThreadExec1 {
         System.out.println(PrimeChecker.isPrime(19));
 
 
-
     }
 }
