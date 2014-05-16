@@ -1,1 +1,7 @@
 *.class
+*.iml
+*.project
+*.settings
+*.classpath
+bin
+RemoteSystemsTempFiles
