@@ -36,7 +36,7 @@ public final class QuestionLoader {
 
         JAXBContext jc = JAXBContext.newInstance("questionLoader.jaxb");
         Unmarshaller u = jc.createUnmarshaller();
-        Quiz quiz = (Quiz) u.unmarshal(new File("ch/bfh/ti/quizduel/game/questions.xml"));
+        Quiz quiz = (Quiz) u.unmarshal(new File("questions.xml"));
 
         //get all questions with answers and save them into an arraylist
         ArrayList<Row> rows = (ArrayList<Row>) quiz.getRow();
