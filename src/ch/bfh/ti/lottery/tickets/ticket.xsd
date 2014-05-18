@@ -1,5 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ticket>
-    <bla>
-    </bla>
-</ticket>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.ti.bfh.ch/i1p/akz/schema/ticket"
+           xmlns="http://www.ti.bfh.ch/i1p/akz/schema/ticket"
+           elementFormDefault="qualified">
+
+
+    <xs:simpleType name="restrictedSuperStarString">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="ticket">
+        <xs:sequence>
+            <xs:element name="plays">
+                <xs:complexType>
+                    <xs:sequence minOccurs="1" maxOccurs="7">
+                        <xs:element name="play">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="numbers">
+                                        <xs:complexType>
+                                            <xs:sequence minOccurs="5" maxOccurs="5">
+                                                <xs:element name="number">
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:integer">
+                                                            <xs:minInclusive value="1"/>
+                                                            <xs:maxInclusive value="50"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="stars">
+                                        <xs:complexType>
+                                            <xs:sequence minOccurs="2" maxOccurs="2">
+                                                <xs:element name="star">
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:integer">
+                                                            <xs:minInclusive value="1"/>
+                                                            <xs:maxInclusive value="11"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                                <xs:attribute name="playId" type="xs:integer" default="0"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="superStars">
+                <xs:complexType>
+                    <xs:sequence minOccurs="4" maxOccurs="4">
+                        <xs:element name="superStar">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="restrictedSuperStarString">
+                                        <xs:attribute name="superStarId" type="xs:integer"/>
+                                        <xs:attribute name="selected" type="xs:boolean" default="false"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="valitity">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:enumeration value="1"/>
+                        <xs:enumeration value="2"/>
+                        <xs:enumeration value="4"/>
+                        <xs:enumeration value="6"/>
+                        <xs:enumeration value="8"/>
+                        <xs:enumeration value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="date">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="year">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                    <xs:minInclusive value="1901"/>
+                                    <xs:maxInclusive value="2099"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="month">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                    <xs:minInclusive value="1"/>
+                                    <xs:maxInclusive value="12"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="day">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                    <xs:minInclusive value="1"/>
+                                    <xs:maxInclusive value="31"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="time">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="hour">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                    <xs:minInclusive value="0"/>
+                                    <xs:maxInclusive value="23"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="minute">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                    <xs:minInclusive value="0"/>
+                                    <xs:maxInclusive value="59"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="second">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                    <xs:minInclusive value="0"/>
+                                    <xs:maxInclusive value="59"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="tickedId" type="xs:integer" default="0"/>
+    </xs:complexType>
+
+    <xs:element name="ticket" type="ticket"></xs:element>
+
+</xs:schema>

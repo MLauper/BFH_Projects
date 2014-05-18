@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tickets>
+<xs:schema xmlns:ticket="http://www.ti.bfh.ch/i1p/akz/schema/ticket"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.ti.bfh.ch/i1p/akz/schema/tickets"
+           xmlns="http://www.ti.bfh.ch/i1p/akz/schema/tickets"
+           elementFormDefault="qualified">
 
-</tickets>
+    <xs:import schemaLocation="ticket.xsd"
+               namespace="http://www.ti.bfh.ch/i1p/akz/schema/ticket"/>
+
+    <xs:element name="tickets">
+        <xs:complexType>
+            <xs:sequence minOccurs="2" maxOccurs="unbounded">
+                <xs:element name="tickets" type="ticket:ticket"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
