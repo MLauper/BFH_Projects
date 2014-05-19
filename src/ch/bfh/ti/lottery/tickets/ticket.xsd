@@ -48,8 +48,12 @@
                                         </xs:complexType>
                                     </xs:element>
                                 </xs:sequence>
-                                <xs:attribute name="playId" type="xs:integer" default="0"/>
+                                <xs:attribute name="playId" type="xs:integer" use="required"/>
                             </xs:complexType>
+                            <xs:unique name="uniquePlay">
+                                <xs:selector xpath="."/>
+                                <xs:field xpath="@playId"/>
+                            </xs:unique>
                         </xs:element>
                     </xs:sequence>
                 </xs:complexType>

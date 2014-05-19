@@ -1,5 +1,18 @@
-<tic:ticket xmlns:tic="http://www.ti.bfh.ch/i1p/akz/schema/ticket" tickedId="0">
+<tic:ticket tickedId="0" xmlns:tic="http://www.ti.bfh.ch/i1p/akz/schema/ticket">
     <tic:plays>
+        <tic:play playId="0">
+            <tic:numbers>
+                <tic:number>50</tic:number>
+                <tic:number>50</tic:number>
+                <tic:number>50</tic:number>
+                <tic:number>50</tic:number>
+                <tic:number>50</tic:number>
+            </tic:numbers>
+            <tic:stars>
+                <tic:star>11</tic:star>
+                <tic:star>11</tic:star>
+            </tic:stars>
+        </tic:play>
         <tic:play playId="0">
             <tic:numbers>
                 <tic:number>50</tic:number>
@@ -15,10 +28,10 @@
         </tic:play>
     </tic:plays>
     <tic:superStars>
-        <tic:superStar superStarId="100" selected="false">AAAA</tic:superStar>
-        <tic:superStar superStarId="100" selected="false">0000</tic:superStar>
-        <tic:superStar superStarId="100" selected="false">ABCD</tic:superStar>
-        <tic:superStar superStarId="100" selected="false">1234</tic:superStar>
+        <tic:superStar superStarId="100" selected="false">1A2B</tic:superStar>
+        <tic:superStar superStarId="100" selected="false">1A2B</tic:superStar>
+        <tic:superStar superStarId="100" selected="false">1A2B</tic:superStar>
+        <tic:superStar superStarId="100" selected="false">1A2B</tic:superStar>
     </tic:superStars>
     <tic:valitity>6</tic:valitity>
     <tic:date>
