@@ -1,0 +1,66 @@
+<tickets:tickets xmlns:tickets="http://www.ti.bfh.ch/i1p/akz/schema/tickets"
+             xmlns:ticket="http://www.ti.bfh.ch/i1p/akz/schema/ticket">
+  <tickets:ticket ticketId="0">
+    <ticket:plays>
+      <ticket:play playId="0">
+        <ticket:numbers>
+          <ticket:number>1</ticket:number>
+          <ticket:number>2</ticket:number>
+          <ticket:number>3</ticket:number>
+          <ticket:number>49</ticket:number>
+          <ticket:number>50</ticket:number>
+        </ticket:numbers>
+        <ticket:stars>
+          <ticket:star>1</ticket:star>
+          <ticket:star>11</ticket:star>
+        </ticket:stars>
+      </ticket:play>
+    </ticket:plays>
+    <ticket:superStars>
+      <ticket:superStar selected="false">0001</ticket:superStar>
+      <ticket:superStar selected="false">AZ01</ticket:superStar>
+      <ticket:superStar selected="false">01AZ</ticket:superStar>
+      <ticket:superStar selected="false">ZZZZ</ticket:superStar>
+    </ticket:superStars>
+    <ticket:validity>6</ticket:validity>
+    <ticket:dateTime>2007-10-26T08:36:28</ticket:dateTime>
+  </tickets:ticket>
+    <tickets:ticket ticketId="1">
+        <ticket:plays>
+            <ticket:play playId="0">
+                <ticket:numbers>
+                    <ticket:number>1</ticket:number>
+                    <ticket:number>2</ticket:number>
+                    <ticket:number>3</ticket:number>
+                    <ticket:number>49</ticket:number>
+                    <ticket:number>50</ticket:number>
+                </ticket:numbers>
+                <ticket:stars>
+                    <ticket:star>1</ticket:star>
+                    <ticket:star>11</ticket:star>
+                </ticket:stars>
+            </ticket:play>
+            <ticket:play playId="1">
+                <ticket:numbers>
+                    <ticket:number>1</ticket:number>
+                    <ticket:number>2</ticket:number>
+                    <ticket:number>3</ticket:number>
+                    <ticket:number>49</ticket:number>
+                    <ticket:number>50</ticket:number>
+                </ticket:numbers>
+                <ticket:stars>
+                    <ticket:star>1</ticket:star>
+                    <ticket:star>11</ticket:star>
+                </ticket:stars>
+            </ticket:play>
+        </ticket:plays>
+        <ticket:superStars>
+            <ticket:superStar selected="false">0001</ticket:superStar>
+            <ticket:superStar selected="false">AZ01</ticket:superStar>
+            <ticket:superStar selected="false">01AZ</ticket:superStar>
+            <ticket:superStar selected="false">ZZZZ</ticket:superStar>
+        </ticket:superStars>
+        <ticket:validity>6</ticket:validity>
+        <ticket:dateTime>2007-10-26T08:36:28</ticket:dateTime>
+    </tickets:ticket>
+</tickets:tickets>

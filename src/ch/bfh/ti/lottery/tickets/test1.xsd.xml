@@ -1,7 +1,0 @@
-<bla:authors xmlns:bla="bla">
-  <!--1 or more repetitions:-->
-  <author>aaa</author>
-  <author>aaa</author>
-    <!--Optional:-->
-  <lastmodified>2008-09-29</lastmodified>
-</bla:authors>
