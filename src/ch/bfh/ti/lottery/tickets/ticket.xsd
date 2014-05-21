@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.ti.bfh.ch/i1p/akz/schema/ticket"
+           elementFormDefault="qualified"
+           xmlns:ticket="http://www.ti.bfh.ch/i1p/akz/schema/ticket">
+
+
+    <xs:element name="ticket">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ticket:ticketType">
+                    <xs:attribute name="ticketId" type="xs:integer" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="ticketType">
+        <xs:sequence>
+            <xs:element name="plays">
+                <xs:complexType>
+                    <xs:sequence maxOccurs="7" minOccurs="1">
+                        <xs:element name="play">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="numbers">
+                                        <xs:complexType>
+                                            <xs:sequence maxOccurs="5" minOccurs="5">
+                                                <xs:element name="number" type="ticket:numberType"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                        <xs:unique name="uniqueNumber">
+                                            <xs:selector xpath="ticket:number"/>
+                                            <xs:field xpath="."/>
+                                        </xs:unique>
+                                    </xs:element>
+                                    <xs:element name="stars">
+                                        <xs:complexType>
+                                            <xs:sequence maxOccurs="2" minOccurs="2">
+                                                <xs:element name="star" type="ticket:starType"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                        <xs:unique name="uniqueStar">
+                                            <xs:selector xpath="ticket:star"/>
+                                            <xs:field xpath="."/>
+                                        </xs:unique>
+                                    </xs:element>
+                                </xs:sequence>
+                                <xs:attribute name="playId" type="xs:integer" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+                <xs:unique name="uniquePlayId">
+                    <xs:selector xpath="ticket:play"/>
+                    <xs:field xpath="@playId"/>
+                </xs:unique>
+            </xs:element>
+            <xs:element name="superStars">
+                <xs:complexType>
+                    <xs:sequence maxOccurs="4" minOccurs="4">
+                        <xs:element name="superStar">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="ticket:superStarType">
+                                        <xs:attribute default="false" name="selected"
+                                                      type="xs:boolean" use="optional"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+                <xs:unique name="uniqueSuperStar">
+                    <xs:selector xpath="ticket:superStar"/>
+                    <xs:field xpath="."/>
+                </xs:unique>
+            </xs:element>
+            <xs:element name="validity" type="ticket:validityType"/>
+            <xs:element name="dateTime" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="validityType">
+        <xs:restriction base="xs:integer">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="6"/>
+            <xs:enumeration value="8"/>
+            <xs:enumeration value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="numberType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="starType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="11"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="superStarType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
