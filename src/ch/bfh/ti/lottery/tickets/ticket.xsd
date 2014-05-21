@@ -50,13 +50,13 @@
                                 </xs:sequence>
                                 <xs:attribute name="playId" type="xs:integer" use="required"/>
                             </xs:complexType>
-                            <xs:unique name="uniquePlay">
-                                <xs:selector xpath="."/>
-                                <xs:field xpath="@playId"/>
-                            </xs:unique>
                         </xs:element>
                     </xs:sequence>
                 </xs:complexType>
+                <xs:unique name="uniquePlay">
+                    <xs:selector xpath="play"/>
+                    <xs:field xpath="@playId"/>
+                </xs:unique>
             </xs:element>
             <xs:element name="superStars">
                 <xs:complexType>
