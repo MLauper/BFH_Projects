@@ -11,48 +11,49 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:simpleType name="numberType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="numbersType">
+        <xs:sequence minOccurs="5" maxOccurs="5">
+            <xs:element name="number" type="numberType"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="starType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="11"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="starsType">
+        <xs:sequence minOccurs="2" maxOccurs="2">
+            <xs:element name="star" type="starType"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="playType">
+        <xs:sequence>
+            <xs:element name="numbers" type="numbersType"></xs:element>
+            <xs:element name="stars" type="starsType"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="playId" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="playsType">
+        <xs:sequence minOccurs="1" maxOccurs="7">
+            <xs:element name="play" type="playType"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:complexType name="ticket">
         <xs:sequence>
-            <xs:element name="plays">
-                <xs:complexType>
-                    <xs:sequence minOccurs="1" maxOccurs="7">
-                        <xs:element name="play">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="numbers">
-                                        <xs:complexType>
-                                            <xs:sequence minOccurs="5" maxOccurs="5">
-                                                <xs:element name="number">
-                                                    <xs:simpleType>
-                                                        <xs:restriction base="xs:integer">
-                                                            <xs:minInclusive value="1"/>
-                                                            <xs:maxInclusive value="50"/>
-                                                        </xs:restriction>
-                                                    </xs:simpleType>
-                                                </xs:element>
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
-                                    <xs:element name="stars">
-                                        <xs:complexType>
-                                            <xs:sequence minOccurs="2" maxOccurs="2">
-                                                <xs:element name="star">
-                                                    <xs:simpleType>
-                                                        <xs:restriction base="xs:integer">
-                                                            <xs:minInclusive value="1"/>
-                                                            <xs:maxInclusive value="11"/>
-                                                        </xs:restriction>
-                                                    </xs:simpleType>
-                                                </xs:element>
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
-                                </xs:sequence>
-                                <xs:attribute name="playId" type="xs:integer" use="required"/>
-                            </xs:complexType>
-                        </xs:element>
-                    </xs:sequence>
-                </xs:complexType>
+            <xs:element name="plays" type="playsType">
                 <xs:unique name="uniquePlay">
                     <xs:selector xpath="play"/>
                     <xs:field xpath="@playId"/>
@@ -74,7 +75,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="valitity">
+            <xs:element name="validity">
                 <xs:simpleType>
                     <xs:restriction base="xs:integer">
                         <xs:enumeration value="1"/>
