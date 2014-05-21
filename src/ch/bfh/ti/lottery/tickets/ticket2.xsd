@@ -58,7 +58,7 @@
                                 <xs:attribute name="playId" type="xs:integer" use="required"/>
                             </xs:complexType>
                             <xs:unique name="uniquePlayId">
-                                <xs:selector xpath="plays"/>
+                                <xs:selector xpath="play"/>
                                 <xs:field xpath="@playId"/>
                             </xs:unique>
                         </xs:element>
