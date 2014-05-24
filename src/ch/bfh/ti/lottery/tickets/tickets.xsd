@@ -14,7 +14,7 @@
                     <xs:complexType>
                         <xs:complexContent>
                             <xs:extension base="ticket:ticketType">
-                                <xs:attribute name="ticketId" type="xs:integer" use="required"/>
+                                <xs:attribute name="ticketId" type="xs:int" use="required"/>
                             </xs:extension>
                         </xs:complexContent>
                     </xs:complexType>

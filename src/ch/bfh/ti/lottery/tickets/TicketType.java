@@ -1,7 +1,6 @@
 
 package ch.bfh.ti.lottery.tickets;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -58,7 +57,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *                               &lt;/complexType>
  *                             &lt;/element>
  *                           &lt;/sequence>
- *                           &lt;attribute name="playId" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *                           &lt;attribute name="playId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *                         &lt;/restriction>
  *                       &lt;/complexContent>
  *                     &lt;/complexType>
@@ -78,6 +77,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *                       &lt;simpleContent>
  *                         &lt;extension base="&lt;http://www.ti.bfh.ch/i1p/akz/schema/ticket>superStarType">
  *                           &lt;attribute name="selected" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
+ *                           &lt;attribute name="superStarId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *                         &lt;/extension>
  *                       &lt;/simpleContent>
  *                     &lt;/complexType>
@@ -114,8 +114,8 @@ public class TicketType {
     protected TicketType.Plays plays;
     @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", required = true)
     protected TicketType.SuperStars superStars;
-    @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", required = true)
-    protected BigInteger validity;
+    @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+    protected int validity;
     @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", required = true)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dateTime;
@@ -171,24 +171,16 @@ public class TicketType {
     /**
      * Gets the value of the validity property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
      */
-    public BigInteger getValidity() {
+    public int getValidity() {
         return validity;
     }
 
     /**
      * Sets the value of the validity property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
      */
-    public void setValidity(BigInteger value) {
+    public void setValidity(int value) {
         this.validity = value;
     }
 
@@ -255,7 +247,7 @@ public class TicketType {
      *                     &lt;/complexType>
      *                   &lt;/element>
      *                 &lt;/sequence>
-     *                 &lt;attribute name="playId" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+     *                 &lt;attribute name="playId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
      *               &lt;/restriction>
      *             &lt;/complexContent>
      *           &lt;/complexType>
@@ -340,7 +332,7 @@ public class TicketType {
          *           &lt;/complexType>
          *         &lt;/element>
          *       &lt;/sequence>
-         *       &lt;attribute name="playId" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+         *       &lt;attribute name="playId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
          *     &lt;/restriction>
          *   &lt;/complexContent>
          * &lt;/complexType>
@@ -360,7 +352,7 @@ public class TicketType {
             @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", required = true)
             protected TicketType.Plays.Play.Stars stars;
             @XmlAttribute(name = "playId", required = true)
-            protected BigInteger playId;
+            protected int playId;
 
             /**
              * Gets the value of the numbers property.
@@ -413,24 +405,16 @@ public class TicketType {
             /**
              * Gets the value of the playId property.
              * 
-             * @return
-             *     possible object is
-             *     {@link BigInteger }
-             *     
              */
-            public BigInteger getPlayId() {
+            public int getPlayId() {
                 return playId;
             }
 
             /**
              * Sets the value of the playId property.
              * 
-             * @param value
-             *     allowed object is
-             *     {@link BigInteger }
-             *     
              */
-            public void setPlayId(BigInteger value) {
+            public void setPlayId(int value) {
                 this.playId = value;
             }
 
@@ -461,7 +445,6 @@ public class TicketType {
             public static class Numbers {
 
                 @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", type = Integer.class)
-                @XmlSchemaType(name = "integer")
                 protected List<Integer> number;
 
                 /**
@@ -522,7 +505,6 @@ public class TicketType {
             public static class Stars {
 
                 @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", type = Integer.class)
-                @XmlSchemaType(name = "integer")
                 protected List<Integer> star;
 
                 /**
@@ -576,6 +558,7 @@ public class TicketType {
      *             &lt;simpleContent>
      *               &lt;extension base="&lt;http://www.ti.bfh.ch/i1p/akz/schema/ticket>superStarType">
      *                 &lt;attribute name="selected" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
+     *                 &lt;attribute name="superStarId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
      *               &lt;/extension>
      *             &lt;/simpleContent>
      *           &lt;/complexType>
@@ -637,6 +620,7 @@ public class TicketType {
          *   &lt;simpleContent>
          *     &lt;extension base="&lt;http://www.ti.bfh.ch/i1p/akz/schema/ticket>superStarType">
          *       &lt;attribute name="selected" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
+         *       &lt;attribute name="superStarId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
          *     &lt;/extension>
          *   &lt;/simpleContent>
          * &lt;/complexType>
@@ -654,6 +638,8 @@ public class TicketType {
             protected String value;
             @XmlAttribute(name = "selected")
             protected Boolean selected;
+            @XmlAttribute(name = "superStarId", required = true)
+            protected int superStarId;
 
             /**
              * Gets the value of the value property.
@@ -705,6 +691,22 @@ public class TicketType {
              */
             public void setSelected(Boolean value) {
                 this.selected = value;
+            }
+
+            /**
+             * Gets the value of the superStarId property.
+             * 
+             */
+            public int getSuperStarId() {
+                return superStarId;
+            }
+
+            /**
+             * Sets the value of the superStarId property.
+             * 
+             */
+            public void setSuperStarId(int value) {
+                this.superStarId = value;
             }
 
         }

@@ -1,7 +1,6 @@
 
 package ch.bfh.ti.lottery.tickets;
 
-import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -18,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;extension base="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}ticketType">
- *       &lt;attribute name="ticketId" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       &lt;attribute name="ticketId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -34,29 +33,21 @@ public class Ticket
 {
 
     @XmlAttribute(name = "ticketId", required = true)
-    protected BigInteger ticketId;
+    protected int ticketId;
 
     /**
      * Gets the value of the ticketId property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
      */
-    public BigInteger getTicketId() {
+    public int getTicketId() {
         return ticketId;
     }
 
     /**
      * Sets the value of the ticketId property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
      */
-    public void setTicketId(BigInteger value) {
+    public void setTicketId(int value) {
         this.ticketId = value;
     }
 

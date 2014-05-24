@@ -9,7 +9,7 @@
         <xs:complexType>
             <xs:complexContent>
                 <xs:extension base="ticket:ticketType">
-                    <xs:attribute name="ticketId" type="xs:integer" use="required"/>
+                    <xs:attribute name="ticketId" type="xs:int" use="required"/>
                 </xs:extension>
             </xs:complexContent>
         </xs:complexType>
@@ -47,7 +47,7 @@
                                         </xs:unique>
                                     </xs:element>
                                 </xs:sequence>
-                                <xs:attribute name="playId" type="xs:integer" use="required"/>
+                                <xs:attribute name="playId" type="xs:int" use="required"/>
                             </xs:complexType>
                         </xs:element>
                     </xs:sequence>
@@ -66,6 +66,8 @@
                                     <xs:extension base="ticket:superStarType">
                                         <xs:attribute default="false" name="selected"
                                                       type="xs:boolean" use="optional"/>
+                                        <xs:attribute name="superStarId"
+                                                      type="xs:int" use="required"/>
                                     </xs:extension>
                                 </xs:simpleContent>
                             </xs:complexType>
@@ -76,6 +78,10 @@
                     <xs:selector xpath="ticket:superStar"/>
                     <xs:field xpath="."/>
                 </xs:unique>
+                <xs:unique name="uniqueSuperStarId">
+                    <xs:selector xpath="ticket:superStar"/>
+                    <xs:field xpath="@superStarId"/>
+                </xs:unique>
             </xs:element>
             <xs:element name="validity" type="ticket:validityType"/>
             <xs:element name="dateTime" type="xs:dateTime"/>
@@ -83,7 +89,7 @@
     </xs:complexType>
 
     <xs:simpleType name="validityType">
-        <xs:restriction base="xs:integer">
+        <xs:restriction base="xs:int">
             <xs:enumeration value="1"/>
             <xs:enumeration value="2"/>
             <xs:enumeration value="4"/>
@@ -94,14 +100,14 @@
     </xs:simpleType>
 
     <xs:simpleType name="numberType">
-        <xs:restriction base="xs:integer">
+        <xs:restriction base="xs:int">
             <xs:minInclusive value="1"/>
             <xs:maxInclusive value="50"/>
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="starType">
-        <xs:restriction base="xs:integer">
+        <xs:restriction base="xs:int">
             <xs:minInclusive value="1"/>
             <xs:maxInclusive value="11"/>
         </xs:restriction>
