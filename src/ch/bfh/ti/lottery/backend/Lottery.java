@@ -5,15 +5,10 @@ package ch.bfh.ti.lottery.backend;
  */
 public class Lottery {
 
-    int a = 0;
+    private int nextTicketId = 0;
 
-    /**
-     * Constructor
-     */
-    public Lottery() {
-    }
 
-    public void setA(int a) {
-        this.a = a;
-    }
+
+
+
 }
