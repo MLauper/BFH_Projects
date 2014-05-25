@@ -1,0 +1,12 @@
+.ticketBackground{
+	-fx-background-image:url("graphics/lotteryTicket.png");
+	    -fx-background-size: stretch;
+}
+.numbSelector{
+	-fx-background-color:#000000;
+}
+.check-box
+{
+-fx-width:10px;
+-fx-height:10px;
+}

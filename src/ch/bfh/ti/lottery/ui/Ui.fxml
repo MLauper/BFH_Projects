@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import java.util.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
   <children>
     <MenuBar prefHeight="27.0" prefWidth="600.0" AnchorPane.bottomAnchor="373.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <menus>
@@ -31,12 +34,149 @@
       <tabs>
         <Tab fx:id="tab1" text="tab1">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="373.0" prefWidth="600.0" />
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="373.0" prefWidth="600.0">
+              <children>
+                <VBox prefHeight="337.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <HBox prefHeight="34.0" prefWidth="600.0">
+                      <children>
+                        <Label id="lab1Titel" fx:id="lbl1Titel" text="Label" />
+                      </children>
+                    </HBox>
+                    <FlowPane prefHeight="68.0" prefWidth="580.0">
+                      <children>
+                        <Label id="lb" fx:id="lblXSDPath" text="Label" />
+                        <TextField id="tx" fx:id="txtXSDPath" prefWidth="200.0" />
+                        <Button fx:id="butFileSelector" cancelButton="false" defaultButton="false" disable="false" mnemonicParsing="false" text="Button" />
+                        <Button fx:id="butXSDActivator" mnemonicParsing="false" text="Button" />
+                      </children>
+                    </FlowPane>
+                    <FlowPane prefHeight="34.0" prefWidth="580.0">
+                      <children>
+                        <Label id="lblCurWin" fx:id="lblCurWinNumb" text="Label" />
+                        <TextField fx:id="txtCurWinNumb1" prefWidth="34.0" />
+                        <TextField id="txtCurWinNumb1" fx:id="txtCurWinNumb2" prefWidth="34.0" />
+                        <TextField id="txtCurWinNumb1" fx:id="txtCurWinNumb3" prefWidth="34.0" />
+                        <TextField id="txtCurWinNumb1" fx:id="txtCurWinNumb4" prefWidth="34.0" />
+                        <TextField id="txtCurWinNumb1" fx:id="txtCurWinNumb5" prefWidth="34.0" />
+                      </children>
+                    </FlowPane>
+                    <FlowPane prefHeight="34.0" prefWidth="580.0">
+                      <children>
+                        <Label id="lblCurWin" fx:id="lblCurWinStarNumb" text="Label" />
+                        <TextField id="txtCurWinNumb1" fx:id="txtCurWinStarNumb1" prefWidth="34.0" />
+                        <TextField id="txtCurWinNumb1" fx:id="txtCurWinStarNumb2" prefWidth="34.0" />
+                      </children>
+                    </FlowPane>
+                    <FlowPane prefHeight="34.0" prefWidth="580.0">
+                      <children>
+                        <Label id="lblCurWin" fx:id="lblCurWinSupStarNumb" text="Label" />
+                        <TextField id="txtCurWinNumb1" fx:id="txtCurWinSupStarNumb1" prefWidth="34.0" />
+                      </children>
+                    </FlowPane>
+                    <FlowPane prefHeight="34.0" prefWidth="580.0">
+                      <children>
+                        <Label id="lblCurWin" fx:id="lblEvalDay" text="Label" />
+                        <TextField id="txtCurWinNumb1" fx:id="txtEvalDay" prefWidth="34.0" />
+                      </children>
+                    </FlowPane>
+                  </children>
+                </VBox>
+              </children>
+              <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+              </padding>
+            </AnchorPane>
           </content>
         </Tab>
         <Tab fx:id="tab2" text="tab2">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            <AnchorPane id="" minHeight="0.0" minWidth="0.0" prefHeight="355.0" prefWidth="600.0" styleClass="ticketBackground">
+              <children>
+                <VBox prefHeight="363.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <HBox prefHeight="270.0" prefWidth="600.0">
+                      <children>
+                        <FlowPane prefHeight="270.0" prefWidth="98.0">
+                          <children>
+                            <CheckBox maxHeight="10.0" maxWidth="10.0" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" styleClass="numbSelector" text="">
+                              <FlowPane.margin>
+                                <Insets right="5.0" />
+                              </FlowPane.margin>
+                            </CheckBox>
+                            <CheckBox minHeight="12.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="12.0" styleClass="numbSelector" text="">
+                              <FlowPane.margin>
+                                <Insets right="5.0" />
+                              </FlowPane.margin>
+                            </CheckBox>
+                            <CheckBox minHeight="12.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="12.0" text="">
+                              <FlowPane.margin>
+                                <Insets right="5.0" />
+                              </FlowPane.margin>
+                            </CheckBox>
+                            <CheckBox minHeight="12.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="12.0" text="">
+                              <FlowPane.margin>
+                                <Insets right="5.0" />
+                              </FlowPane.margin>
+                            </CheckBox>
+                            <CheckBox minHeight="12.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="12.0" text="">
+                              <FlowPane.margin>
+                                <Insets right="5.0" />
+                              </FlowPane.margin>
+                            </CheckBox>
+                            <CheckBox minHeight="12.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="12.0" text="">
+                              <FlowPane.margin>
+                                <Insets right="5.0" />
+                              </FlowPane.margin>
+                            </CheckBox>
+                          </children>
+                          <padding>
+                            <Insets left="8.0" top="30.0" />
+                          </padding>
+                        </FlowPane>
+                        <FlowPane prefHeight="270.0" prefWidth="98.0">
+                          <children>
+                            <Button minHeight="14.0" minWidth="14.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="14.0" text="">
+                              <font>
+                                <Font size="2.0" />
+                              </font>
+                              <FlowPane.margin>
+                                <Insets left="3.0" fx:id="x1" />
+                              </FlowPane.margin>
+                            </Button>
+                            <Button minHeight="14.0" minWidth="14.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="14.0" text="Button" FlowPane.margin="$x1" />
+                            <Button minHeight="14.0" minWidth="14.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="14.0" text="Button">
+                              <FlowPane.margin>
+                                <Insets left="3.0" fx:id="x1" />
+                              </FlowPane.margin>
+                            </Button>
+                            <Button minHeight="14.0" minWidth="14.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="14.0" text="Button">
+                              <FlowPane.margin>
+                                <Insets left="3.0" fx:id="x1" />
+                              </FlowPane.margin>
+                            </Button>
+                            <Button minHeight="14.0" minWidth="14.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="14.0" text="Button">
+                              <FlowPane.margin>
+                                <Insets left="3.0" fx:id="x1" />
+                              </FlowPane.margin>
+                            </Button>
+                          </children>
+                          <padding>
+                            <Insets left="8.0" top="30.0" />
+                          </padding>
+                          <HBox.margin>
+                            <Insets />
+                          </HBox.margin>
+                        </FlowPane>
+                      </children>
+                    </HBox>
+                  </children>
+                </VBox>
+              </children>
+              <stylesheets>
+                <URL value="@stylesheet.css" />
+              </stylesheets>
+            </AnchorPane>
           </content>
         </Tab>
         <Tab fx:id="tab3" text="tab3">
