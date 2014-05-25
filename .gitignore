@@ -7,3 +7,5 @@ bin
 RemoteSystemsTempFiles
 /bin
 .metadata/
+
+*.fxbuild
