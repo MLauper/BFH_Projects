@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class UITester extends Application {
@@ -12,8 +13,8 @@ public class UITester extends Application {
 	public void start(Stage primaryStage) {
 		try {
             FXMLLoader loader = new FXMLLoader(
-            UITester.class.getResource("Ui.fxml"));
-            AnchorPane rootLayout = (AnchorPane) loader.load();
+            UITester.class.getResource("ComplexApplication_i18n.fxml"));
+            VBox rootLayout = (VBox) loader.load();
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
