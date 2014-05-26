@@ -32,7 +32,7 @@ public class TicketModifier {
         dateTime.setMinute(44);
         ticket.setDateTime(dateTime);
 
-        TicketType.SuperStars newSuperStars =  createSuperStar();
+        TicketType.SuperStars newSuperStars = createSuperStar();
 
         ticket.setSuperStars(newSuperStars);
 
@@ -114,9 +114,9 @@ public class TicketModifier {
         }
 
         int playsSize;
-        if (ticket.getPlays() == null){
+        if (ticket.getPlays() == null) {
             playsSize = 0;
-        }else {
+        } else {
             playsSize = ticket.getPlays().getPlay().size();
         }
 
@@ -129,29 +129,50 @@ public class TicketModifier {
             return false;
         } else {
 
+            if (ticket.getPlays() == null) {
+                ticket.setPlays(new Tickets.Ticket.Plays());
+            }
+
             int nextPlayId;
-            if (ticket.getPlays() == null){
+            if (ticket.getPlays() == null) {
                 nextPlayId = 0;
-            }else {
+            } else {
                 nextPlayId = ticket.getPlays().getPlay().size();
             }
 
-            Ticket.Plays.Play play = new Ticket.Plays.Play();
 
-            play.setPlayId(nextPlayId);
+            Ticket.Plays.Play newPlay = new Ticket.Plays.Play();
 
+            newPlay.setPlayId(nextPlayId);
 
+            Ticket.Plays.Play.Numbers newNumbers = new TicketType.Plays.Play.Numbers();
             for (int i = 0; i < numbers.length; i++) {
-                play.getNumbers().getNumber().add(numbers[i]);
+                newNumbers.getNumber().add(numbers[i]);
+                //play.getNumbers().getNumber().add(numbers[i]);
             }
 
+            Ticket.Plays.Play.Stars newStars = new TicketType.Plays.Play.Stars();
             for (int i = 0; i < stars.length; i++) {
-                play.getNumbers().getNumber().add(stars[i]);
+                newStars.getStar().add(stars[i]);
             }
 
-            ticket.getPlays().getPlay().add(play);
+            newPlay.setNumbers(newNumbers);
+            newPlay.setStars(newStars);
+
+            ticket.getPlays().getPlay().add(newPlay);
             return true;
         }
+    }
+
+    /**
+     * modify a play
+     *
+     * @param ticket Ticket to modify
+     */
+    public static boolean setNumbersOfPlay(Tickets.Ticket ticket, int playId, int numbers[], int stars[]) {
+
+
+        return false;
     }
 
     /**
@@ -161,7 +182,22 @@ public class TicketModifier {
      * @param superStarId SuperStar ID {0-3}
      * @param selected    SuperStar selected true|false
      */
-    public static void selectSuperStar(Ticket ticket, int superStarId, boolean selected) {
+    public static void selectSuperStar(Tickets.Ticket ticket, int superStarId, boolean selected) {
         ticket.getSuperStars().getSuperStar().get(superStarId).setSelected(selected);
+    }
+
+    /**
+     * set ticket validity
+     *
+     * @param ticket Ticket to modify
+     */
+    public static boolean setValidity(Tickets.Ticket ticket, int validity) {
+
+        if (validity == 1 || validity == 2 || validity == 4 || validity == 6 || validity == 8 || validity == 10) {
+            ticket.setValidity(validity);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

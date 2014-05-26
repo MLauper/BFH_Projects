@@ -25,11 +25,18 @@ public class Tester {
         stars[0] = 1;
         stars[1] = 2;
 
-        TicketModifier.addPlay(tickets.getTicket().get(0), nums, stars);
+        System.out.println(
+                TicketModifier.addPlay(tickets.getTicket().get(0), nums, stars) + " " +
+                        TicketModifier.addPlay(tickets.getTicket().get(0), nums, stars)
+        );
 
+        TicketModifier.selectSuperStar(tickets.getTicket().get(0), 0, true);
 
-        System.out.println("bla");
+        System.out.println(
+                TicketModifier.setValidity(tickets.getTicket().get(0), 8)
+        );
 
+        System.out.println("end");
 
     }
 }
