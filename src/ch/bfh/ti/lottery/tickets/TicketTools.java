@@ -5,10 +5,10 @@ import java.util.Random;
 /**
  * Created by alain on 24.05.14.
  */
-public class TicketModifier {
+public class TicketTools {
 
 
-    public TicketModifier() {
+    public TicketTools() {
     }
 
     /**
@@ -199,5 +199,15 @@ public class TicketModifier {
         } else {
             return false;
         }
+    }
+
+    public static boolean validateTicket(Tickets.Ticket ticket) {
+
+        return false;
+    }
+
+    public static boolean validateTicket(Tickets tickets) {
+
+        return false;
     }
 }

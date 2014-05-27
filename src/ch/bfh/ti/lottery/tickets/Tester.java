@@ -12,7 +12,7 @@ public class Tester {
         Tickets tickets = new Tickets();
 
 
-        tickets.getTicket().add(TicketModifier.createNewTicket(0, 2, "2014-05-26 00:01"));
+        tickets.getTicket().add(TicketTools.createNewTicket(0, 2, "2014-05-26 00:01"));
 
         int[] nums = new int[5];
         nums[0] = 1;
@@ -26,14 +26,14 @@ public class Tester {
         stars[1] = 2;
 
         System.out.println(
-                TicketModifier.addPlay(tickets.getTicket().get(0), nums, stars) + " " +
-                        TicketModifier.addPlay(tickets.getTicket().get(0), nums, stars)
+                TicketTools.addPlay(tickets.getTicket().get(0), nums, stars) + " " +
+                        TicketTools.addPlay(tickets.getTicket().get(0), nums, stars)
         );
 
-        TicketModifier.selectSuperStar(tickets.getTicket().get(0), 0, true);
+        TicketTools.selectSuperStar(tickets.getTicket().get(0), 0, true);
 
         System.out.println(
-                TicketModifier.setValidity(tickets.getTicket().get(0), 8)
+                TicketTools.setValidity(tickets.getTicket().get(0), 8)
         );
 
         System.out.println("end");
