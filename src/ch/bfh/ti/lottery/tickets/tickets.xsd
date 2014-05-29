@@ -5,8 +5,10 @@
     targetNamespace="http://www.ti.bfh.ch/i1p/akz/schema/tickets" 
     elementFormDefault="qualified">
 
-    <xs:import namespace="http://www.ti.bfh.ch/i1p/akz/schema/ticket" schemaLocation="ticket.xsd"/>
-    
+    <xs:import namespace="http://www.ti.bfh.ch/i1p/akz/schema/ticket"
+               schemaLocation="ticket.xsd"/>
+    <xs:include schemaLocation="ticket.xsd"/>
+
     <xs:element name="tickets">
         <xs:complexType>
             <xs:sequence minOccurs="0" maxOccurs="unbounded">

@@ -86,6 +86,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link TicketType.TimeStamp }
+     * 
+     */
+    public TicketType.TimeStamp createTicketTypeTimeStamp() {
+        return new TicketType.TimeStamp();
+    }
+
+    /**
      * Create an instance of {@link TicketType.SuperStars.SuperStar }
      * 
      */

@@ -1,5 +1,16 @@
 package ch.bfh.ti.lottery.tickets;
 
+import javax.xml.XMLConstants;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Random;
 
 /**
@@ -14,29 +25,21 @@ public class TicketTools {
     /**
      * Creates and returns a new ticket
      *
-     * @param ticketId       Ticket ID
-     * @param ticketValidity for how many draws the ticket is valid
-     * @param timeStamp      in format "JJJJ-MM-DD hh:mm" e.g.: "2014-11-23 14:56"
+     * @param ticketId Ticket ID
      */
-    public static Tickets.Ticket createNewTicket(int ticketId, int ticketValidity, String timeStamp) {
+    public static Tickets.Ticket createNewTicket(int ticketId) {
 
 
         Tickets.Ticket ticket = new Tickets.Ticket();
         ticket.setTicketId(ticketId);
 
-        TicketGregorianCalendar dateTime = new TicketGregorianCalendar();
-        dateTime.setYear(2014);
-        dateTime.setMonth(12);
-        dateTime.setDay(22);
-        dateTime.setHour(23);
-        dateTime.setMinute(44);
-        ticket.setDateTime(dateTime);
+        ticket.setTimeStamp(getCurrentTimeStamp());
 
         TicketType.SuperStars newSuperStars = createSuperStar();
 
         ticket.setSuperStars(newSuperStars);
 
-        ticket.setValidity(ticketValidity);
+        ticket.setValidity(1);
 
         return ticket;
     }
@@ -206,8 +209,77 @@ public class TicketTools {
         return false;
     }
 
-    public static boolean validateTicket(Tickets tickets) {
+    public static boolean validateTickets() {
 
-        return false;
+        File xsdFile = new File("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets/tickets.xsd");
+        File xmlFile = new File("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets/tickets.xml");
+
+        InputStream xsd = null;
+        try {
+            xsd = new FileInputStream(xsdFile);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        InputStream xml = null;
+        try {
+            xml = new FileInputStream(xmlFile);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            SchemaFactory factory =
+                    SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Schema schema = factory.newSchema(new StreamSource(xsd));
+            Validator validator = schema.newValidator();
+            validator.validate(new StreamSource(xml));
+            return true;
+        } catch (Exception ex) {
+            System.out.println(ex);
+            return false;
+        }
+
     }
+
+    /**
+     * get current system time stamp
+     *
+     * @return current time stamp
+     */
+    public static Ticket.TimeStamp getCurrentTimeStamp() {
+        String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss_SSS").format(Calendar.getInstance().getTime());
+
+        Tickets.Ticket.TimeStamp newTimeStamp = new Tickets.Ticket.TimeStamp();
+        newTimeStamp.setYear(Integer.parseInt(timeStamp.substring(0, 4)));
+        newTimeStamp.setMonth(Integer.parseInt(timeStamp.substring(5, 7)));
+        newTimeStamp.setDay(Integer.parseInt(timeStamp.substring(8, 10)));
+        newTimeStamp.setHour(Integer.parseInt(timeStamp.substring(11, 13)));
+        newTimeStamp.setMinute(Integer.parseInt(timeStamp.substring(14, 16)));
+        newTimeStamp.setSecond(Integer.parseInt(timeStamp.substring(17, 19)));
+        newTimeStamp.setMilSecond(Integer.parseInt(timeStamp.substring(20, 23)));
+        newTimeStamp.setTimeZoneOffset(2);
+
+        return newTimeStamp;
+    }
+
+    /**
+     * sets current time to ticket
+     *
+     * @param ticket
+     */
+    public static void setTimeStamp(Tickets.Ticket ticket) {
+        ticket.setTimeStamp(getCurrentTimeStamp());
+    }
+
+    /**
+     * sets specific TimeStamp Class to ticket
+     *
+     * @param ticket
+     * @param timeStamp
+     */
+    public static void setTimeStamp(Tickets.Ticket ticket, Ticket.TimeStamp timeStamp) {
+        ticket.setTimeStamp(timeStamp);
+    }
+
 }

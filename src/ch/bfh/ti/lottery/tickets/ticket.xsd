@@ -84,7 +84,20 @@
                 </xs:unique>
             </xs:element>
             <xs:element name="validity" type="ticket:validityType"/>
-            <xs:element name="dateTime" type="xs:dateTime"/>
+            <xs:element name="timeStamp">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="year" type="xs:int"/>
+                        <xs:element name="month" type="ticket:monthType"/>
+                        <xs:element name="day" type="ticket:dayType"/>
+                        <xs:element name="hour" type="ticket:hourType"/>
+                        <xs:element name="minute" type="ticket:minuteType"/>
+                        <xs:element name="second" type="ticket:secondType"/>
+                        <xs:element name="milSecond" type="ticket:milSecondsType"/>
+                        <xs:element name="timeZoneOffset" type="ticket:timeZoneOffsetType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
 
@@ -115,7 +128,56 @@
 
     <xs:simpleType name="superStarType">
         <xs:restriction base="xs:string">
-            <xs:pattern value="[A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9]"/>
+            <xs:pattern value="[A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="monthType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="dayType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="31"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="hourType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="23"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="minuteType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="59"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="secondType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="59"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="milSecondsType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="999"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="timeZoneOffsetType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="-12"/>
+            <xs:maxInclusive value="+12"/>
         </xs:restriction>
     </xs:simpleType>
 

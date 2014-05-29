@@ -1,66 +1,50 @@
-<tickets:tickets xmlns:tickets="http://www.ti.bfh.ch/i1p/akz/schema/tickets"
-             xmlns:ticket="http://www.ti.bfh.ch/i1p/akz/schema/ticket">
-  <tickets:ticket ticketId="0">
-    <ticket:plays>
-      <ticket:play playId="0">
-        <ticket:numbers>
-          <ticket:number>1</ticket:number>
-          <ticket:number>2</ticket:number>
-          <ticket:number>3</ticket:number>
-          <ticket:number>49</ticket:number>
-          <ticket:number>50</ticket:number>
-        </ticket:numbers>
-        <ticket:stars>
-          <ticket:star>1</ticket:star>
-          <ticket:star>11</ticket:star>
-        </ticket:stars>
-      </ticket:play>
-    </ticket:plays>
-    <ticket:superStars>
-      <ticket:superStar superStarId="0" selected="false">0001</ticket:superStar>
-      <ticket:superStar superStarId="1" selected="false">AZ01</ticket:superStar>
-      <ticket:superStar superStarId="2" selected="false">01AZ</ticket:superStar>
-      <ticket:superStar superStarId="3" selected="false">ZZZZ</ticket:superStar>
-    </ticket:superStars>
-    <ticket:validity>6</ticket:validity>
-    <ticket:dateTime>2007-10-26T08:36:28</ticket:dateTime>
-  </tickets:ticket>
-    <tickets:ticket ticketId="1">
-        <ticket:plays>
-            <ticket:play playId="0">
-                <ticket:numbers>
-                    <ticket:number>1</ticket:number>
-                    <ticket:number>2</ticket:number>
-                    <ticket:number>3</ticket:number>
-                    <ticket:number>49</ticket:number>
-                    <ticket:number>50</ticket:number>
-                </ticket:numbers>
-                <ticket:stars>
-                    <ticket:star>1</ticket:star>
-                    <ticket:star>11</ticket:star>
-                </ticket:stars>
-            </ticket:play>
-            <ticket:play playId="1">
-                <ticket:numbers>
-                    <ticket:number>1</ticket:number>
-                    <ticket:number>2</ticket:number>
-                    <ticket:number>3</ticket:number>
-                    <ticket:number>49</ticket:number>
-                    <ticket:number>50</ticket:number>
-                </ticket:numbers>
-                <ticket:stars>
-                    <ticket:star>1</ticket:star>
-                    <ticket:star>11</ticket:star>
-                </ticket:stars>
-            </ticket:play>
-        </ticket:plays>
-        <ticket:superStars>
-            <ticket:superStar superStarId="0" selected="false">0001</ticket:superStar>
-            <ticket:superStar superStarId="1" selected="false">AZ01</ticket:superStar>
-            <ticket:superStar superStarId="2" selected="false">01AZ</ticket:superStar>
-            <ticket:superStar superStarId="3" selected="false">ZZZZ</ticket:superStar>
-        </ticket:superStars>
-        <ticket:validity>6</ticket:validity>
-        <ticket:dateTime>2007-10-26T08:36:28</ticket:dateTime>
-    </tickets:ticket>
-</tickets:tickets>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:tickets xmlns="http://www.ti.bfh.ch/i1p/akz/schema/ticket" xmlns:ns2="http://www.ti.bfh.ch/i1p/akz/schema/tickets">
+    <ns2:ticket ticketId="0">
+        <plays>
+            <play playId="0">
+                <numbers>
+                    <number>1</number>
+                    <number>2</number>
+                    <number>3</number>
+                    <number>4</number>
+                    <number>5</number>
+                </numbers>
+                <stars>
+                    <star>1</star>
+                    <star>2</star>
+                </stars>
+            </play>
+            <play playId="1">
+                <numbers>
+                    <number>1</number>
+                    <number>2</number>
+                    <number>3</number>
+                    <number>4</number>
+                    <number>5</number>
+                </numbers>
+                <stars>
+                    <star>1</star>
+                    <star>2</star>
+                </stars>
+            </play>
+        </plays>
+        <superStars>
+            <superStar selected="true" superStarId="0">X905Q</superStar>
+            <superStar selected="false" superStarId="1">E509U</superStar>
+            <superStar selected="false" superStarId="2">T974V</superStar>
+            <superStar selected="false" superStarId="3">O429O</superStar>
+        </superStars>
+        <validity>8</validity>
+        <timeStamp>
+            <year>2014</year>
+            <month>5</month>
+            <day>29</day>
+            <hour>20</hour>
+            <minute>55</minute>
+            <second>31</second>
+            <milSecond>704</milSecond>
+            <timeZoneOffset>2</timeZoneOffset>
+        </timeStamp>
+    </ns2:ticket>
+</ns2:tickets>

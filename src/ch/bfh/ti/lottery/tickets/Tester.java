@@ -5,9 +5,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
+import java.io.File;
 
 /**
  * Created by alain on 24.05.14.
@@ -20,7 +18,7 @@ public class Tester {
         Tickets tickets = new Tickets();
 
 
-        tickets.getTicket().add(TicketTools.createNewTicket(0, 2, "2014-05-26 00:01"));
+        tickets.getTicket().add(TicketTools.createNewTicket(0));
 
         int[] nums = new int[5];
         nums[0] = 1;
@@ -34,7 +32,8 @@ public class Tester {
         stars[1] = 2;
 
         System.out.println(
-                TicketTools.addPlay(tickets.getTicket().get(0), nums, stars) + " " +
+                TicketTools.addPlay(tickets.getTicket().get(0), nums, stars) +
+                        " " +
                         TicketTools.addPlay(tickets.getTicket().get(0), nums, stars)
         );
 
@@ -45,32 +44,14 @@ public class Tester {
         );
 
 
-        JAXBContext jc = null;
-        try {
-            jc = JAXBContext.newInstance();
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
-        Marshaller m = null;
-        try {
-            m = jc.createMarshaller();
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
 
-        OutputStream os = null;
-        try {
-            os = new FileOutputStream( "test_tickets.xml" );
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
-            m.marshal( tickets, os );
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
+        Marshall.marshall(tickets,"/Users/alain/Desktop/tmp_bfh", "tickets.xml");
 
-        System.out.println("end");
+        Tickets newTic = Marshall.unMarshall("/Users/alain/Desktop/tmp_bfh", "tickets.xml");
+
+
+        System.out.println("Validate:");
+        System.out.println(TicketTools.validateTickets());
 
     }
 }

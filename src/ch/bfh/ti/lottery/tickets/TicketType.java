@@ -7,11 +7,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -88,7 +86,24 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *           &lt;/complexType>
  *         &lt;/element>
  *         &lt;element name="validity" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}validityType"/>
- *         &lt;element name="dateTime" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+ *         &lt;element name="timeStamp">
+ *           &lt;complexType>
+ *             &lt;complexContent>
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 &lt;sequence>
+ *                   &lt;element name="year" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *                   &lt;element name="month" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}monthType"/>
+ *                   &lt;element name="day" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}dayType"/>
+ *                   &lt;element name="hour" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}hourType"/>
+ *                   &lt;element name="minute" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}minuteType"/>
+ *                   &lt;element name="second" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}secondType"/>
+ *                   &lt;element name="milSecond" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}milSecondsType"/>
+ *                   &lt;element name="timeZoneOffset" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}timeZoneOffsetType"/>
+ *                 &lt;/sequence>
+ *               &lt;/restriction>
+ *             &lt;/complexContent>
+ *           &lt;/complexType>
+ *         &lt;/element>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -102,7 +117,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "plays",
     "superStars",
     "validity",
-    "dateTime"
+    "timeStamp"
 })
 @XmlSeeAlso({
     ch.bfh.ti.lottery.tickets.Tickets.Ticket.class,
@@ -117,8 +132,7 @@ public class TicketType {
     @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
     protected int validity;
     @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", required = true)
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dateTime;
+    protected TicketType.TimeStamp timeStamp;
 
     /**
      * Gets the value of the plays property.
@@ -185,27 +199,27 @@ public class TicketType {
     }
 
     /**
-     * Gets the value of the dateTime property.
+     * Gets the value of the timeStamp property.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link TicketType.TimeStamp }
      *     
      */
-    public XMLGregorianCalendar getDateTime() {
-        return dateTime;
+    public TicketType.TimeStamp getTimeStamp() {
+        return timeStamp;
     }
 
     /**
-     * Sets the value of the dateTime property.
+     * Sets the value of the timeStamp property.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link TicketType.TimeStamp }
      *     
      */
-    public void setDateTime(XMLGregorianCalendar value) {
-        this.dateTime = value;
+    public void setTimeStamp(TicketType.TimeStamp value) {
+        this.timeStamp = value;
     }
 
 
@@ -709,6 +723,193 @@ public class TicketType {
                 this.superStarId = value;
             }
 
+        }
+
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type.
+     * 
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     * 
+     * <pre>
+     * &lt;complexType>
+     *   &lt;complexContent>
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       &lt;sequence>
+     *         &lt;element name="year" type="{http://www.w3.org/2001/XMLSchema}int"/>
+     *         &lt;element name="month" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}monthType"/>
+     *         &lt;element name="day" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}dayType"/>
+     *         &lt;element name="hour" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}hourType"/>
+     *         &lt;element name="minute" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}minuteType"/>
+     *         &lt;element name="second" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}secondType"/>
+     *         &lt;element name="milSecond" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}milSecondsType"/>
+     *         &lt;element name="timeZoneOffset" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}timeZoneOffsetType"/>
+     *       &lt;/sequence>
+     *     &lt;/restriction>
+     *   &lt;/complexContent>
+     * &lt;/complexType>
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "year",
+        "month",
+        "day",
+        "hour",
+        "minute",
+        "second",
+        "milSecond",
+        "timeZoneOffset"
+    })
+    public static class TimeStamp {
+
+        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        protected int year;
+        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        protected int month;
+        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        protected int day;
+        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        protected int hour;
+        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        protected int minute;
+        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        protected int second;
+        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        protected int milSecond;
+        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        protected int timeZoneOffset;
+
+        /**
+         * Gets the value of the year property.
+         * 
+         */
+        public int getYear() {
+            return year;
+        }
+
+        /**
+         * Sets the value of the year property.
+         * 
+         */
+        public void setYear(int value) {
+            this.year = value;
+        }
+
+        /**
+         * Gets the value of the month property.
+         * 
+         */
+        public int getMonth() {
+            return month;
+        }
+
+        /**
+         * Sets the value of the month property.
+         * 
+         */
+        public void setMonth(int value) {
+            this.month = value;
+        }
+
+        /**
+         * Gets the value of the day property.
+         * 
+         */
+        public int getDay() {
+            return day;
+        }
+
+        /**
+         * Sets the value of the day property.
+         * 
+         */
+        public void setDay(int value) {
+            this.day = value;
+        }
+
+        /**
+         * Gets the value of the hour property.
+         * 
+         */
+        public int getHour() {
+            return hour;
+        }
+
+        /**
+         * Sets the value of the hour property.
+         * 
+         */
+        public void setHour(int value) {
+            this.hour = value;
+        }
+
+        /**
+         * Gets the value of the minute property.
+         * 
+         */
+        public int getMinute() {
+            return minute;
+        }
+
+        /**
+         * Sets the value of the minute property.
+         * 
+         */
+        public void setMinute(int value) {
+            this.minute = value;
+        }
+
+        /**
+         * Gets the value of the second property.
+         * 
+         */
+        public int getSecond() {
+            return second;
+        }
+
+        /**
+         * Sets the value of the second property.
+         * 
+         */
+        public void setSecond(int value) {
+            this.second = value;
+        }
+
+        /**
+         * Gets the value of the milSecond property.
+         * 
+         */
+        public int getMilSecond() {
+            return milSecond;
+        }
+
+        /**
+         * Sets the value of the milSecond property.
+         * 
+         */
+        public void setMilSecond(int value) {
+            this.milSecond = value;
+        }
+
+        /**
+         * Gets the value of the timeZoneOffset property.
+         * 
+         */
+        public int getTimeZoneOffset() {
+            return timeZoneOffset;
+        }
+
+        /**
+         * Sets the value of the timeZoneOffset property.
+         * 
+         */
+        public void setTimeZoneOffset(int value) {
+            this.timeZoneOffset = value;
         }
 
     }
