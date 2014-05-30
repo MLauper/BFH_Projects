@@ -35,7 +35,7 @@ public class TicketTools {
 
         ticket.setTimeStamp(getCurrentTimeStamp());
 
-        TicketType.SuperStars newSuperStars = createSuperStar();
+        Tickets.Ticket.SuperStars newSuperStars = createSuperStar();
 
         ticket.setSuperStars(newSuperStars);
 
@@ -44,12 +44,12 @@ public class TicketTools {
         return ticket;
     }
 
-    private static TicketType.SuperStars createSuperStar() {
-        TicketType.SuperStars newSuperStarsList = new TicketType.SuperStars();
+    private static Tickets.Ticket.SuperStars createSuperStar() {
+        Tickets.Ticket.SuperStars newSuperStarsList = new Tickets.Ticket.SuperStars();
 
         int nextSuperStarId = 0;
         for (int i = 0; i < 4; i++) {
-            TicketType.SuperStars.SuperStar newSuperStar = new TicketType.SuperStars.SuperStar();
+            Tickets.Ticket.SuperStars.SuperStar newSuperStar = new Tickets.Ticket.SuperStars.SuperStar();
             String newSuperStarString = "";
 
             String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -144,17 +144,17 @@ public class TicketTools {
             }
 
 
-            Ticket.Plays.Play newPlay = new Ticket.Plays.Play();
+            Tickets.Ticket.Plays.Play newPlay = new Tickets.Ticket.Plays.Play();
 
             newPlay.setPlayId(nextPlayId);
 
-            Ticket.Plays.Play.Numbers newNumbers = new TicketType.Plays.Play.Numbers();
+            Tickets.Ticket.Plays.Play.Numbers newNumbers = new Tickets.Ticket.Plays.Play.Numbers();
             for (int i = 0; i < numbers.length; i++) {
                 newNumbers.getNumber().add(numbers[i]);
                 //play.getNumbers().getNumber().add(numbers[i]);
             }
 
-            Ticket.Plays.Play.Stars newStars = new TicketType.Plays.Play.Stars();
+            Tickets.Ticket.Plays.Play.Stars newStars = new Tickets.Ticket.Plays.Play.Stars();
             for (int i = 0; i < stars.length; i++) {
                 newStars.getStar().add(stars[i]);
             }
@@ -212,7 +212,7 @@ public class TicketTools {
     public static boolean validateTickets() {
 
         File xsdFile = new File("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets/tickets.xsd");
-        File xmlFile = new File("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets/tickets.xml");
+        File xmlFile = new File("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets/tickets.xsd.xml");
 
         InputStream xsd = null;
         try {
@@ -247,7 +247,7 @@ public class TicketTools {
      *
      * @return current time stamp
      */
-    public static Ticket.TimeStamp getCurrentTimeStamp() {
+    public static Tickets.Ticket.TimeStamp getCurrentTimeStamp() {
         String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss_SSS").format(Calendar.getInstance().getTime());
 
         Tickets.Ticket.TimeStamp newTimeStamp = new Tickets.Ticket.TimeStamp();
@@ -278,7 +278,7 @@ public class TicketTools {
      * @param ticket
      * @param timeStamp
      */
-    public static void setTimeStamp(Tickets.Ticket ticket, Ticket.TimeStamp timeStamp) {
+    public static void setTimeStamp(Tickets.Ticket ticket, Tickets.Ticket.TimeStamp timeStamp) {
         ticket.setTimeStamp(timeStamp);
     }
 

@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="ticket">
  *           &lt;complexType>
  *             &lt;complexContent>
- *               &lt;extension base="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}ticketType">
+ *               &lt;extension base="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticketType.xsd}ticketType">
  *                 &lt;attribute name="ticketId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *               &lt;/extension>
  *             &lt;/complexContent>
@@ -86,7 +86,7 @@ public class Tickets {
      * <pre>
      * &lt;complexType>
      *   &lt;complexContent>
-     *     &lt;extension base="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}ticketType">
+     *     &lt;extension base="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticketType.xsd}ticketType">
      *       &lt;attribute name="ticketId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
      *     &lt;/extension>
      *   &lt;/complexContent>

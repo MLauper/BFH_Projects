@@ -78,14 +78,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ch.bfh.ti.lottery.tickets.Ticket }
-     * 
-     */
-    public ch.bfh.ti.lottery.tickets.Ticket createTicket() {
-        return new ch.bfh.ti.lottery.tickets.Ticket();
-    }
-
-    /**
      * Create an instance of {@link TicketType.TimeStamp }
      * 
      */

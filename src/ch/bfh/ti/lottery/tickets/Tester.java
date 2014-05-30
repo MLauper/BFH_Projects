@@ -1,12 +1,6 @@
 package ch.bfh.ti.lottery.tickets;
 
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-import java.io.File;
-
 /**
  * Created by alain on 24.05.14.
  */
@@ -19,6 +13,7 @@ public class Tester {
 
 
         tickets.getTicket().add(TicketTools.createNewTicket(0));
+        tickets.getTicket().add(TicketTools.createNewTicket(1));
 
         int[] nums = new int[5];
         nums[0] = 1;
@@ -36,16 +31,23 @@ public class Tester {
                         " " +
                         TicketTools.addPlay(tickets.getTicket().get(0), nums, stars)
         );
+        System.out.println(
+                TicketTools.addPlay(tickets.getTicket().get(1), nums, stars) +
+                        " " +
+                        TicketTools.addPlay(tickets.getTicket().get(1), nums, stars)
+        );
 
         TicketTools.selectSuperStar(tickets.getTicket().get(0), 0, true);
+        TicketTools.selectSuperStar(tickets.getTicket().get(1), 3, true);
 
         System.out.println(
-                TicketTools.setValidity(tickets.getTicket().get(0), 8)
+                TicketTools.setValidity(tickets.getTicket().get(0), 8) + " " +
+                        TicketTools.setValidity(tickets.getTicket().get(1), 10)
         );
 
 
         String xmlPath = "/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets";
-        Marshall.marshall(tickets,xmlPath, "tickets.xml");
+        Marshall.marshall(tickets, xmlPath, "tickets.xml");
         Tickets newTic = Marshall.unMarshall(xmlPath, "tickets.xml");
 
 
