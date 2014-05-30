@@ -44,14 +44,17 @@ public class Tester {
         );
 
 
+        //Tickets newTic = Marshall.unMarshall("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets", "tickets.xml");
 
-        Marshall.marshall(tickets,"/Users/alain/Desktop/tmp_bfh", "tickets.xml");
+        Marshall.marshall(tickets,"/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets", "tickets.xml");
 
-        Tickets newTic = Marshall.unMarshall("/Users/alain/Desktop/tmp_bfh", "tickets.xml");
 
 
         System.out.println("Validate:");
         System.out.println(TicketTools.validateTickets());
+
+        System.out.println("End:");
+
 
     }
 }

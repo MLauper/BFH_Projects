@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/tickets.xsd"
-           xmlns:tickets="https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/tickets.xsd"
-           xmlns:ticket="https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd"
-           elementFormDefault="qualified">
+    xmlns:ticket="http://www.ti.bfh.ch/i1p/akz/schema/ticket"
+    xmlns:tickets="http://www.ti.bfh.ch/i1p/akz/schema/tickets"
+    targetNamespace="http://www.ti.bfh.ch/i1p/akz/schema/tickets" 
+    elementFormDefault="qualified">
 
-    <xs:import namespace="https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd"
+    <xs:import namespace="http://www.ti.bfh.ch/i1p/akz/schema/ticket"
                schemaLocation="ticket.xsd"/>
+    <xs:include schemaLocation="ticket.xsd"/>
 
     <xs:element name="tickets">
         <xs:complexType>
@@ -27,5 +28,4 @@
             <xs:field xpath="@ticketId"/>
         </xs:unique>
     </xs:element>
-
 </xs:schema>
