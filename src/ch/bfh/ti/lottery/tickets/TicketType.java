@@ -37,7 +37,7 @@ import javax.xml.bind.annotation.XmlValue;
  *                                 &lt;complexContent>
  *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                                     &lt;sequence maxOccurs="5" minOccurs="5">
- *                                       &lt;element name="number" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}numberType"/>
+ *                                       &lt;element name="number" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}numberType"/>
  *                                     &lt;/sequence>
  *                                   &lt;/restriction>
  *                                 &lt;/complexContent>
@@ -48,7 +48,7 @@ import javax.xml.bind.annotation.XmlValue;
  *                                 &lt;complexContent>
  *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                                     &lt;sequence maxOccurs="2" minOccurs="2">
- *                                       &lt;element name="star" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}starType"/>
+ *                                       &lt;element name="star" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}starType"/>
  *                                     &lt;/sequence>
  *                                   &lt;/restriction>
  *                                 &lt;/complexContent>
@@ -73,7 +73,7 @@ import javax.xml.bind.annotation.XmlValue;
  *                   &lt;element name="superStar">
  *                     &lt;complexType>
  *                       &lt;simpleContent>
- *                         &lt;extension base="&lt;http://www.ti.bfh.ch/i1p/akz/schema/ticket>superStarType">
+ *                         &lt;extension base="&lt;https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd>superStarType">
  *                           &lt;attribute name="selected" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
  *                           &lt;attribute name="superStarId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *                         &lt;/extension>
@@ -85,20 +85,20 @@ import javax.xml.bind.annotation.XmlValue;
  *             &lt;/complexContent>
  *           &lt;/complexType>
  *         &lt;/element>
- *         &lt;element name="validity" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}validityType"/>
+ *         &lt;element name="validity" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}validityType"/>
  *         &lt;element name="timeStamp">
  *           &lt;complexType>
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
  *                   &lt;element name="year" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                   &lt;element name="month" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}monthType"/>
- *                   &lt;element name="day" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}dayType"/>
- *                   &lt;element name="hour" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}hourType"/>
- *                   &lt;element name="minute" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}minuteType"/>
- *                   &lt;element name="second" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}secondType"/>
- *                   &lt;element name="milSecond" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}milSecondsType"/>
- *                   &lt;element name="timeZoneOffset" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}timeZoneOffsetType"/>
+ *                   &lt;element name="month" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}monthType"/>
+ *                   &lt;element name="day" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}dayType"/>
+ *                   &lt;element name="hour" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}hourType"/>
+ *                   &lt;element name="minute" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}minuteType"/>
+ *                   &lt;element name="second" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}secondType"/>
+ *                   &lt;element name="milSecond" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}milSecondsType"/>
+ *                   &lt;element name="timeZoneOffset" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}timeZoneOffsetType"/>
  *                 &lt;/sequence>
  *               &lt;/restriction>
  *             &lt;/complexContent>
@@ -113,7 +113,7 @@ import javax.xml.bind.annotation.XmlValue;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ticketType", namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", propOrder = {
+@XmlType(name = "ticketType", namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd", propOrder = {
     "plays",
     "superStars",
     "validity",
@@ -125,13 +125,13 @@ import javax.xml.bind.annotation.XmlValue;
 })
 public class TicketType {
 
-    @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", required = true)
+    @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd", required = true)
     protected TicketType.Plays plays;
-    @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", required = true)
+    @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd", required = true)
     protected TicketType.SuperStars superStars;
-    @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+    @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd")
     protected int validity;
-    @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", required = true)
+    @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd", required = true)
     protected TicketType.TimeStamp timeStamp;
 
     /**
@@ -243,7 +243,7 @@ public class TicketType {
      *                       &lt;complexContent>
      *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *                           &lt;sequence maxOccurs="5" minOccurs="5">
-     *                             &lt;element name="number" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}numberType"/>
+     *                             &lt;element name="number" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}numberType"/>
      *                           &lt;/sequence>
      *                         &lt;/restriction>
      *                       &lt;/complexContent>
@@ -254,7 +254,7 @@ public class TicketType {
      *                       &lt;complexContent>
      *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *                           &lt;sequence maxOccurs="2" minOccurs="2">
-     *                             &lt;element name="star" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}starType"/>
+     *                             &lt;element name="star" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}starType"/>
      *                           &lt;/sequence>
      *                         &lt;/restriction>
      *                       &lt;/complexContent>
@@ -280,7 +280,7 @@ public class TicketType {
     })
     public static class Plays {
 
-        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", required = true)
+        @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd", required = true)
         protected List<TicketType.Plays.Play> play;
 
         /**
@@ -328,7 +328,7 @@ public class TicketType {
          *             &lt;complexContent>
          *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
          *                 &lt;sequence maxOccurs="5" minOccurs="5">
-         *                   &lt;element name="number" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}numberType"/>
+         *                   &lt;element name="number" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}numberType"/>
          *                 &lt;/sequence>
          *               &lt;/restriction>
          *             &lt;/complexContent>
@@ -339,7 +339,7 @@ public class TicketType {
          *             &lt;complexContent>
          *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
          *                 &lt;sequence maxOccurs="2" minOccurs="2">
-         *                   &lt;element name="star" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}starType"/>
+         *                   &lt;element name="star" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}starType"/>
          *                 &lt;/sequence>
          *               &lt;/restriction>
          *             &lt;/complexContent>
@@ -361,9 +361,9 @@ public class TicketType {
         })
         public static class Play {
 
-            @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", required = true)
+            @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd", required = true)
             protected TicketType.Plays.Play.Numbers numbers;
-            @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", required = true)
+            @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd", required = true)
             protected TicketType.Plays.Play.Stars stars;
             @XmlAttribute(name = "playId", required = true)
             protected int playId;
@@ -443,7 +443,7 @@ public class TicketType {
              *   &lt;complexContent>
              *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
              *       &lt;sequence maxOccurs="5" minOccurs="5">
-             *         &lt;element name="number" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}numberType"/>
+             *         &lt;element name="number" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}numberType"/>
              *       &lt;/sequence>
              *     &lt;/restriction>
              *   &lt;/complexContent>
@@ -458,7 +458,7 @@ public class TicketType {
             })
             public static class Numbers {
 
-                @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", type = Integer.class)
+                @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd", type = Integer.class)
                 protected List<Integer> number;
 
                 /**
@@ -503,7 +503,7 @@ public class TicketType {
              *   &lt;complexContent>
              *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
              *       &lt;sequence maxOccurs="2" minOccurs="2">
-             *         &lt;element name="star" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}starType"/>
+             *         &lt;element name="star" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}starType"/>
              *       &lt;/sequence>
              *     &lt;/restriction>
              *   &lt;/complexContent>
@@ -518,7 +518,7 @@ public class TicketType {
             })
             public static class Stars {
 
-                @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", type = Integer.class)
+                @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd", type = Integer.class)
                 protected List<Integer> star;
 
                 /**
@@ -570,7 +570,7 @@ public class TicketType {
      *         &lt;element name="superStar">
      *           &lt;complexType>
      *             &lt;simpleContent>
-     *               &lt;extension base="&lt;http://www.ti.bfh.ch/i1p/akz/schema/ticket>superStarType">
+     *               &lt;extension base="&lt;https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd>superStarType">
      *                 &lt;attribute name="selected" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
      *                 &lt;attribute name="superStarId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
      *               &lt;/extension>
@@ -591,7 +591,7 @@ public class TicketType {
     })
     public static class SuperStars {
 
-        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket", required = true)
+        @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd", required = true)
         protected List<TicketType.SuperStars.SuperStar> superStar;
 
         /**
@@ -632,7 +632,7 @@ public class TicketType {
          * <pre>
          * &lt;complexType>
          *   &lt;simpleContent>
-         *     &lt;extension base="&lt;http://www.ti.bfh.ch/i1p/akz/schema/ticket>superStarType">
+         *     &lt;extension base="&lt;https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd>superStarType">
          *       &lt;attribute name="selected" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
          *       &lt;attribute name="superStarId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
          *     &lt;/extension>
@@ -739,13 +739,13 @@ public class TicketType {
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
      *         &lt;element name="year" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *         &lt;element name="month" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}monthType"/>
-     *         &lt;element name="day" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}dayType"/>
-     *         &lt;element name="hour" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}hourType"/>
-     *         &lt;element name="minute" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}minuteType"/>
-     *         &lt;element name="second" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}secondType"/>
-     *         &lt;element name="milSecond" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}milSecondsType"/>
-     *         &lt;element name="timeZoneOffset" type="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}timeZoneOffsetType"/>
+     *         &lt;element name="month" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}monthType"/>
+     *         &lt;element name="day" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}dayType"/>
+     *         &lt;element name="hour" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}hourType"/>
+     *         &lt;element name="minute" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}minuteType"/>
+     *         &lt;element name="second" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}secondType"/>
+     *         &lt;element name="milSecond" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}milSecondsType"/>
+     *         &lt;element name="timeZoneOffset" type="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}timeZoneOffsetType"/>
      *       &lt;/sequence>
      *     &lt;/restriction>
      *   &lt;/complexContent>
@@ -767,21 +767,21 @@ public class TicketType {
     })
     public static class TimeStamp {
 
-        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd")
         protected int year;
-        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd")
         protected int month;
-        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd")
         protected int day;
-        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd")
         protected int hour;
-        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd")
         protected int minute;
-        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd")
         protected int second;
-        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd")
         protected int milSecond;
-        @XmlElement(namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+        @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd")
         protected int timeZoneOffset;
 
         /**

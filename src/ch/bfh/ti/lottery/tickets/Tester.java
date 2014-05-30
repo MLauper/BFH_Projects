@@ -44,10 +44,9 @@ public class Tester {
         );
 
 
-        //Tickets newTic = Marshall.unMarshall("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets", "tickets.xml");
-
-        Marshall.marshall(tickets,"/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets", "tickets.xml");
-
+        String xmlPath = "/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets";
+        Marshall.marshall(tickets,xmlPath, "tickets.xml");
+        Tickets newTic = Marshall.unMarshall(xmlPath, "tickets.xml");
 
 
         System.out.println("Validate:");

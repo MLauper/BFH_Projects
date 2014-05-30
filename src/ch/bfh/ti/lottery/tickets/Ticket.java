@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
- *     &lt;extension base="{http://www.ti.bfh.ch/i1p/akz/schema/ticket}ticketType">
+ *     &lt;extension base="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd}ticketType">
  *       &lt;attribute name="ticketId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "ticket", namespace = "http://www.ti.bfh.ch/i1p/akz/schema/ticket")
+@XmlRootElement(name = "ticket", namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd")
 public class Ticket
     extends TicketType
 {

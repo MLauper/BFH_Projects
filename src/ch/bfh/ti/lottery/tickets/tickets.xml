@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:tickets xmlns="https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticket.xsd" xmlns:ns2="https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/tickets.xsd">
+    <ns2:ticket ticketId="0">
+        <plays>
+            <play playId="0">
+                <numbers>
+                    <number>1</number>
+                    <number>2</number>
+                    <number>3</number>
+                    <number>4</number>
+                    <number>5</number>
+                </numbers>
+                <stars>
+                    <star>1</star>
+                    <star>2</star>
+                </stars>
+            </play>
+            <play playId="1">
+                <numbers>
+                    <number>1</number>
+                    <number>2</number>
+                    <number>3</number>
+                    <number>4</number>
+                    <number>5</number>
+                </numbers>
+                <stars>
+                    <star>1</star>
+                    <star>2</star>
+                </stars>
+            </play>
+        </plays>
+        <superStars>
+            <superStar selected="true" superStarId="0">Z728N</superStar>
+            <superStar selected="false" superStarId="1">N199H</superStar>
+            <superStar selected="false" superStarId="2">X363I</superStar>
+            <superStar selected="false" superStarId="3">B784U</superStar>
+        </superStars>
+        <validity>8</validity>
+        <timeStamp>
+            <year>2014</year>
+            <month>5</month>
+            <day>30</day>
+            <hour>13</hour>
+            <minute>53</minute>
+            <second>57</second>
+            <milSecond>204</milSecond>
+            <timeZoneOffset>2</timeZoneOffset>
+        </timeStamp>
+    </ns2:ticket>
+</ns2:tickets>
