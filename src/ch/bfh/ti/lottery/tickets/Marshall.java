@@ -30,8 +30,8 @@ public class Marshall {
             // Writing to XML file
             m.marshal(tickets, xmlFile);
 
-            // Writing to console
-            m.marshal(tickets, System.out);
+            // Writing to console (debugging only)
+            //m.marshal(tickets, System.out);
 
         } catch (JAXBException e) {
             e.printStackTrace();

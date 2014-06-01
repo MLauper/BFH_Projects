@@ -1,14 +1,13 @@
 package ch.bfh.ti.lottery.tickets;
 
+import org.xml.sax.SAXException;
+
 import javax.xml.XMLConstants;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Random;
@@ -204,7 +203,8 @@ public class TicketTools {
         }
     }
 
-    public static boolean validateXML(String inXmlSchemaPath, String inXmlSchmaFile, String inXmlPath, String inXmlFile) {
+    public static void validateXML(String inXmlSchemaPath, String inXmlSchmaFile, String inXmlPath, String inXmlFile)
+            throws SAXException {
 
         File xsdFile = new File(inXmlSchemaPath + File.separator + inXmlSchmaFile);
         File xmlFile = new File(inXmlPath + File.separator + inXmlFile);
@@ -223,17 +223,22 @@ public class TicketTools {
             e.printStackTrace();
         }
 
+        Validator validator = null;
+        StreamSource streamSource = null;
         try {
-            SchemaFactory factory =
-                    SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = factory.newSchema(new StreamSource(xsd));
+            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
             factory.setResourceResolver(new ResourceResolver());
-            Validator validator = schema.newValidator();
-            validator.validate(new StreamSource(xml));
-            return true;
-        } catch (Exception ex) {
-            System.out.println(ex);
-            return false;
+            Schema schema = factory.newSchema(new StreamSource(xsd));
+            validator = schema.newValidator();
+            streamSource = new StreamSource(xml);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            validator.validate(streamSource);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -276,5 +281,74 @@ public class TicketTools {
     public static void setTimeStamp(Tickets.Ticket ticket, Tickets.Ticket.TimeStamp timeStamp) {
         ticket.setTimeStamp(timeStamp);
     }
+
+    public static Tickets.Ticket generateRandomTicket(int nextTicketId, int totalOfPlaysPerTicket) {
+
+        Tickets.Ticket newTicket = createNewTicket(nextTicketId);
+
+        int[] numPool = new int[50];
+        for (int i = 0; i < numPool.length; i++) {
+            numPool[i] = i + 1;
+        }
+
+        int[] starPool = new int[11];
+        for (int i = 0; i < starPool.length; i++) {
+            starPool[i] = i + 1;
+        }
+
+        Random random = new Random();
+
+        for (int j = 0; j < totalOfPlaysPerTicket; j++) {
+
+            int[] newNums = new int[5];
+            for (int i = 0; i < newNums.length; i++) {
+                int nextNum = -1;
+
+                Boolean unique = false;
+                while (!unique) {
+                    nextNum = random.nextInt(numPool.length);
+
+                    if (nextNum != newNums[0] &&
+                            nextNum != newNums[1] &&
+                            nextNum != newNums[2] &&
+                            nextNum != newNums[3] &&
+                            nextNum != newNums[4]) {
+                        unique = true;
+                    }
+                }
+                if (nextNum != -1) {
+                    newNums[i] = nextNum;
+                }
+            }
+
+            int[] newStars = new int[2];
+            for (int i = 0; i < newStars.length; i++) {
+                int nextNum = -1;
+
+                Boolean unique = false;
+                while (!unique) {
+                    nextNum = random.nextInt(starPool.length);
+
+                    if (nextNum != newStars[0] && nextNum != newStars[1]) {
+                        unique = true;
+                    }
+                }
+                if (nextNum != -1) {
+                    newStars[i] = nextNum;
+                }
+            }
+            addPlay(newTicket, newNums, newStars);
+        }
+
+
+        int[] superStarSelector = {0, 1, 2, 3};
+        selectSuperStar(newTicket, random.nextInt(superStarSelector.length), true);
+
+        int[] enumValidity = {1, 2, 4, 6, 8, 10};
+        setValidity(newTicket, random.nextInt(enumValidity.length));
+
+        return newTicket;
+    }
+
 
 }

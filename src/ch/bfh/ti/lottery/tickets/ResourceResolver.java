@@ -26,6 +26,13 @@ public class ResourceResolver implements LSResourceResolver {
         private String publicId;
 
         private String systemId;
+        private BufferedInputStream inputStream;
+
+        public LSInputImpl(String publicId, String sysId, InputStream input) {
+            this.publicId = publicId;
+            this.systemId = sysId;
+            this.inputStream = new BufferedInputStream(input);
+        }
 
         public String getPublicId() {
             return publicId;
@@ -41,8 +48,16 @@ public class ResourceResolver implements LSResourceResolver {
         }
 
         @Override
+        public void setBaseURI(String baseURI) {
+        }
+
+        @Override
         public InputStream getByteStream() {
             return null;
+        }
+
+        @Override
+        public void setByteStream(InputStream byteStream) {
         }
 
         @Override
@@ -51,13 +66,25 @@ public class ResourceResolver implements LSResourceResolver {
         }
 
         @Override
+        public void setCertifiedText(boolean certifiedText) {
+        }
+
+        @Override
         public Reader getCharacterStream() {
             return null;
         }
 
         @Override
+        public void setCharacterStream(Reader characterStream) {
+        }
+
+        @Override
         public String getEncoding() {
             return null;
+        }
+
+        @Override
+        public void setEncoding(String encoding) {
         }
 
         @Override
@@ -74,26 +101,6 @@ public class ResourceResolver implements LSResourceResolver {
                     return null;
                 }
             }
-        }
-
-        @Override
-        public void setBaseURI(String baseURI) {
-        }
-
-        @Override
-        public void setByteStream(InputStream byteStream) {
-        }
-
-        @Override
-        public void setCertifiedText(boolean certifiedText) {
-        }
-
-        @Override
-        public void setCharacterStream(Reader characterStream) {
-        }
-
-        @Override
-        public void setEncoding(String encoding) {
         }
 
         @Override
@@ -114,14 +121,6 @@ public class ResourceResolver implements LSResourceResolver {
 
         public void setInputStream(BufferedInputStream inputStream) {
             this.inputStream = inputStream;
-        }
-
-        private BufferedInputStream inputStream;
-
-        public LSInputImpl(String publicId, String sysId, InputStream input) {
-            this.publicId = publicId;
-            this.systemId = sysId;
-            this.inputStream = new BufferedInputStream(input);
         }
 
     }
