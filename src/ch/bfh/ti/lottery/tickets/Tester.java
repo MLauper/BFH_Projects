@@ -23,7 +23,7 @@ public class Tester {
         String xmlSchemaPath = "/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets";
         String xmlSchmaFile = "tickets.xsd";
 
-        Marshall.marshall(tickets, xmlPath, xmlFile);
+        //Marshall.marshall(tickets, xmlPath, xmlFile);
         Tickets newTic = Marshall.unMarshall(xmlPath, xmlFile);
 
         System.out.println("Validate:");

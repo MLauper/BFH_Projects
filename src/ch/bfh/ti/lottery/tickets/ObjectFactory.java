@@ -30,14 +30,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Tickets }
-     * 
-     */
-    public Tickets createTickets() {
-        return new Tickets();
-    }
-
-    /**
      * Create an instance of {@link TicketType }
      * 
      */
@@ -70,11 +62,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Tickets.Ticket }
+     * Create an instance of {@link Ticket }
      * 
      */
-    public Tickets.Ticket createTicketsTicket() {
-        return new Tickets.Ticket();
+    public Ticket createTicket() {
+        return new Ticket();
     }
 
     /**

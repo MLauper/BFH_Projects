@@ -120,7 +120,7 @@ import javax.xml.bind.annotation.XmlValue;
     "timeStamp"
 })
 @XmlSeeAlso({
-    ch.bfh.ti.lottery.tickets.Tickets.Ticket.class
+    Ticket.class
 })
 public class TicketType {
 
