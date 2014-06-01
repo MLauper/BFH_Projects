@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="ticket">
  *           &lt;complexType>
  *             &lt;complexContent>
- *               &lt;extension base="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticketType.xsd}ticketType">
+ *               &lt;extension base="{https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType}ticketType">
  *                 &lt;attribute name="ticketId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *               &lt;/extension>
  *             &lt;/complexContent>
@@ -42,10 +42,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "ticket"
 })
-@XmlRootElement(name = "tickets", namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/tickets.xsd")
+@XmlRootElement(name = "tickets", namespace = "https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/tickets")
 public class Tickets {
 
-    @XmlElement(namespace = "https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/tickets.xsd")
+    @XmlElement(namespace = "https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/tickets")
     protected List<Tickets.Ticket> ticket;
 
     /**
@@ -86,7 +86,7 @@ public class Tickets {
      * <pre>
      * &lt;complexType>
      *   &lt;complexContent>
-     *     &lt;extension base="{https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticketType.xsd}ticketType">
+     *     &lt;extension base="{https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType}ticketType">
      *       &lt;attribute name="ticketId" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
      *     &lt;/extension>
      *   &lt;/complexContent>

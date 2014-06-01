@@ -47,13 +47,17 @@ public class Tester {
 
 
         String xmlPath = "/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets";
-        Marshall.marshall(tickets, xmlPath, "tickets.xml");
-        Tickets newTic = Marshall.unMarshall(xmlPath, "tickets.xml");
+        String xmlFile = "lotteryTickets.xml";
+
+        String xmlSchemaPath = "/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets";
+        String xmlSchmaFile = "tickets.xsd";
+
+        Marshall.marshall(tickets, xmlPath, xmlFile);
+        Tickets newTic = Marshall.unMarshall(xmlPath, xmlFile);
 
 
         System.out.println("Validate:");
-        System.out.println(TicketTools.validateTickets());
-
+        System.out.println(TicketTools.validateXML(xmlSchemaPath, xmlSchmaFile, xmlPath, xmlFile));
         System.out.println("End:");
 
 

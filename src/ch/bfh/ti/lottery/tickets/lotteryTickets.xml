@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns2:tickets xmlns="https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/ticketType.xsd" xmlns:ns2="https://github.com/akeusen/BFH_Projects/blob/master/src/ch/bfh/ti/lottery/tickets/tickets.xsd">
+<ns2:tickets xmlns="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType"
+             xmlns:ns2="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/tickets">
     <ns2:ticket ticketId="0">
         <plays>
             <play playId="0">
@@ -30,20 +31,20 @@
             </play>
         </plays>
         <superStars>
-            <superStar selected="true" superStarId="0">I426K</superStar>
-            <superStar selected="false" superStarId="1">C318T</superStar>
-            <superStar selected="false" superStarId="2">J906U</superStar>
-            <superStar selected="false" superStarId="3">P081S</superStar>
+            <superStar selected="true" superStarId="0">V120J</superStar>
+            <superStar selected="false" superStarId="1">L849N</superStar>
+            <superStar selected="false" superStarId="2">U670Z</superStar>
+            <superStar selected="false" superStarId="3">Q715Y</superStar>
         </superStars>
         <validity>8</validity>
         <timeStamp>
             <year>2014</year>
-            <month>5</month>
-            <day>30</day>
-            <hour>15</hour>
-            <minute>21</minute>
-            <second>47</second>
-            <milSecond>877</milSecond>
+            <month>6</month>
+            <day>1</day>
+            <hour>12</hour>
+            <minute>44</minute>
+            <second>51</second>
+            <milSecond>351</milSecond>
             <timeZoneOffset>2</timeZoneOffset>
         </timeStamp>
     </ns2:ticket>
@@ -77,20 +78,20 @@
             </play>
         </plays>
         <superStars>
-            <superStar selected="false" superStarId="0">F860S</superStar>
-            <superStar selected="false" superStarId="1">O301N</superStar>
-            <superStar selected="false" superStarId="2">R730G</superStar>
-            <superStar selected="true" superStarId="3">Y470Y</superStar>
+            <superStar selected="false" superStarId="0">W802X</superStar>
+            <superStar selected="false" superStarId="1">R498N</superStar>
+            <superStar selected="false" superStarId="2">A148J</superStar>
+            <superStar selected="true" superStarId="3">H639F</superStar>
         </superStars>
         <validity>10</validity>
         <timeStamp>
             <year>2014</year>
-            <month>5</month>
-            <day>30</day>
-            <hour>15</hour>
-            <minute>21</minute>
-            <second>47</second>
-            <milSecond>883</milSecond>
+            <month>6</month>
+            <day>1</day>
+            <hour>12</hour>
+            <minute>44</minute>
+            <second>51</second>
+            <milSecond>355</milSecond>
             <timeZoneOffset>2</timeZoneOffset>
         </timeStamp>
     </ns2:ticket>

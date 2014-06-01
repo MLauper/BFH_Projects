@@ -204,15 +204,10 @@ public class TicketTools {
         }
     }
 
-    public static boolean validateTicket(Tickets.Ticket ticket) {
+    public static boolean validateXML(String inXmlSchemaPath, String inXmlSchmaFile, String inXmlPath, String inXmlFile) {
 
-        return false;
-    }
-
-    public static boolean validateTickets() {
-
-        File xsdFile = new File("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets/tickets.xsd");
-        File xmlFile = new File("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets/tickets.xsd.xml");
+        File xsdFile = new File(inXmlSchemaPath + File.separator + inXmlSchmaFile);
+        File xmlFile = new File(inXmlPath + File.separator + inXmlFile);
 
         InputStream xsd = null;
         try {
@@ -232,6 +227,7 @@ public class TicketTools {
             SchemaFactory factory =
                     SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
             Schema schema = factory.newSchema(new StreamSource(xsd));
+            factory.setResourceResolver(new ResourceResolver());
             Validator validator = schema.newValidator();
             validator.validate(new StreamSource(xml));
             return true;
@@ -239,7 +235,6 @@ public class TicketTools {
             System.out.println(ex);
             return false;
         }
-
     }
 
     /**
