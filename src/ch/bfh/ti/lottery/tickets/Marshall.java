@@ -43,12 +43,23 @@ public class Marshall {
      *
      * @param pathToXML   path in which XML can be found e.g. /var/data
      * @param xmlFileName XML file name e.g. tickets.xml
+     * @return container of tickets
      */
     public static Tickets unMarshall(String pathToXML, String xmlFileName) {
+        String xmlFile = pathToXML + File.separator + xmlFileName;
+        return unMarshall(xmlFile);
+    }
 
+    /**
+     * Marshall a Object to an XML
+     *
+     * @param xmlFile XML file with full path name e.g. /var/data/tickets.xml
+     * @return container of tickets
+     */
+    public static Tickets unMarshall(String xmlFile) {
         Tickets ticketsFromXML = null;
         try {
-            File file = new File(pathToXML + File.separator + xmlFileName);
+            File file = new File(xmlFile);
             JAXBContext jaxbContext = JAXBContext.newInstance(Tickets.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -60,5 +71,4 @@ public class Marshall {
         }
         return ticketsFromXML;
     }
-
 }
