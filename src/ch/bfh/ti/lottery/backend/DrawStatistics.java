@@ -146,11 +146,13 @@ public class DrawStatistics {
                     }
                 }
 
-                for (Tickets.Ticket.SuperStars.SuperStar superStart : tic.getSuperStars().getSuperStar()) {
+                for (Tickets.Ticket.SuperStars.SuperStar superStars : tic.getSuperStars().getSuperStar()) {
 
-                    for (int i = 0; i < luckySuperStars.length; i++) {
-                        if (luckySuperStars[i].toUpperCase().equals(superStart.getValue().toUpperCase())) {
-                            correctSuperStars++;
+                    if (superStars.isSelected()) {
+                        for (int i = 0; i < luckySuperStars.length; i++) {
+                            if (luckySuperStars[i].toUpperCase().equals(superStars.getValue().toUpperCase())) {
+                                correctSuperStars++;
+                            }
                         }
                     }
                 }
@@ -179,7 +181,7 @@ public class DrawStatistics {
         System.out.println("2 + *  : " + tot2NumOkAnd1StarOk);
         System.out.println("2      : " + tot2NumOkAnd0StarOk);
         System.out.println("");
-        System.out.println("Super *: " + correctSuperStars);
+        System.out.println("Super* : " + correctSuperStars);
 
     }
 
