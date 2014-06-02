@@ -203,11 +203,20 @@ public class TicketTools {
         }
     }
 
-    public static void validateXML(String inXmlSchemaPath, String inXmlSchmaFile, String inXmlPath, String inXmlFile)
+    public static void validateXML(String inXmlSchemaPath, String inXmlSchmaFileName, String inXmlPath, String inXmlFileName)
             throws SAXException {
 
-        File xsdFile = new File(inXmlSchemaPath + File.separator + inXmlSchmaFile);
-        File xmlFile = new File(inXmlPath + File.separator + inXmlFile);
+        String inXmlSchema = inXmlSchemaPath + File.separator + inXmlSchmaFileName;
+        String inXmlFile = inXmlPath + File.separator + inXmlFileName;
+
+        validateXML(inXmlSchema, inXmlFile);
+    }
+
+    public static void validateXML(String inXmlSchema, String inXmlFile)
+            throws SAXException {
+
+        File xsdFile = new File(inXmlSchema);
+        File xmlFile = new File(inXmlFile);
 
         InputStream xsd = null;
         try {

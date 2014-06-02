@@ -9,6 +9,8 @@ import ch.bfh.ti.lottery.tickets.Tickets;
  */
 public class Lottery {
 
+    private String xsdTicketFile = "/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets/ticket.xsd";
+    private String xsdTicketsFile = "/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets/tickets.xsd";
     private Tickets lotteryTicketPool = null;
     private DrawStatistics drawStats = null;
     private int[] luckyNumbers = new int[5];
@@ -22,6 +24,14 @@ public class Lottery {
         this.lotteryTicketPool = new Tickets();
         this.drawStats = new DrawStatistics();
 
+    }
+
+    public void setXsdTicketFile(String xsdTicketFile) {
+        this.xsdTicketFile = xsdTicketFile;
+    }
+
+    public void setXsdTicketsFile(String xsdTicketsFile) {
+        this.xsdTicketsFile = xsdTicketsFile;
     }
 
     public void generateTickets(int toGenerateTickets, int playsPerTicket) {
@@ -61,18 +71,27 @@ public class Lottery {
     }
 
     /**
-     * replace
+     * replace or add ticket pool (method will validate xml first! Check path to xsd-file!)
      *
      * @param xmlFile XML file with full path name e.g. /var/data/tickets.xml
      * @param replace if true then the new pool replaces the current pool
      */
     public void addXmlTickets(String xmlFile, Boolean replace) {
-        Tickets newlotteryTicketPool = Marshall.unMarshall(xmlFile);
-
-        if (replace) {
-            this.lotteryTicketPool = newlotteryTicketPool;
-        } else {
-            this.lotteryTicketPool.getTicket().addAll(newlotteryTicketPool.getTicket());
+        try {
+            TicketTools.validateXML(xsdTicketsFile, xmlFile);
+            Tickets newlotteryTicketPool = Marshall.unMarshall(xmlFile);
+            if (replace) {
+                this.lotteryTicketPool = newlotteryTicketPool;
+            } else {
+                for (Tickets.Ticket tic : newlotteryTicketPool.getTicket()) {
+                    tic.setTicketId(nextTicketId);
+                    nextTicketId++;
+                }
+                this.lotteryTicketPool.getTicket().addAll(newlotteryTicketPool.getTicket());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("XML file not valid! Import failed!");
         }
     }
 }
