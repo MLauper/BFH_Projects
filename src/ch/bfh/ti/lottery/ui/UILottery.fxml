@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="222.0" layoutY="213.0" prefHeight="500.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="%mnuDatei">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="%mnuSchliessen" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%mneEinstellungen">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="%mnuDeutsch" />
+                        <MenuItem mnemonicParsing="false" text="%mnuEnglish" />
+                        <MenuItem mnemonicParsing="false" text="%mnuFranz" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%mneHilfe">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="mnuUber" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <TabPane prefHeight="445.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="%tabEinstellungen">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="418.0" prefWidth="500.0">
+                           <children>
+                              <VBox layoutX="123.0" layoutY="42.0" prefHeight="412.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox prefHeight="50.0" prefWidth="500.0">
+                                       <children>
+                                          <Label text="%lblXSD">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Button mnemonicParsing="false" text="%butDatei">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" text="%butAktivieren">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="26.0" prefWidth="500.0">
+                                       <children>
+                                          <Label text="%lblWinNummern">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtNr0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtNr1" layoutX="120.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtNr2" layoutX="155.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtNr3" layoutX="190.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtNr4" layoutX="225.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="60.0" prefHeight="26.0" prefWidth="500.0">
+                                       <children>
+                                          <Label text="%lblWinStarNummern">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtStarNr0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtStarNr1" layoutX="120.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="86.0" prefHeight="26.0" prefWidth="500.0">
+                                       <children>
+                                          <Label text="%lblWinSuperStarNummern">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtSuperStarNr01" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="%tabEinzel">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="500.0" />
+                  </content>
+                </Tab>
+                  <Tab text="%tabMulti">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <HBox>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <Label prefHeight="16.0" prefWidth="148.0" text="%lblNachricht">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtNachricht" prefHeight="26.0" prefWidth="387.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
