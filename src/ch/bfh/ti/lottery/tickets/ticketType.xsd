@@ -74,6 +74,7 @@
                 </xs:unique>
             </xs:element>
             <xs:element name="validity" type="ticketType:validityType"/>
+            <xs:element name="drawn" type="xs:int" default="0"/>
             <xs:element name="timeStamp">
                 <xs:complexType>
                     <xs:sequence>

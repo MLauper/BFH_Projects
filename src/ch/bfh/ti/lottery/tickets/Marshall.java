@@ -18,17 +18,21 @@ public class Marshall {
      * @param xmlFileName XML file name e.g. tickets.xml
      */
     public static void marshall(Tickets tickets, String pathToXML, String xmlFileName) {
+        String xmlFile = pathToXML + File.separator + xmlFileName;
+        marshall(tickets, xmlFile);
+    }
 
+    public static void marshall(Tickets tickets, String xmlFile) {
         try {
             JAXBContext context = JAXBContext.newInstance(Tickets.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
             //specify the location and name of xml file to be created
-            File xmlFile = new File(pathToXML + File.separator + xmlFileName);
+            File fileXml = new File(xmlFile);
 
             // Writing to XML file
-            m.marshal(tickets, xmlFile);
+            m.marshal(tickets, fileXml);
 
             // Writing to console (debugging only)
             //m.marshal(tickets, System.out);

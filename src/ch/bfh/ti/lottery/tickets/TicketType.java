@@ -86,6 +86,7 @@ import javax.xml.bind.annotation.XmlValue;
  *           &lt;/complexType>
  *         &lt;/element>
  *         &lt;element name="validity" type="{https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType}validityType"/>
+ *         &lt;element name="drawn" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="timeStamp">
  *           &lt;complexType>
  *             &lt;complexContent>
@@ -117,10 +118,11 @@ import javax.xml.bind.annotation.XmlValue;
     "plays",
     "superStars",
     "validity",
+    "drawn",
     "timeStamp"
 })
 @XmlSeeAlso({
-    Ticket.class
+    ch.bfh.ti.lottery.tickets.Tickets.Ticket.class
 })
 public class TicketType {
 
@@ -130,6 +132,8 @@ public class TicketType {
     protected TicketType.SuperStars superStars;
     @XmlElement(namespace = "https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType")
     protected int validity;
+    @XmlElement(namespace = "https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType", defaultValue = "0")
+    protected int drawn;
     @XmlElement(namespace = "https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType", required = true)
     protected TicketType.TimeStamp timeStamp;
 
@@ -195,6 +199,22 @@ public class TicketType {
      */
     public void setValidity(int value) {
         this.validity = value;
+    }
+
+    /**
+     * Gets the value of the drawn property.
+     * 
+     */
+    public int getDrawn() {
+        return drawn;
+    }
+
+    /**
+     * Sets the value of the drawn property.
+     * 
+     */
+    public void setDrawn(int value) {
+        this.drawn = value;
     }
 
     /**

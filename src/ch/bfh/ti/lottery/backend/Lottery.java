@@ -66,10 +66,6 @@ public class Lottery {
         this.luckySuperStars[3] = d;
     }
 
-    public void addXmlTicket() {
-
-    }
-
     /**
      * replace or add ticket pool (method will validate xml first! Check path to xsd-file!)
      *
@@ -94,4 +90,13 @@ public class Lottery {
             System.out.println("XML file not valid! Import failed!");
         }
     }
+
+    public void writeTicketPoolToXml(String xmlFile){
+        Marshall.marshall(this.lotteryTicketPool, xmlFile);
+    }
+
+    public int getTotalTicketsInPool(){
+        return this.lotteryTicketPool.getTicket().size();
+    }
+
 }

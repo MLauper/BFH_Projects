@@ -39,6 +39,7 @@ public class TicketTools {
         ticket.setSuperStars(newSuperStars);
 
         ticket.setValidity(1);
+        ticket.setDrawn(0);
 
         return ticket;
     }
