@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox layoutX="222.0" layoutY="213.0" prefHeight="500.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -48,17 +47,17 @@
                                                 <Insets left="10.0" top="15.0" />
                                              </HBox.margin>
                                           </Label>
-                                          <TextField>
+                                          <TextField fx:id="txtXSD">
                                              <HBox.margin>
                                                 <Insets left="10.0" top="10.0" />
                                              </HBox.margin>
                                           </TextField>
-                                          <Button mnemonicParsing="false" text="%butDatei">
+                                          <Button fx:id="butDateiXSD" mnemonicParsing="false" text="%butDatei">
                                              <HBox.margin>
                                                 <Insets left="10.0" top="10.0" />
                                              </HBox.margin>
                                           </Button>
-                                          <Button mnemonicParsing="false" text="%butAktivieren">
+                                          <Button fx:id="butAktXSD" mnemonicParsing="false" text="%butAktivieren">
                                              <HBox.margin>
                                                 <Insets left="10.0" top="10.0" />
                                              </HBox.margin>
@@ -75,27 +74,27 @@
                                                 <Insets left="10.0" top="5.0" />
                                              </HBox.margin>
                                           </Label>
-                                          <TextField fx:id="txtNr0" prefHeight="25.0" prefWidth="30.0">
+                                          <TextField fx:id="txtEinstNr0" prefHeight="25.0" prefWidth="30.0">
                                              <HBox.margin>
                                                 <Insets left="10.0" />
                                              </HBox.margin>
                                           </TextField>
-                                          <TextField fx:id="txtNr1" layoutX="120.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                          <TextField fx:id="txtEinstNr1" layoutX="120.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
                                              <HBox.margin>
                                                 <Insets left="10.0" />
                                              </HBox.margin>
                                           </TextField>
-                                          <TextField fx:id="txtNr2" layoutX="155.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                          <TextField fx:id="txtEinstNr2" layoutX="155.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
                                              <HBox.margin>
                                                 <Insets left="10.0" />
                                              </HBox.margin>
                                           </TextField>
-                                          <TextField fx:id="txtNr3" layoutX="190.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                          <TextField fx:id="txtEinstNr3" layoutX="190.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
                                              <HBox.margin>
                                                 <Insets left="10.0" />
                                              </HBox.margin>
                                           </TextField>
-                                          <TextField fx:id="txtNr4" layoutX="225.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                          <TextField fx:id="txtEinstNr4" layoutX="225.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
                                              <HBox.margin>
                                                 <Insets left="10.0" />
                                              </HBox.margin>
@@ -150,12 +149,1180 @@
                         </AnchorPane>
                   </content>
                 </Tab>
-                <Tab text="%tabEinzel">
+                <Tab text="%tabTickets">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="500.0" />
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="500.0">
+                           <children>
+                              <VBox prefHeight="412.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox prefHeight="50.0" prefWidth="500.0">
+                                       <children>
+                                          <Label text="%lblXML">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtXML">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Button fx:id="butDateiXML" mnemonicParsing="false" text="%butDatei">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="butAktXML" mnemonicParsing="false" text="%butAktivieren">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="26.0" prefWidth="500.0">
+                                       <children>
+                                          <Label text="%lblWinNummern">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtCurWinNr0" editable="false" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtCurWinNr1" editable="false" layoutX="120.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtCurWinNr2" editable="false" layoutX="155.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtCurWinNr3" editable="false" layoutX="190.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtCurWinNr4" editable="false" layoutX="225.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="60.0" prefHeight="26.0" prefWidth="500.0">
+                                       <children>
+                                          <Label text="%lblWinStarNummern">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtCurStarWinNr0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtCurStarWinNr1" layoutX="120.0" layoutY="10.0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="86.0" prefHeight="26.0" prefWidth="500.0">
+                                       <children>
+                                          <Label text="%lblWinSuperStarNummern">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtCurSuperStarWinNr0" prefHeight="25.0" prefWidth="30.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <ChoiceBox prefWidth="100.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </ChoiceBox>
+                                          <TabPane prefHeight="200.0" prefWidth="580.0" tabClosingPolicy="UNAVAILABLE">
+                                            <tabs>
+                                              <Tab text="%tabTicketsPlay0">
+                                                <content>
+                                                  <AnchorPane maxHeight="-Infinity" maxWidth="580.0" minHeight="-Infinity" minWidth="580.0" prefHeight="167.0" prefWidth="580.0">
+                                                         <children>
+                                                            <HBox>
+                                                               <children>
+                                                                  <VBox maxWidth="180.0" minWidth="180.0" prefWidth="180.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtTreffer0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtStarTreffer0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtSuperStarTreffer0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox layoutX="10.0" layoutY="10.0" maxWidth="400.0" minWidth="400.0" prefWidth="400.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblMomTickNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickNr00" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr01" layoutX="107.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr02" layoutX="147.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr03" layoutX="187.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr04" layoutX="227.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickStarNr00" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickStarNr01" layoutX="131.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickSuperStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr00" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr01" layoutX="167.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr02" layoutX="207.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr03" layoutX="247.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr04" layoutX="287.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                                <Tab text="%tabTicketsPlay1">
+                                                   <content>
+                                                      <AnchorPane maxHeight="-Infinity" maxWidth="580.0" minHeight="-Infinity" minWidth="580.0" prefHeight="167.0" prefWidth="580.0">
+                                                         <children>
+                                                            <HBox>
+                                                               <children>
+                                                                  <VBox maxWidth="180.0" minWidth="180.0" prefWidth="180.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtTreffer1" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtStarTreffer1" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtSuperStarTreffer1" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox layoutX="10.0" layoutY="10.0" maxWidth="400.0" minWidth="400.0" prefWidth="400.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblMomTickNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickNr10" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr11" layoutX="107.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr12" layoutX="147.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr13" layoutX="187.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr14" layoutX="227.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickStarNr10" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickStarNr11" layoutX="131.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickSuperStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr10" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr11" layoutX="167.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr12" layoutX="207.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr13" layoutX="247.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr14" layoutX="287.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="%tabTicketsPlay1">
+                                                   <content>
+                                                      <AnchorPane maxHeight="-Infinity" maxWidth="580.0" minHeight="-Infinity" minWidth="580.0" prefHeight="167.0" prefWidth="580.0">
+                                                         <children>
+                                                            <HBox>
+                                                               <children>
+                                                                  <VBox maxWidth="180.0" minWidth="180.0" prefWidth="180.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtTreffer2" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtStarTreffer2" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtSuperStarTreffer2" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox layoutX="10.0" layoutY="10.0" maxWidth="400.0" minWidth="400.0" prefWidth="400.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblMomTickNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickNr20" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr21" layoutX="107.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr22" layoutX="147.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr23" layoutX="187.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr24" layoutX="227.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickStarNr20" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickStarNr21" layoutX="131.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickSuperStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr20" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr21" layoutX="167.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr22" layoutX="207.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr23" layoutX="247.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr24" layoutX="287.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="%tabTicketsPlay1">
+                                                   <content>
+                                                      <AnchorPane maxHeight="-Infinity" maxWidth="580.0" minHeight="-Infinity" minWidth="580.0" prefHeight="167.0" prefWidth="580.0">
+                                                         <children>
+                                                            <HBox>
+                                                               <children>
+                                                                  <VBox maxWidth="180.0" minWidth="180.0" prefWidth="180.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtTreffer3" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtStarTreffer3" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtSuperStarTreffer3" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox layoutX="10.0" layoutY="10.0" maxWidth="400.0" minWidth="400.0" prefWidth="400.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblMomTickNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickNr30" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr31" layoutX="107.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr32" layoutX="147.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr33" layoutX="187.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr34" layoutX="227.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickStarNr30" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickStarNr31" layoutX="131.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickSuperStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr30" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr31" layoutX="167.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr32" layoutX="207.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr33" layoutX="247.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr34" layoutX="287.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="%tabTicketsPlay1">
+                                                   <content>
+                                                      <AnchorPane maxHeight="-Infinity" maxWidth="580.0" minHeight="-Infinity" minWidth="580.0" prefHeight="167.0" prefWidth="580.0">
+                                                         <children>
+                                                            <HBox>
+                                                               <children>
+                                                                  <VBox maxWidth="180.0" minWidth="180.0" prefWidth="180.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtTreffer4" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtStarTreffer4" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtSuperStarTreffer4" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox layoutX="10.0" layoutY="10.0" maxWidth="400.0" minWidth="400.0" prefWidth="400.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblMomTickNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickNr40" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr41" layoutX="107.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr42" layoutX="147.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr43" layoutX="187.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr44" layoutX="227.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickStarNr40" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickStarNr41" layoutX="131.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickSuperStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr40" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr41" layoutX="167.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr42" layoutX="207.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr43" layoutX="247.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr44" layoutX="287.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="%tabTicketsPlay1">
+                                                   <content>
+                                                      <AnchorPane maxHeight="-Infinity" maxWidth="580.0" minHeight="-Infinity" minWidth="580.0" prefHeight="167.0" prefWidth="580.0">
+                                                         <children>
+                                                            <HBox>
+                                                               <children>
+                                                                  <VBox maxWidth="180.0" minWidth="180.0" prefWidth="180.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtTreffer5" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtStarTreffer5" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtSuperStarTreffer5" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox layoutX="10.0" layoutY="10.0" maxWidth="400.0" minWidth="400.0" prefWidth="400.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblMomTickNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickNr50" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr51" layoutX="107.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr52" layoutX="147.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr53" layoutX="187.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr54" layoutX="227.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickStarNr50" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickStarNr51" layoutX="131.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickSuperStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr50" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr51" layoutX="167.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr52" layoutX="207.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr53" layoutX="247.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr54" layoutX="287.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="%tabTicketsPlay1">
+                                                   <content>
+                                                      <AnchorPane maxHeight="-Infinity" maxWidth="580.0" minHeight="-Infinity" minWidth="580.0" prefHeight="167.0" prefWidth="580.0">
+                                                         <children>
+                                                            <HBox>
+                                                               <children>
+                                                                  <VBox maxWidth="180.0" minWidth="180.0" prefWidth="180.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtTreffer6" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtStarTreffer6" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblStarTreffer">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtSuperStarTreffer6" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox layoutX="10.0" layoutY="10.0" maxWidth="400.0" minWidth="400.0" prefWidth="400.0">
+                                                                     <children>
+                                                                        <HBox>
+                                                                           <children>
+                                                                              <Label text="%lblMomTickNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickNr60" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr61" layoutX="107.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr62" layoutX="147.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr63" layoutX="187.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickNr64" layoutX="227.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="10.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickStarNr60" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickStarNr61" layoutX="131.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                        <HBox layoutX="10.0" layoutY="36.0">
+                                                                           <children>
+                                                                              <Label text="%lblMomTickSuperStarNr">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="14.0" />
+                                                                                 </HBox.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr60" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr61" layoutX="167.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr62" layoutX="207.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr63" layoutX="247.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="txtMomTickSuperStarNr64" layoutX="287.0" layoutY="10.0" prefWidth="40.0">
+                                                                                 <HBox.margin>
+                                                                                    <Insets right="10.0" top="10.0" />
+                                                                                 </HBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                            </tabs>
+                                          </TabPane>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
                   </content>
                 </Tab>
-                  <Tab text="%tabMulti">
+                  <Tab text="%tabGewinninfo">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                     </content>
