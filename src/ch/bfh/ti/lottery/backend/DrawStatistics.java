@@ -184,4 +184,25 @@ public class DrawStatistics {
         System.out.println("Super* : " + correctSuperStars);
 
     }
+
+    public int[] getStatistics() {
+
+        int list[] = new int[14];
+        list[0] = tot5NumOkAnd2StarOk;
+        list[1] = tot5NumOkAnd1StarOk;
+        list[2] = tot5NumOkAnd0StarOk;
+        list[3] = tot4NumOkAnd2StarOk;
+        list[4] = tot4NumOkAnd1StarOk;
+        list[5] = tot4NumOkAnd0StarOk;
+        list[6] = tot3NumOkAnd2StarOk;
+        list[7] = tot2NumOkAnd2StarOk;
+        list[8] = tot3NumOkAnd1StarOk;
+        list[9] = tot3NumOkAnd0StarOk;
+        list[10] = tot1NumOkAnd2StarOk;
+        list[11] = tot2NumOkAnd1StarOk;
+        list[12] = tot2NumOkAnd0StarOk;
+        list[13] = correctSuperStars;
+
+        return list;
+    }
 }
