@@ -99,4 +99,7 @@ public class Lottery {
         return this.lotteryTicketPool.getTicket().size();
     }
 
+    public Tickets getLotteryTicketPool() {
+        return lotteryTicketPool;
+    }
 }
