@@ -4,6 +4,8 @@ import ch.bfh.ti.lottery.tickets.Marshall;
 import ch.bfh.ti.lottery.tickets.TicketTools;
 import ch.bfh.ti.lottery.tickets.Tickets;
 
+import java.util.ArrayList;
+
 /**
  * This is the logic of the lottery system.
  */
@@ -12,17 +14,18 @@ public class Lottery {
     private String xsdTicketFile = "/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets/ticket.xsd";
     private String xsdTicketsFile = "/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets/tickets.xsd";
     private Tickets lotteryTicketPool = null;
-    private DrawStatistics drawStats = null;
     private int[] luckyNumbers = new int[5];
     private int[] luckyStars = new int[2];
     private String[] luckySuperStars = new String[4];
+    private ArrayList<DrawStatistics> drawStatisticsArrayList;
 
     private int nextTicketId = 0;
 
 
     public Lottery() {
         this.lotteryTicketPool = new Tickets();
-        this.drawStats = new DrawStatistics();
+        this.drawStatisticsArrayList = new ArrayList<>();
+        this.drawStatisticsArrayList.add(new DrawStatistics());
 
     }
 
@@ -42,8 +45,8 @@ public class Lottery {
     }
 
     public void draw() {
-        drawStats.drawLottery(lotteryTicketPool, luckySuperStars, luckyNumbers, luckyStars);
-        drawStats.printStatistics();
+        this.drawStatisticsArrayList.get(0).drawLottery(lotteryTicketPool, luckySuperStars, luckyNumbers, luckyStars);
+        this.drawStatisticsArrayList.get(0).printStatistics();
     }
 
     public void setSetLuckyNumbers(int a, int b, int c, int d, int e) {

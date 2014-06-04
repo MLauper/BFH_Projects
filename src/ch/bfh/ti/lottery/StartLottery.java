@@ -11,7 +11,7 @@ public class StartLottery {
 
         Lottery lottery = new Lottery();
 
-        lottery.generateTickets(1000000, 1);
+        lottery.generateTickets(10000, 1);
         //lottery.writeTicketPoolToXml("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/ticPool.xml");
         //lottery.addXmlTickets("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/ticPool.xml", true);
 

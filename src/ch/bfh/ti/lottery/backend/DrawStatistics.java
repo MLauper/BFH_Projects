@@ -21,6 +21,8 @@ public class DrawStatistics {
     private int tot2NumOkAnd1StarOk = 0;
     private int tot2NumOkAnd0StarOk = 0;
 
+    private boolean isDrawn = false;
+
     int correctSuperStars = 0;
 
     public DrawStatistics() {
@@ -32,136 +34,139 @@ public class DrawStatistics {
                             int[] luckyNumbers,
                             int[] luckyStars) {
 
-        int checkedTickets = 0;
+        if (!isDrawn) {
+            int checkedTickets = 0;
 
-        for (Tickets.Ticket tic : lotteryTickets.getTicket()) {
+            for (Tickets.Ticket tic : lotteryTickets.getTicket()) {
 
-            if (tic.getDrawn() < tic.getValidity()) {
+                if (tic.getDrawn() < tic.getValidity()) {
 
-                for (Tickets.Ticket.Plays.Play play : tic.getPlays().getPlay()) {
+                    for (Tickets.Ticket.Plays.Play play : tic.getPlays().getPlay()) {
 
-                    int correctNum = 0;
-                    int correctStars = 0;
+                        int correctNum = 0;
+                        int correctStars = 0;
 
-                    for (Integer num : play.getNumbers().getNumber()) {
+                        for (Integer num : play.getNumbers().getNumber()) {
 
-                        for (int i = 0; i < luckyNumbers.length; i++) {
-                            if (luckyNumbers[i] == num) {
-                                correctNum++;
+                            for (int i = 0; i < luckyNumbers.length; i++) {
+                                if (luckyNumbers[i] == num) {
+                                    correctNum++;
+                                }
+                            }
+                        }
+
+                        for (Integer star : play.getStars().getStar()) {
+                            for (int i = 0; i < luckyStars.length; i++) {
+                                if (luckyStars[i] == star) {
+                                    correctStars++;
+                                }
+                            }
+                        }
+                        switch (correctNum) {
+                            case 1: {
+                                switch (correctStars) {
+                                    case 2: {
+                                        tot1NumOkAnd2StarOk++;
+                                        break;
+                                    }
+                                    default: {
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                            case 2: {
+                                switch (correctStars) {
+                                    case 1: {
+                                        tot2NumOkAnd1StarOk++;
+                                        break;
+                                    }
+                                    case 2: {
+                                        tot2NumOkAnd2StarOk++;
+                                        break;
+                                    }
+                                    default: {
+                                        tot2NumOkAnd0StarOk++;
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                            case 3: {
+                                switch (correctStars) {
+                                    case 1: {
+                                        tot3NumOkAnd1StarOk++;
+                                        break;
+                                    }
+                                    case 2: {
+                                        tot3NumOkAnd2StarOk++;
+                                        break;
+                                    }
+                                    default: {
+                                        tot3NumOkAnd0StarOk++;
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                            case 4: {
+                                switch (correctStars) {
+                                    case 1: {
+                                        tot4NumOkAnd1StarOk++;
+                                        break;
+                                    }
+                                    case 2: {
+                                        tot4NumOkAnd2StarOk++;
+                                        break;
+                                    }
+                                    default: {
+                                        tot4NumOkAnd0StarOk++;
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                            case 5: {
+                                switch (correctStars) {
+                                    case 1: {
+                                        tot5NumOkAnd1StarOk++;
+                                        break;
+                                    }
+                                    case 2: {
+                                        tot5NumOkAnd2StarOk++;
+                                        break;
+                                    }
+                                    default: {
+                                        tot5NumOkAnd0StarOk++;
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                            default: {
+                                break;
                             }
                         }
                     }
 
-                    for (Integer star : play.getStars().getStar()) {
-                        for (int i = 0; i < luckyStars.length; i++) {
-                            if (luckyStars[i] == star) {
-                                correctStars++;
+                    for (Tickets.Ticket.SuperStars.SuperStar superStars : tic.getSuperStars().getSuperStar()) {
+
+                        if (superStars.isSelected()) {
+                            for (int i = 0; i < luckySuperStars.length; i++) {
+                                if (luckySuperStars[i].toUpperCase().equals(superStars.getValue().toUpperCase())) {
+                                    correctSuperStars++;
+                                }
                             }
                         }
                     }
-                    switch (correctNum) {
-                        case 1: {
-                            switch (correctStars) {
-                                case 2: {
-                                    tot1NumOkAnd2StarOk++;
-                                    break;
-                                }
-                                default: {
-                                    break;
-                                }
-                            }
-                            break;
-                        }
-                        case 2: {
-                            switch (correctStars) {
-                                case 1: {
-                                    tot2NumOkAnd1StarOk++;
-                                    break;
-                                }
-                                case 2: {
-                                    tot2NumOkAnd2StarOk++;
-                                    break;
-                                }
-                                default: {
-                                    tot2NumOkAnd0StarOk++;
-                                    break;
-                                }
-                            }
-                            break;
-                        }
-                        case 3: {
-                            switch (correctStars) {
-                                case 1: {
-                                    tot3NumOkAnd1StarOk++;
-                                    break;
-                                }
-                                case 2: {
-                                    tot3NumOkAnd2StarOk++;
-                                    break;
-                                }
-                                default: {
-                                    tot3NumOkAnd0StarOk++;
-                                    break;
-                                }
-                            }
-                            break;
-                        }
-                        case 4: {
-                            switch (correctStars) {
-                                case 1: {
-                                    tot4NumOkAnd1StarOk++;
-                                    break;
-                                }
-                                case 2: {
-                                    tot4NumOkAnd2StarOk++;
-                                    break;
-                                }
-                                default: {
-                                    tot4NumOkAnd0StarOk++;
-                                    break;
-                                }
-                            }
-                            break;
-                        }
-                        case 5: {
-                            switch (correctStars) {
-                                case 1: {
-                                    tot5NumOkAnd1StarOk++;
-                                    break;
-                                }
-                                case 2: {
-                                    tot5NumOkAnd2StarOk++;
-                                    break;
-                                }
-                                default: {
-                                    tot5NumOkAnd0StarOk++;
-                                    break;
-                                }
-                            }
-                            break;
-                        }
-                        default: {
-                            break;
-                        }
-                    }
+                    tic.setDrawn(tic.getDrawn() + 1);
+                    checkedTickets++;
                 }
-
-                for (Tickets.Ticket.SuperStars.SuperStar superStars : tic.getSuperStars().getSuperStar()) {
-
-                    if (superStars.isSelected()) {
-                        for (int i = 0; i < luckySuperStars.length; i++) {
-                            if (luckySuperStars[i].toUpperCase().equals(superStars.getValue().toUpperCase())) {
-                                correctSuperStars++;
-                            }
-                        }
-                    }
-                }
-                tic.setDrawn(tic.getDrawn() + 1);
-                checkedTickets++;
             }
+            System.out.println("");
+            System.out.println("Checked Tickets in this draw: " + checkedTickets);
+            isDrawn = true;
         }
-        System.out.println("");
-        System.out.println("Checked Tickets in this draw: " + checkedTickets);
     }
 
 
