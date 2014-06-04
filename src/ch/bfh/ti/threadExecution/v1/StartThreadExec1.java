@@ -7,9 +7,29 @@ import ch.bfh.ti.threadExecution.tools.PrimeChecker;
  */
 public class StartThreadExec1 {
 
+    private static int m;
+    private static int n;
+
+
     public static void main(String[] args) {
 
-        System.out.println(PrimeChecker.isPrime(19));
+
+        // Get user input for the highest number (m) to check prime
+        m = 100;
+
+        // Get user input for how many threads (n) should be started
+
+
+        // start the n threads
+
+
+        // start calculating prime until m
+
+        for (int i = 0; i < m + 1; i++) {
+            PrimeChecker.isPrime(i);
+        }
+
+        // stop all other threads and list highest num of each thread
 
 
     }

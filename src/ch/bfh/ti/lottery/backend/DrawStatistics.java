@@ -184,6 +184,4 @@ public class DrawStatistics {
         System.out.println("Super* : " + correctSuperStars);
 
     }
-
-
 }
