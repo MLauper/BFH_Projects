@@ -1,5 +1,6 @@
 package ch.bfh.ti.threadExecution.v1;
 
+import ch.bfh.ti.threadExecution.tools.FileReader;
 import ch.bfh.ti.threadExecution.tools.PrimeChecker;
 
 /**
@@ -31,6 +32,12 @@ public class StartThreadExec1 {
 
         // stop all other threads and list highest num of each thread
 
+        FileReader fileReader = new FileReader();
+        try {
+            fileReader.readFile();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }
