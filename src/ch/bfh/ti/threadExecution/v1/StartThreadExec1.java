@@ -3,6 +3,8 @@ package ch.bfh.ti.threadExecution.v1;
 import ch.bfh.ti.threadExecution.tools.FileReader;
 import ch.bfh.ti.threadExecution.tools.PrimeChecker;
 
+import java.util.ArrayList;
+
 /**
  * Created by alain on 07.05.14.
  */
@@ -32,11 +34,14 @@ public class StartThreadExec1 {
 
         // stop all other threads and list highest num of each thread
 
-        FileReader fileReader = new FileReader();
+        ArrayList<String> firstNames = null;
         try {
-            fileReader.readFile();
+            firstNames = FileReader.getFirstNameListList();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        for (String name : firstNames){
+            System.out.println(name);
         }
 
     }
