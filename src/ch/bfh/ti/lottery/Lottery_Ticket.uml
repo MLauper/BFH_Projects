@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="796.6875" y="44.0">ch.bfh.ti.lottery.tickets.Tickets</node>
+    <node x="792.9375" y="266.0">ch.bfh.ti.lottery.tickets.Tickets.Ticket</node>
+    <node x="293.9375" y="266.0">ch.bfh.ti.lottery.tickets.TicketType.SuperStars</node>
+    <node x="0.0" y="589.0">ch.bfh.ti.lottery.tickets.TicketType.Plays.Play.Numbers</node>
+    <node x="91.4375" y="444.0">ch.bfh.ti.lottery.tickets.TicketType.Plays.Play</node>
+    <node x="530.9375" y="189.0">ch.bfh.ti.lottery.tickets.TicketType.TimeStamp</node>
+    <node x="211.0" y="589.0">ch.bfh.ti.lottery.tickets.TicketType.Plays.Play.Stars</node>
+    <node x="390.25" y="0.0">ch.bfh.ti.lottery.tickets.TicketType</node>
+    <node x="120.4375" y="266.0">ch.bfh.ti.lottery.tickets.TicketType.Plays</node>
+    <node x="319.4375" y="444.0">ch.bfh.ti.lottery.tickets.TicketType.SuperStars.SuperStar</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ch.bfh.ti.lottery.tickets.Tickets.Ticket" target="ch.bfh.ti.lottery.tickets.Tickets">
+      <point x="30.25" y="-25.5" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="ch.bfh.ti.lottery.tickets.TicketType.TimeStamp" target="ch.bfh.ti.lottery.tickets.TicketType">
+      <point x="0.0" y="-102.5" />
+      <point x="651.9375" y="169.0" />
+      <point x="560.875" y="169.0" />
+      <point x="34.125" y="69.5" />
+    </edge>
+    <edge source="ch.bfh.ti.lottery.tickets.TicketType.Plays.Play.Stars" target="ch.bfh.ti.lottery.tickets.TicketType.Plays.Play">
+      <point x="0.0" y="-25.5" />
+      <point x="294.5" y="564.0" />
+      <point x="247.4375" y="564.0" />
+      <point x="52.0" y="47.5" />
+    </edge>
+    <edge source="ch.bfh.ti.lottery.tickets.TicketType.Plays.Play" target="ch.bfh.ti.lottery.tickets.TicketType.Plays">
+      <point x="0.0" y="-47.5" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="ch.bfh.ti.lottery.tickets.TicketType.SuperStars" target="ch.bfh.ti.lottery.tickets.TicketType">
+      <point x="0.0" y="-25.5" />
+      <point x="402.4375" y="169.0" />
+      <point x="492.625" y="169.0" />
+      <point x="-34.125" y="69.5" />
+    </edge>
+    <edge source="ch.bfh.ti.lottery.tickets.TicketType.SuperStars.SuperStar" target="ch.bfh.ti.lottery.tickets.TicketType.SuperStars">
+      <point x="0.0" y="-47.5" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="ch.bfh.ti.lottery.tickets.Tickets.Ticket" target="ch.bfh.ti.lottery.tickets.TicketType">
+      <point x="-30.25" y="-25.5" />
+      <point x="823.1875" y="159.0" />
+      <point x="629.125" y="159.0" />
+      <point x="102.375" y="69.5" />
+    </edge>
+    <edge source="ch.bfh.ti.lottery.tickets.TicketType.Plays.Play.Numbers" target="ch.bfh.ti.lottery.tickets.TicketType.Plays.Play">
+      <point x="0.0" y="-25.5" />
+      <point x="95.5" y="564.0" />
+      <point x="143.4375" y="564.0" />
+      <point x="-52.0" y="47.5" />
+    </edge>
+    <edge source="ch.bfh.ti.lottery.tickets.TicketType.Plays" target="ch.bfh.ti.lottery.tickets.TicketType">
+      <point x="0.0" y="-25.5" />
+      <point x="195.4375" y="159.0" />
+      <point x="424.375" y="159.0" />
+      <point x="-102.375" y="69.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="485.5" y="320.0" />
+  <SelectedNodes>
+    <node>ch.bfh.ti.lottery.tickets.TicketType.TimeStamp</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

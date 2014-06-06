@@ -2,12 +2,52 @@
 <Diagram>
   <ID>JAVA</ID>
   <OriginalElement />
-  <nodes />
+  <nodes>
+    <node x="0.0" y="630.0">ch.bfh.ti.lottery.tickets.TicketTools</node>
+    <node x="423.0" y="630.0">HTMLConverter</node>
+    <node x="249.16666666666669" y="44.0">ch.bfh.ti.lottery.tickets.Tickets</node>
+    <node x="38.416666666666686" y="189.0">ch.bfh.ti.lottery.backend.Lottery</node>
+    <node x="0.0" y="10.0">ch.bfh.ti.lottery.backend.DrawStatistics</node>
+    <node x="386.4166666666667" y="200.5">ch.bfh.ti.lottery.tickets.ObjectFactory</node>
+    <node x="0.0" y="991.0">ch.bfh.ti.lottery.tickets.Marshall</node>
+    <node x="513.6458333333334" y="0.0">ch.bfh.ti.lottery.tickets.TicketType</node>
+    <node x="118.91666666666669" y="534.0">ch.bfh.ti.lottery.StartLottery</node>
+  </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="0.0" />
+  <edges>
+    <edge source="ch.bfh.ti.lottery.StartLottery" target="ch.bfh.ti.lottery.backend.Lottery">
+      <point x="0.0" y="-25.5" />
+      <point x="0.0" y="147.5" />
+    </edge>
+    <edge source="ch.bfh.ti.lottery.backend.Lottery" target="ch.bfh.ti.lottery.tickets.Tickets">
+      <point x="123.0" y="-147.5" />
+      <point x="325.4166666666667" y="164.0" />
+      <point x="336.1666666666667" y="164.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="ch.bfh.ti.lottery.backend.Lottery" target="ch.bfh.ti.lottery.backend.DrawStatistics">
+      <point x="-41.0" y="-147.5" />
+      <point x="53.5" y="59.5" />
+    </edge>
+    <edge source="ch.bfh.ti.lottery.tickets.ObjectFactory" target="ch.bfh.ti.lottery.tickets.TicketType">
+      <point x="87.75" y="-136.0" />
+      <point x="0.0" y="69.5" />
+    </edge>
+    <edge source="ch.bfh.ti.lottery.tickets.ObjectFactory" target="ch.bfh.ti.lottery.tickets.Tickets">
+      <point x="-87.75" y="-136.0" />
+      <point x="474.1666666666667" y="164.0" />
+      <point x="394.1666666666667" y="164.0" />
+      <point x="58.0" y="25.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.625" x="424.5" y="554.0" />
   <SelectedNodes />
-  <Categories />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
   <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
 </Diagram>
 
