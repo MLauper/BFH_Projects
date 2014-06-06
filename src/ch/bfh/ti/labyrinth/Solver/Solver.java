@@ -1,11 +1,10 @@
-package Solver;
+package ch.bfh.ti.labyrinth.Solver;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import javafx.scene.shape.Line;
-import Creator.Tile;
+import ch.bfh.ti.labyrinth.Creator.Tile;
 
 public class Solver
 {

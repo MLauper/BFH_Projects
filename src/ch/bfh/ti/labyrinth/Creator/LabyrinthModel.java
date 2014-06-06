@@ -1,4 +1,4 @@
-package Creator;
+package ch.bfh.ti.labyrinth.Creator;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;

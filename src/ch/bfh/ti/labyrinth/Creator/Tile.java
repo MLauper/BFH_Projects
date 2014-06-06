@@ -1,4 +1,4 @@
-package Creator;
+package ch.bfh.ti.labyrinth.Creator;
 
 public class Tile{
 
