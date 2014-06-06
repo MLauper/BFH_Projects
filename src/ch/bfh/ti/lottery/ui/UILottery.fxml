@@ -69,7 +69,7 @@
                                     </HBox>
                                     <HBox prefHeight="26.0" prefWidth="500.0">
                                        <children>
-                                          <Label text="%lblWinNummern">
+                                          <Label text="%lblWinNummernEinst">
                                              <HBox.margin>
                                                 <Insets left="10.0" top="5.0" />
                                              </HBox.margin>
@@ -106,7 +106,7 @@
                                     </HBox>
                                     <HBox layoutX="10.0" layoutY="60.0" prefHeight="26.0" prefWidth="500.0">
                                        <children>
-                                          <Label text="%lblWinStarNummern">
+                                          <Label text="%lblWinStarNummernEinst">
                                              <HBox.margin>
                                                 <Insets left="10.0" top="5.0" />
                                              </HBox.margin>
@@ -128,7 +128,7 @@
                                     </HBox>
                                     <HBox layoutX="10.0" layoutY="86.0" prefHeight="26.0" prefWidth="500.0">
                                        <children>
-                                          <Label text="%lblWinSuperStarNummern">
+                                          <Label text="%lblWinSuperStarNummernEinst">
                                              <HBox.margin>
                                                 <Insets left="10.0" top="5.0" />
                                              </HBox.margin>
@@ -260,7 +260,7 @@
                                     </HBox>
                                     <HBox>
                                        <children>
-                                          <ChoiceBox prefWidth="100.0">
+                                          <ChoiceBox fx:id="chbTickets" prefWidth="100.0">
                                              <HBox.margin>
                                                 <Insets left="10.0" right="10.0" />
                                              </HBox.margin>
@@ -1324,7 +1324,15 @@
                 </Tab>
                   <Tab text="%tabGewinninfo">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <Button layoutX="211.0" layoutY="44.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="800.0" text="%butGewinninfo" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <Label fx:id="lblGewinninfo" layoutX="339.0" layoutY="74.0" prefHeight="338.0" prefWidth="800.0" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="74.0" />
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
                     </content>
                   </Tab>
               </tabs>
