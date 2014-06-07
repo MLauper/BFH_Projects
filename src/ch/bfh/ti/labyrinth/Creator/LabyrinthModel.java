@@ -109,6 +109,10 @@ public class LabyrinthModel {
       				finalMaze[0][i].type = 4;
       				break;
       			}
+      			if (finalMaze[rows][i].type == 1){
+      				finalMaze[rows+1][i].type = 4;
+      				break;
+      			}
       		}
       		
       		//print final maze to console

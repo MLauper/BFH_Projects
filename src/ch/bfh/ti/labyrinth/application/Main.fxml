@@ -23,7 +23,7 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
             <HBox prefHeight="40.0" prefWidth="640.0">
                <children>
@@ -37,7 +37,7 @@
                         <Insets left="10.0" top="15.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="txfX" prefHeight="26.0" prefWidth="36.0">
+                  <TextField fx:id="txfX" alignment="CENTER" prefHeight="26.0" prefWidth="36.0">
                      <HBox.margin>
                         <Insets left="5.0" top="10.0" />
                      </HBox.margin>
@@ -47,7 +47,7 @@
                         <Insets left="10.0" top="15.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="txfY" prefHeight="26.0" prefWidth="36.0">
+                  <TextField fx:id="txfY" alignment="CENTER" prefHeight="26.0" prefWidth="36.0">
                      <HBox.margin>
                         <Insets left="5.0" top="10.0" />
                      </HBox.margin>

@@ -58,7 +58,7 @@ public class Controller {
 
     @FXML
     void mazeGenerate(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
-		LabyrinthModel l = new LabyrinthModel(20,43);
+		LabyrinthModel l = new LabyrinthModel(28,59);
 		
 		GraphicsContext mazecanvas = cvsMaze.getGraphicsContext2D();
 		
@@ -66,15 +66,18 @@ public class Controller {
 			for (int j = 0; j < l.getFinalMaze()[i].length; j++){
 				if (l.getFinalMaze()[i][j].type == 0){
 					mazecanvas.setFill(Color.BLACK);
-					mazecanvas.fillRect((j*13), (i*13), 13, 13);
+					mazecanvas.fillRect((j*10), (i*10), 10, 10);
 				}
 				else
 				{
 					mazecanvas.setFill(Color.WHITE);
-					mazecanvas.fillRect((j*13), (i*13), 13, 13);
+					mazecanvas.fillRect((j*10), (i*10), 10, 10);
 				}
 			}
 		}
+		
+		GraphicsContext pathcanvas = cvsPath.getGraphicsContext2D();
+    	pathcanvas.clearRect(0, 0, 610, 300);
     }
 
     @FXML
@@ -89,7 +92,26 @@ public class Controller {
     
     @FXML
     void mazeSolve(ActionEvent event) throws FileNotFoundException {
-    	Solver solver = new Solver(8, 9); // define Startpoint here
+    	
+    	int x = Integer.parseInt(txfX.getText());
+    	int y = Integer.parseInt(txfY.getText());
+    	
+    	Solver solver = new Solver(x,y); // define Startpoint here
+    	
+    	boolean path[][] = solver.getMazepath();
+    	
+    	GraphicsContext pathcanvas = cvsPath.getGraphicsContext2D();
+		
+    	pathcanvas.clearRect(0, 0, 610, 300);
+    	
+		for (int i = 0; i < path.length; i++){
+			for (int j = 0; j < path[i].length; j++){
+				if (path[i][j]){
+					pathcanvas.setFill(Color.BLUE);
+					pathcanvas.fillOval((j*10)+3, (i*10)+3, 4, 4);
+				}
+			}
+		}
     }
 
     @FXML

@@ -66,10 +66,6 @@ public class Solver
             String line = s.nextLine();
             cols = line.length();
         }
-
-        System.out.println("loadmaze:");
-        System.out.println("cols: " + cols);
-        System.out.println("rows: " + rows);
         
         maze = new Tile[rows][cols];
         Scanner m = new Scanner(f);
