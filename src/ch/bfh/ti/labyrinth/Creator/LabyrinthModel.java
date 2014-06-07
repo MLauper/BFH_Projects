@@ -9,8 +9,9 @@ public class LabyrinthModel {
 		
 	private int rows;
 	private int columns;
-	public Tile[][] mazeElements;
-	
+	private Tile[][] mazeElements;
+	private Tile[][] finalMaze;
+
 	public LabyrinthModel(int r, int c) throws FileNotFoundException, UnsupportedEncodingException{
 		
 		this.rows = r;
@@ -83,14 +84,56 @@ public class LabyrinthModel {
         	if(walls.isEmpty())
         		mazeElements[last.row][last.column].type = 1;  //end point could also be marked separately as X or E
         }
-    	
+    
+        
+      //prepare maze with walls and exit
+      //initialize final array
+      		finalMaze = new Tile[(rows+2)][(columns+2)];
+      		for (Integer i = 0; i < (rows+2); i++){
+      			for (Integer j = 0; j < (columns+2); j++){
+      				finalMaze[i][j] = new Tile(i,j,null);
+      				finalMaze[i][j].type = 0;
+      			}
+      		}
+      		
+      		//shift array one row down and a column to the right
+      		for (Integer i = (rows); i > 0 ; i--){
+      			for (Integer j = (columns); j > 0; j--){
+      				finalMaze[i][j] = mazeElements[i-1][j-1];
+      			}
+      		}
+      		
+      		//open gate
+      		for (Integer i = 0; i < (columns+2); i++){
+      			if (finalMaze[1][i].type == 1){
+      				finalMaze[0][i].type = 4;
+      				break;
+      			}
+      		}
+      		
+      		//print final maze to console
+      		for (Integer i = 0; i < (rows+2); i++){
+      			for (Integer j = 0; j < (columns+2); j++){
+      				System.out.print(finalMaze[i][j].type);
+      			}
+      			System.out.println();
+      		}
+
+      	rows = rows+2;
+      	columns = columns+2;
+      	
         // write maze into txt-file
 		PrintWriter writer = new PrintWriter("maze.txt", "UTF-8");
 		for(int i=0;i<rows;i++){
 			for(int j=0;j<columns;j++)
-				writer.print(mazeElements[i][j].type);
+				writer.print(finalMaze[i][j].type);
 			writer.println();
 		}
 		writer.close();
 	}
+	
+	public Tile[][] getFinalMaze() {
+		return finalMaze;
+	}
+	
 }

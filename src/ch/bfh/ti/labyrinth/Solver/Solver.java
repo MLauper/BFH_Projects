@@ -9,7 +9,6 @@ import ch.bfh.ti.labyrinth.Creator.Tile;
 public class Solver
 {
 	private Tile[][] maze; // The maze
-	private Tile[][] finalMaze;
 	private boolean[][] visited;
 	private boolean[][] mazepath; // The solution to the maze
 
@@ -93,9 +92,7 @@ public class Solver
         	}
         }
         
-        prepareMaze();
-        
-        return finalMaze;
+        return maze;
 	}
 	
 	private boolean recursiveSolve(int x, int y) {
@@ -127,48 +124,6 @@ public class Solver
 	            return true;
 	        }
 	    return false;
-	}
-	
-	private void prepareMaze(){
-		
-		//initialize final array
-		finalMaze = new Tile[(rows+2)][(cols+2)];
-		for (Integer i = 0; i < (rows+2); i++){
-			for (Integer j = 0; j < (cols+2); j++){
-				finalMaze[i][j] = new Tile(i,j,null);
-				finalMaze[i][j].type = 0;
-			}
-		}
-		
-		//shift array one row down and a column to the right
-		for (Integer i = (rows); i > 0 ; i--){
-			for (Integer j = (cols); j > 0; j--){
-				finalMaze[i][j] = maze[i-1][j-1];
-			}
-		}
-		
-		for (Integer i = 0; i < (cols+2); i++){
-			if (finalMaze[1][i].type == 1){
-				finalMaze[0][i].type = 4;
-				break;
-			}
-		}
-		
-		//print final maze to console
-		for (Integer i = 0; i < (rows+2); i++){
-			for (Integer j = 0; j < (cols+2); j++){
-				System.out.print(finalMaze[i][j].type);
-			}
-			System.out.println();
-		}
-	
-		cols = cols + 2;
-		rows = rows + 2;
-		
-	}
-
-	public Tile[][] getMaze() {
-		return maze;
 	}
 
 	public boolean[][] getMazepath() {

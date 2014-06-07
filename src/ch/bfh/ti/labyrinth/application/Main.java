@@ -2,8 +2,6 @@ package ch.bfh.ti.labyrinth.application;
 	
 import java.io.IOException;
 
-import ch.bfh.ti.labyrinth.Solver.Solver;
-import ch.bfh.ti.labyrinth.Creator.LabyrinthModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;

@@ -64,7 +64,8 @@
                   </Label>
                </children>
             </HBox>
-            <Canvas fx:id="cvsCanvas" height="300.0" layoutX="14.0" layoutY="54.0" width="610.0" AnchorPane.leftAnchor="15.0" />
+            <Canvas fx:id="cvsMaze" height="300.0" layoutX="14.0" layoutY="54.0" width="610.0" AnchorPane.leftAnchor="15.0" />
+            <Canvas fx:id="cvsPath" height="300.0" layoutX="15.0" layoutY="54.0" width="610.0" />
          </children>
     </AnchorPane>
   </children>
