@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.bfh.ti.lottery.ui.UiController">
    <children>
       <VBox layoutX="222.0" layoutY="213.0" prefHeight="500.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -305,7 +305,7 @@
                                                                         </HBox>
                                                                         <HBox layoutX="10.0" layoutY="36.0">
                                                                            <children>
-                                                                              <Label text="%lblStarTreffer">
+                                                                              <Label text="%lblSuperStarTreffer">
                                                                                  <HBox.margin>
                                                                                     <Insets right="10.0" top="14.0" />
                                                                                  </HBox.margin>
@@ -454,7 +454,7 @@
                                                                         </HBox>
                                                                         <HBox layoutX="10.0" layoutY="36.0">
                                                                            <children>
-                                                                              <Label text="%lblStarTreffer">
+                                                                              <Label text="%lblSuperStarTreffer">
                                                                                  <HBox.margin>
                                                                                     <Insets right="10.0" top="14.0" />
                                                                                  </HBox.margin>
@@ -603,7 +603,7 @@
                                                                         </HBox>
                                                                         <HBox layoutX="10.0" layoutY="36.0">
                                                                            <children>
-                                                                              <Label text="%lblStarTreffer">
+                                                                              <Label text="%lblSuperStarTreffer">
                                                                                  <HBox.margin>
                                                                                     <Insets right="10.0" top="14.0" />
                                                                                  </HBox.margin>
@@ -752,7 +752,7 @@
                                                                         </HBox>
                                                                         <HBox layoutX="10.0" layoutY="36.0">
                                                                            <children>
-                                                                              <Label text="%lblStarTreffer">
+                                                                              <Label text="%lblSuperStarTreffer">
                                                                                  <HBox.margin>
                                                                                     <Insets right="10.0" top="14.0" />
                                                                                  </HBox.margin>
@@ -901,7 +901,7 @@
                                                                         </HBox>
                                                                         <HBox layoutX="10.0" layoutY="36.0">
                                                                            <children>
-                                                                              <Label text="%lblStarTreffer">
+                                                                              <Label text="%lblSuperStarTreffer">
                                                                                  <HBox.margin>
                                                                                     <Insets right="10.0" top="14.0" />
                                                                                  </HBox.margin>
@@ -1328,7 +1328,11 @@
                            <children>
                               <VBox>
                                  <children>
-                                    <Button layoutX="211.0" layoutY="44.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="800.0" text="%butGewinninfo" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <Pane prefHeight="49.0" prefWidth="800.0">
+                                       <children>
+                                          <Button layoutX="326.0" layoutY="10.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="150.0" text="%butGewinninfo" />
+                                       </children>
+                                    </Pane>
                                     <Label fx:id="lblGewinninfo" layoutX="339.0" layoutY="74.0" prefHeight="338.0" prefWidth="800.0" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="74.0" />
                                  </children>
                               </VBox>
