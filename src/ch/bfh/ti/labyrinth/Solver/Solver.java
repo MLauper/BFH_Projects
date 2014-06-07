@@ -9,6 +9,7 @@ import ch.bfh.ti.labyrinth.Creator.Tile;
 public class Solver
 {
 	private Tile[][] maze; // The maze
+
 	private boolean[][] visited;
 	private boolean[][] mazepath; // The solution to the maze
 
@@ -124,5 +125,9 @@ public class Solver
 
 	public boolean[][] getMazepath() {
 		return mazepath;
+	}
+	
+	public Tile[][] getMaze() {
+		return maze;
 	}
 }

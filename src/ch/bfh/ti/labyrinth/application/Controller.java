@@ -78,6 +78,7 @@ public class Controller {
 		
 		GraphicsContext pathcanvas = cvsPath.getGraphicsContext2D();
     	pathcanvas.clearRect(0, 0, 610, 300);
+    	lblMessage.setText("");
     }
 
     @FXML
@@ -98,20 +99,31 @@ public class Controller {
     	
     	Solver solver = new Solver(x,y); // define Startpoint here
     	
-    	boolean path[][] = solver.getMazepath();
-    	
-    	GraphicsContext pathcanvas = cvsPath.getGraphicsContext2D();
-		
-    	pathcanvas.clearRect(0, 0, 610, 300);
-    	
-		for (int i = 0; i < path.length; i++){
-			for (int j = 0; j < path[i].length; j++){
-				if (path[i][j]){
-					pathcanvas.setFill(Color.BLUE);
-					pathcanvas.fillOval((j*10)+3, (i*10)+3, 4, 4);
+    	if (solver.getMaze()[x][y].type == 1){
+	    	
+	    	boolean path[][] = solver.getMazepath();
+	    	
+	    	GraphicsContext pathcanvas = cvsPath.getGraphicsContext2D();
+	    	pathcanvas.clearRect(0, 0, 610, 300);
+	    	
+			for (int i = 0; i < path.length; i++){
+				for (int j = 0; j < path[i].length; j++){
+					if (path[i][j]){
+						pathcanvas.setFill(Color.BLUE);
+						pathcanvas.fillOval((j*10)+3, (i*10)+3, 4, 4);
+					}
 				}
 			}
+			lblMessage.setTextFill(Color.GREEN);
+			lblMessage.setText("You have escaped!");
 		}
+    	else
+    	{
+    		GraphicsContext pathcanvas = cvsPath.getGraphicsContext2D();
+        	pathcanvas.clearRect(0, 0, 610, 300);    		
+    		lblMessage.setTextFill(Color.RED);
+    		lblMessage.setText("There is a wall, choose another tile.");
+    	}	
     }
 
     @FXML
