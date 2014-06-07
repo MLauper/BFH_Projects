@@ -8,12 +8,14 @@ import ch.bfh.ti.labyrinth.Creator.Tile;
 
 public class Solver
 {
-	Tile[][] maze; // The maze
-	boolean[][] visited;
-	boolean[][] mazepath; // The solution to the maze
-	int rows, cols;
-	int startX, startY; // Starting X and Y values of maze
-	int endX, endY;     // Ending X and Y values of maze
+	private Tile[][] maze; // The maze
+	private Tile[][] finalMaze;
+	private boolean[][] visited;
+	private boolean[][] mazepath; // The solution to the maze
+
+	private int rows, cols;
+	private int startX, startY; // Starting X and Y values of maze
+	private int endX, endY;     // Ending X and Y values of maze
 	
 	public Solver(int x, int y) throws FileNotFoundException{
 		startX = x;
@@ -21,7 +23,7 @@ public class Solver
 		solveMaze();
 	}
 	
-	public void solveMaze() throws FileNotFoundException {
+	private void solveMaze() throws FileNotFoundException {
 	    // Will leave you with a boolean array (correctPath) 
 	    // with the path indicated by true values.
 	    // If b is false, there is no solution to the maze
@@ -39,8 +41,9 @@ public class Solver
 	            mazepath[r][c] = false;
 	        }
 	    @SuppressWarnings("unused")
-		boolean b = recursiveSolve(startX, startY);
+		boolean b = recursiveSolve(startX, startY); //start recursive solving
 	    
+	    //print out map of path
 		for (int i = 0; i < mazepath.length;i++){
 			for (int j = 0; j < mazepath[i].length; j++){
 				if (mazepath[i][j])
@@ -52,7 +55,7 @@ public class Solver
 		}
 	}
 	
-	public Tile[][] loadMaze() throws FileNotFoundException{
+	private Tile[][] loadMaze() throws FileNotFoundException{
 		
 		//get width and height of maze
         File f = new File("maze.txt");
@@ -83,17 +86,23 @@ public class Solver
                 		String c = "" + line.charAt(y);
                 		maze[x][y] = new Tile(i,j,null);
                       	maze[x][y].type = Integer.parseInt(c);
-                      	System.out.print(maze[x][y].type);
+                      	//System.out.print(maze[x][y].type);
                 	}
-                	System.out.println();
+                	//System.out.println();
         		}
         	}
         }
-        return maze;
+        
+        prepareMaze();
+        
+        return finalMaze;
 	}
 	
-	public boolean recursiveSolve(int x, int y) {
-	    if (maze[x][y].type == 4) return true; // If you reached the end
+	private boolean recursiveSolve(int x, int y) {
+	    if (maze[x][y].type == 4){
+	    	mazepath[x][y] = true;
+	    	return true; // If you reached the end
+	    }
 	    if (maze[x][y].type == 0 || visited[x][y]) return false;  
 	    // If you are on a wall or already were here
 	    visited[x][y] = true;
@@ -118,5 +127,51 @@ public class Solver
 	            return true;
 	        }
 	    return false;
+	}
+	
+	private void prepareMaze(){
+		
+		//initialize final array
+		finalMaze = new Tile[(rows+2)][(cols+2)];
+		for (Integer i = 0; i < (rows+2); i++){
+			for (Integer j = 0; j < (cols+2); j++){
+				finalMaze[i][j] = new Tile(i,j,null);
+				finalMaze[i][j].type = 0;
+			}
+		}
+		
+		//shift array one row down and a column to the right
+		for (Integer i = (rows); i > 0 ; i--){
+			for (Integer j = (cols); j > 0; j--){
+				finalMaze[i][j] = maze[i-1][j-1];
+			}
+		}
+		
+		for (Integer i = 0; i < (cols+2); i++){
+			if (finalMaze[1][i].type == 1){
+				finalMaze[0][i].type = 4;
+				break;
+			}
+		}
+		
+		//print final maze to console
+		for (Integer i = 0; i < (rows+2); i++){
+			for (Integer j = 0; j < (cols+2); j++){
+				System.out.print(finalMaze[i][j].type);
+			}
+			System.out.println();
+		}
+	
+		cols = cols + 2;
+		rows = rows + 2;
+		
+	}
+
+	public Tile[][] getMaze() {
+		return maze;
+	}
+
+	public boolean[][] getMazepath() {
+		return mazepath;
 	}
 }

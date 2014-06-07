@@ -25,9 +25,9 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		LabyrinthModel l = new LabyrinthModel(20,15);
+		LabyrinthModel l = new LabyrinthModel(10,10);
 		
-		Solver solver = new Solver(3, 3);
+		Solver solver = new Solver(8, 9); // define Startpoint here
 		
 		launch(args);
 	}

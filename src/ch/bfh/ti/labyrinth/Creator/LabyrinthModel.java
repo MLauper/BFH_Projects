@@ -81,7 +81,7 @@ public class LabyrinthModel {
  
         	// if algorithm has resolved, mark end point
         	if(walls.isEmpty())
-        		mazeElements[last.row][last.column].type = 4;  //end point could also be marked separately as X or E
+        		mazeElements[last.row][last.column].type = 1;  //end point could also be marked separately as X or E
         }
     	
         // write maze into txt-file
