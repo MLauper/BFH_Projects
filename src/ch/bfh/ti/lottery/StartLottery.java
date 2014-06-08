@@ -12,15 +12,15 @@ public class StartLottery {
         Lottery lottery = new Lottery();
 
         lottery.generateTickets(1000, 3);
-        lottery.writeTicketPoolToXml("projects/src/ch/bfh/ti/lottery/ticPool.xml");
-        lottery.addXmlTickets("projects/src/ch/bfh/ti/lottery/ticPool.xml", true);
+        lottery.writeTicketPoolToXml("ch/bfh/ti/lottery/ticPool.xml");
+        lottery.addXmlTickets("ch/bfh/ti/lottery/ticPool.xml", true);
 
         lottery.setSetLuckyNumbers(5,31,23,21,29);
         lottery.setSetLuckyStars(7,9);
         lottery.setSetLuckySuperStars("A123B","V252G","R835F","B923C");
 //
         lottery.draw();
-        lottery.writeTicketPoolToXml("/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/ticPool.xml");
+        lottery.writeTicketPoolToXml("ch/bfh/ti/lottery/ticPool.xml");
 
         System.out.println("Totel tickets in pool: " + lottery.getTotalTicketsInPool());
 
