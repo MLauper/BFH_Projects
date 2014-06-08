@@ -14,17 +14,19 @@ public class ThreadExec2 implements Callable<ArrayList<Integer>> {
     private int maxValue;
     private ArrayList<Integer> primes;
 
-    ThreadExec2(int min, int max) {
+    public ThreadExec2(int min, int max) {
         minValue = min;
         maxValue = max;
         primes = new ArrayList<Integer>();
+
     }
 
     @Override
     public ArrayList<Integer> call() throws Exception {
         for (int i = minValue; i <= maxValue; i++) {
-            if (PrimeChecker.isPrime(i))
+            if (PrimeChecker.isPrime(i)) {
                 primes.add(i);
+            }
         }
         return primes;
     }
