@@ -31,13 +31,13 @@ public class StartThreadExec2 {
             Scanner in = new Scanner(System.in);
             try {
                 System.out.println("");
-                System.out.print("Bitte angeben bis wie hoch Primzahl berechnet werden soll : ");
+                System.out.print("Bitte angeben bis wie hoch Primzahl berechnet werden soll [1-15000]: ");
                 m = in.nextInt();
-                if (m > 0) {
+                if (m > 0 && m < 15001) {
                     isInpuOK = true;
                 } else {
                     System.out.println("");
-                    System.out.println("Bitte Integer > 0 eingeben!");
+                    System.out.println("Bitte Integer(m) mit Bedingung \"0 < m < 15001\" eingeben!");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("");
@@ -71,6 +71,11 @@ public class StartThreadExec2 {
         System.out.print("Start calculation with single thread...");
         long startSingleCalc = System.currentTimeMillis();
         for (int i = 0; i <= m; i++) {
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             if (PrimeChecker.isPrime(i)) {
                 calculatedPrimes.add(i);
             }
