@@ -15,7 +15,6 @@ public class Solver
 
 	private int rows, cols;
 	private int startX, startY; // Starting X and Y values of maze
-	private int endX, endY;     // Ending X and Y values of maze
 	
 	public Solver(int x, int y) throws FileNotFoundException{
 		startX = x;
@@ -55,7 +54,7 @@ public class Solver
 		}
 	}
 	
-	private Tile[][] loadMaze() throws FileNotFoundException{
+	public Tile[][] loadMaze() throws FileNotFoundException{
 		
 		//get width and height of maze
         File f = new File("maze.txt");
@@ -69,7 +68,8 @@ public class Solver
         }
         
         maze = new Tile[rows][cols];
-        Scanner m = new Scanner(f);
+        @SuppressWarnings("resource")
+		Scanner m = new Scanner(f);
         
         for (Integer i = 0; i < rows; i++){
         	for (Integer j = 0; j < cols; j++){
@@ -82,9 +82,7 @@ public class Solver
                 		String c = "" + line.charAt(y);
                 		maze[x][y] = new Tile(i,j,null);
                       	maze[x][y].type = Integer.parseInt(c);
-                      	//System.out.print(maze[x][y].type);
                 	}
-                	//System.out.println();
         		}
         	}
         }
@@ -93,30 +91,39 @@ public class Solver
 	}
 	
 	private boolean recursiveSolve(int x, int y) {
-	    if (maze[x][y].type == 4){
+		//if escaped from maze
+		if (maze[x][y].type == 4){
 	    	mazepath[x][y] = true;
-	    	return true; // If you reached the end
+	    	return true;
 	    }
-	    if (maze[x][y].type == 0 || visited[x][y]) return false;  
-	    // If you are on a wall or already were here
+		//if wall or already visited
+		if (maze[x][y].type == 0 || visited[x][y])
+	    	return false;
+		
+		//set visited true
 	    visited[x][y] = true;
+	    
+	    //check left field
 	    if (x != 0) //not left edge
 	        if (recursiveSolve(x-1, y)) { // Recalls method one to the left
 	            mazepath[x][y] = true; // Sets that path value to true;
 	            return true;
 	        }
+	    //check right field
 	    if (x != rows-1) //not right edge
 	        if (recursiveSolve(x+1, y)) { // Recalls method one to the right
 	            mazepath[x][y] = true;
 	            return true;
 	        }
+	    //check top field
 	    if (y != 0)  //not top edge
-	        if (recursiveSolve(x, y-1)) { // Recalls method one up
+	        if (recursiveSolve(x, y-1)) {
 	            mazepath[x][y] = true;
 	            return true;
 	        }
+	    //check bottom field
 	    if (y != cols-1) //not bottom edge
-	        if (recursiveSolve(x, y+1)) { // Recalls method one down
+	        if (recursiveSolve(x, y+1)) {
 	            mazepath[x][y] = true;
 	            return true;
 	        }

@@ -1,9 +1,11 @@
 package ch.bfh.ti.labyrinth.Creator;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class LabyrinthModel {
 		
@@ -134,6 +136,40 @@ public class LabyrinthModel {
 			writer.println();
 		}
 		writer.close();
+	}
+	
+	public void loadMaze() throws FileNotFoundException{
+		
+		//get width and height of maze
+        File f = new File("maze.txt");
+        @SuppressWarnings("resource")
+		Scanner s = new Scanner(f);
+        
+        while(s.hasNextLine())  {
+            rows++;
+            String line = s.nextLine();
+            columns = line.length();
+        }
+        
+        finalMaze = new Tile[rows][columns];
+        @SuppressWarnings("resource")
+		Scanner m = new Scanner(f);
+        
+        for (Integer i = 0; i < rows; i++){
+        	for (Integer j = 0; j < columns; j++){
+        			
+        		//get type from character at position in txt
+        		for (int x = 0; m.hasNext(); x++) {
+                String line = m.nextLine();
+                	for (int y = 0; y < line.length(); y++)
+                	{
+                		String c = "" + line.charAt(y);
+                		finalMaze[x][y] = new Tile(i,j,null);
+                		finalMaze[x][y].type = Integer.parseInt(c);
+                	}
+        		}
+        	}
+        }		
 	}
 	
 	public Tile[][] getFinalMaze() {

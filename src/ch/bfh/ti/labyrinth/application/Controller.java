@@ -6,6 +6,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import ch.bfh.ti.labyrinth.Creator.LabyrinthModel;
+import ch.bfh.ti.labyrinth.Creator.Tile;
 import ch.bfh.ti.labyrinth.Solver.Solver;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -82,8 +83,35 @@ public class Controller {
     }
 
     @FXML
-    void mazeLoad(ActionEvent event) {
-
+    void mazeLoad(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
+    	
+    	LabyrinthModel l = new LabyrinthModel(28,59);
+    	
+    	l.loadMaze();
+		
+		GraphicsContext mazecanvas = cvsMaze.getGraphicsContext2D();
+		
+		try {
+			for (int i = 0; i < l.getFinalMaze().length; i++){
+				for (int j = 0; j < l.getFinalMaze()[i].length; j++){
+					if (l.getFinalMaze()[i][j].type == 0){
+						mazecanvas.setFill(Color.BLACK);
+						mazecanvas.fillRect((j*10), (i*10), 10, 10);
+					}
+					else
+					{
+						mazecanvas.setFill(Color.WHITE);
+						mazecanvas.fillRect((j*10), (i*10), 10, 10);
+					}
+				}
+			}
+		} catch (NullPointerException e) {
+		    // ignore nullpointer exception
+		}
+		
+		GraphicsContext pathcanvas = cvsPath.getGraphicsContext2D();
+    	pathcanvas.clearRect(0, 0, 610, 300);
+    	lblMessage.setText("");
     }
 
     @FXML
