@@ -42,311 +42,311 @@ public class UiController {
 			.observableArrayList();
 	ArrayList<ArrayList<TextField>> textFields = new ArrayList<>();
 
-	 @FXML
-	    private TextField txtMomTickStarNr10;
+	@FXML
+	private TextField txtMomTickStarNr10;
 
-	    @FXML
-	    private TextField txtMomTickStarNr11;
+	@FXML
+	private TextField txtMomTickStarNr11;
 
-	    @FXML
-	    private Tab tabWinner;
-	    
-	    @FXML
-	    private Tab tabTickets;
-	    
-	    @FXML
-	    private TextField txtTreffer0;
+	@FXML
+	private Tab tabWinner;
 
-	    @FXML
-	    private TextField txtTreffer1;
+	@FXML
+	private Tab tabTickets;
 
-	    @FXML
-	    private TextField txtTreffer2;
+	@FXML
+	private TextField txtTreffer0;
 
-	    @FXML
-	    private TextField txtTreffer3;
+	@FXML
+	private TextField txtTreffer1;
 
-	    @FXML
-	    private TextField txtTreffer4;
+	@FXML
+	private TextField txtTreffer2;
 
-	    @FXML
-	    private TextField txtTreffer5;
+	@FXML
+	private TextField txtTreffer3;
 
-	    @FXML
-	    private TextField txtTreffer6;
+	@FXML
+	private TextField txtTreffer4;
 
-	    @FXML
-	    private TextField txtMomTickNr62;
+	@FXML
+	private TextField txtTreffer5;
 
-	    @FXML
-	    private TextField txtMomTickNr63;
+	@FXML
+	private TextField txtTreffer6;
 
-	    @FXML
-	    private TextField txtMomTickNr64;
+	@FXML
+	private TextField txtMomTickNr62;
 
-	    @FXML
-	    private TextField txtMomTickStarNr01;
+	@FXML
+	private TextField txtMomTickNr63;
 
-	    @FXML
-	    private TextField txtMomTickStarNr00;
+	@FXML
+	private TextField txtMomTickNr64;
 
-	    @FXML
-	    private TextField txtStarNr0;
+	@FXML
+	private TextField txtMomTickStarNr01;
 
-	    @FXML
-	    private TextField txtStarNr1;
+	@FXML
+	private TextField txtMomTickStarNr00;
 
-	    @FXML
-	    private TextField txtMomTickNr60;
+	@FXML
+	private TextField txtStarNr0;
 
-	    @FXML
-	    private TextField txtNachricht;
+	@FXML
+	private TextField txtStarNr1;
 
-	    @FXML
-	    private TextField txtMomTickNr61;
+	@FXML
+	private TextField txtMomTickNr60;
 
-	    @FXML
-	    private Button butDateiXSD;
+	@FXML
+	private TextField txtNachricht;
 
-	    @FXML
-	    private TextField txtEinstNr4;
+	@FXML
+	private TextField txtMomTickNr61;
 
-	    @FXML
-	    private TextField txtEinstNr3;
+	@FXML
+	private Button butDateiXSD;
 
-	    @FXML
-	    private TextField txtEinstNr2;
+	@FXML
+	private TextField txtEinstNr4;
 
-	    @FXML
-	    private TextField txtEinstNr1;
+	@FXML
+	private TextField txtEinstNr3;
 
-	    @FXML
-	    private TextField txtEinstNr0;
+	@FXML
+	private TextField txtEinstNr2;
 
-	    @FXML
-	    private TextField txtMomTickNr51;
+	@FXML
+	private TextField txtEinstNr1;
 
-	    @FXML
-	    private TextField txtMomTickNr52;
+	@FXML
+	private TextField txtEinstNr0;
 
-	    @FXML
-	    private TextField txtMomTickNr53;
+	@FXML
+	private TextField txtMomTickNr51;
 
-	    @FXML
-	    private TextField txtMomTickNr54;
+	@FXML
+	private TextField txtMomTickNr52;
 
-	    @FXML
-	    private TextField txtXML;
+	@FXML
+	private TextField txtMomTickNr53;
 
-	    @FXML
-	    private TextField txtMomTickSuperStarNr03;
+	@FXML
+	private TextField txtMomTickNr54;
 
-	    @FXML
-	    private TextField txtMomTickStarNr31;
+	@FXML
+	private TextField txtXML;
 
-	    @FXML
-	    private TextField txtMomTickSuperStarNr00;
+	@FXML
+	private TextField txtMomTickSuperStarNr03;
 
-	    @FXML
-	    private ChoiceBox<Tickets.Ticket> chbTickets;
+	@FXML
+	private TextField txtMomTickStarNr31;
 
-	    @FXML
-	    private TextField txtMomTickStarNr30;
+	@FXML
+	private TextField txtMomTickSuperStarNr00;
 
-	    @FXML
-	    private TextField txtMomTickSuperStarNr01;
+	@FXML
+	private ChoiceBox<Tickets.Ticket> chbTickets;
 
-	    @FXML
-	    private TextField txtMomTickNr50;
+	@FXML
+	private TextField txtMomTickStarNr30;
 
-	    @FXML
-	    private TextField txtMomTickSuperStarNr02;
+	@FXML
+	private TextField txtMomTickSuperStarNr01;
 
-	    @FXML
-	    private TextField txtMomTickNr40;
+	@FXML
+	private TextField txtMomTickNr50;
 
-	    @FXML
-	    private TextField txtMomTickNr41;
+	@FXML
+	private TextField txtMomTickSuperStarNr02;
 
-	    @FXML
-	    private TextField txtMomTickNr42;
+	@FXML
+	private TextField txtMomTickNr40;
 
-	    @FXML
-	    private TextField txtMomTickNr43;
+	@FXML
+	private TextField txtMomTickNr41;
 
-	    @FXML
-	    private TextField txtMomTickNr44;
+	@FXML
+	private TextField txtMomTickNr42;
 
-	    @FXML
-	    private TextField txtMomTickStarNr21;
+	@FXML
+	private TextField txtMomTickNr43;
 
-	    @FXML
-	    private TextField txtMomTickStarNr20;
+	@FXML
+	private TextField txtMomTickNr44;
 
-	    @FXML
-	    private TextField txtCurSuperStarWinNr0;
+	@FXML
+	private TextField txtMomTickStarNr21;
 
-	    @FXML
-	    private TextField txtCurSuperStarWinNr2;
+	@FXML
+	private TextField txtMomTickStarNr20;
 
-	    @FXML
-	    private TextField txtCurSuperStarWinNr1;
+	@FXML
+	private TextField txtCurSuperStarWinNr0;
 
-	    @FXML
-	    private TextField txtCurSuperStarWinNr3;
+	@FXML
+	private TextField txtCurSuperStarWinNr2;
 
-	    @FXML
-	    private Button butAktXML;
+	@FXML
+	private TextField txtCurSuperStarWinNr1;
 
-	    @FXML
-	    private TextField txtCurWinNr3;
+	@FXML
+	private TextField txtCurSuperStarWinNr3;
 
-	    @FXML
-	    private TextField txtCurWinNr2;
+	@FXML
+	private Button butAktXML;
 
-	    @FXML
-	    private TextField txtMomTickNr30;
+	@FXML
+	private TextField txtCurWinNr3;
 
-	    @FXML
-	    private TextField txtCurWinNr1;
+	@FXML
+	private TextField txtCurWinNr2;
 
-	    @FXML
-	    private TextField txtMomTickNr31;
+	@FXML
+	private TextField txtMomTickNr30;
 
-	    @FXML
-	    private TextField txtCurWinNr0;
+	@FXML
+	private TextField txtCurWinNr1;
 
-	    @FXML
-	    private TextField txtMomTickNr32;
+	@FXML
+	private TextField txtMomTickNr31;
 
-	    @FXML
-	    private TextField txtMomTickNr33;
+	@FXML
+	private TextField txtCurWinNr0;
 
-	    @FXML
-	    private TextField txtMomTickNr34;
+	@FXML
+	private TextField txtMomTickNr32;
 
-	    @FXML
-	    private TextField txtCurWinNr4;
+	@FXML
+	private TextField txtMomTickNr33;
 
-	    @FXML
-	    private TextField txtMomTickStarNr50;
+	@FXML
+	private TextField txtMomTickNr34;
 
-	    @FXML
-	    private TextField txtMomTickStarNr51;
+	@FXML
+	private TextField txtCurWinNr4;
 
-	    @FXML
-	    private TextField txtMomTickNr20;
+	@FXML
+	private TextField txtMomTickStarNr50;
 
-	    @FXML
-	    private TextField txtMomTickNr21;
+	@FXML
+	private TextField txtMomTickStarNr51;
 
-	    @FXML
-	    private TextField txtMomTickNr22;
+	@FXML
+	private TextField txtMomTickNr20;
 
-	    @FXML
-	    private TextField txtSuperStarNr0;
+	@FXML
+	private TextField txtMomTickNr21;
 
-	    @FXML
-	    private TextField txtMomTickNr23;
+	@FXML
+	private TextField txtMomTickNr22;
 
-	    @FXML
-	    private TextField txtMomTickNr24;
+	@FXML
+	private TextField txtSuperStarNr0;
 
-	    @FXML
-	    private Button butGetWinnerInfo;
+	@FXML
+	private TextField txtMomTickNr23;
 
-	    @FXML
-	    private TextField txtMomTickStarNr41;
+	@FXML
+	private TextField txtMomTickNr24;
 
-	    @FXML
-	    private TextField txtMomTickStarNr40;
+	@FXML
+	private Button butGetWinnerInfo;
 
-	    @FXML
-	    private Button butAktXSD;
+	@FXML
+	private TextField txtMomTickStarNr41;
 
-	    @FXML
-	    private TextField txtSuperStarNr3;
+	@FXML
+	private TextField txtMomTickStarNr40;
 
-	    @FXML
-	    private TextField txtSuperStarNr1;
+	@FXML
+	private Button butAktXSD;
 
-	    @FXML
-	    private TextField txtSuperStarNr2;
+	@FXML
+	private TextField txtSuperStarNr3;
 
-	    @FXML
-	    private TextField txtMomTickNr10;
+	@FXML
+	private TextField txtSuperStarNr1;
 
-	    @FXML
-	    private TextField txtMomTickNr11;
+	@FXML
+	private TextField txtSuperStarNr2;
 
-	    @FXML
-	    private Label lblGewinninfo;
+	@FXML
+	private TextField txtMomTickNr10;
 
-	    @FXML
-	    private TextField txtMomTickNr12;
+	@FXML
+	private TextField txtMomTickNr11;
 
-	    @FXML
-	    private TextField txtStarTreffer0;
+	@FXML
+	private Label lblGewinninfo;
 
-	    @FXML
-	    private TextField txtMomTickNr13;
+	@FXML
+	private TextField txtMomTickNr12;
 
-	    @FXML
-	    private TextField txtStarTreffer1;
+	@FXML
+	private TextField txtStarTreffer0;
 
-	    @FXML
-	    private TextField txtMomTickNr14;
+	@FXML
+	private TextField txtMomTickNr13;
 
-	    @FXML
-	    private TextField txtMomTickNr04;
+	@FXML
+	private TextField txtStarTreffer1;
 
-	    @FXML
-	    private TextField txtSuperStarTreffer0;
+	@FXML
+	private TextField txtMomTickNr14;
 
-	    @FXML
-	    private Button butDateiXML;
+	@FXML
+	private TextField txtMomTickNr04;
 
-	    @FXML
-	    private TextField txtMomTickNr00;
+	@FXML
+	private TextField txtSuperStarTreffer0;
 
-	    @FXML
-	    private TextField txtMomTickNr01;
+	@FXML
+	private Button butDateiXML;
 
-	    @FXML
-	    private TextField txtMomTickNr02;
+	@FXML
+	private TextField txtMomTickNr00;
 
-	    @FXML
-	    private TextField txtMomTickNr03;
+	@FXML
+	private TextField txtMomTickNr01;
 
-	    @FXML
-	    private TextField txtCurStarWinNr1;
+	@FXML
+	private TextField txtMomTickNr02;
 
-	    @FXML
-	    private TextField txtMomTickStarNr61;
+	@FXML
+	private TextField txtMomTickNr03;
 
-	    @FXML
-	    private TextField txtCurStarWinNr0;
+	@FXML
+	private TextField txtCurStarWinNr1;
 
-	    @FXML
-	    private TextField txtMomTickStarNr60;
+	@FXML
+	private TextField txtMomTickStarNr61;
 
-	    @FXML
-	    private TextField txtStarTreffer2;
+	@FXML
+	private TextField txtCurStarWinNr0;
 
-	    @FXML
-	    private TextField txtStarTreffer3;
+	@FXML
+	private TextField txtMomTickStarNr60;
 
-	    @FXML
-	    private TextField txtXSD;
+	@FXML
+	private TextField txtStarTreffer2;
 
-	    @FXML
-	    private TextField txtStarTreffer4;
+	@FXML
+	private TextField txtStarTreffer3;
 
-	    @FXML
-	    private TextField txtStarTreffer5;
+	@FXML
+	private TextField txtXSD;
 
-	    @FXML
-	    private TextField txtStarTreffer6;
+	@FXML
+	private TextField txtStarTreffer4;
+
+	@FXML
+	private TextField txtStarTreffer5;
+
+	@FXML
+	private TextField txtStarTreffer6;
 
 	@FXML
 	// This method is called by the FXMLLoader when initialization is complete
@@ -412,7 +412,6 @@ public class UiController {
 		textFields.get(7).add(txtMomTickSuperStarNr01);
 		textFields.get(7).add(txtMomTickSuperStarNr02);
 		textFields.get(7).add(txtMomTickSuperStarNr03);
-		
 
 	}
 
@@ -476,8 +475,6 @@ public class UiController {
 					}
 				});
 
-	
-
 		butAktXML.setDisable(true);
 		tabWinner.setDisable(false);
 		getWinner(lottery.draw());
@@ -497,8 +494,8 @@ public class UiController {
 								Integer.toString(play.getNumbers().getNumber()
 										.get(j)));
 
-			}				
-			k=0;
+			}
+			k = 0;
 			for (j = 5; j < 7; j++) {
 				textFields
 						.get(i)
@@ -513,20 +510,18 @@ public class UiController {
 		}
 		i = 0;
 		for (TextField field : textFields.get(7)) {
-			if(curTicket.getSuperStars().getSuperStar().get(i).isSelected())
-			{
-			field.setText(curTicket.getSuperStars().getSuperStar().get(i).getValue());
-			}
-			else {
-			field.setText("X");
+			if (curTicket.getSuperStars().getSuperStar().get(i).isSelected()) {
+				field.setText(curTicket.getSuperStars().getSuperStar().get(i)
+						.getValue());
+			} else {
+				field.setText("X");
 			}
 			i++;
-			
+
 		}
-		
+
 	}
 
-	
 	private void getWinner(int[] list) {
 
 		String string = ("");
@@ -580,10 +575,9 @@ public class UiController {
 		txtCurSuperStarWinNr2.setText(superstarnr2);
 		txtCurSuperStarWinNr3.setText(superstarnr3);
 
-tabTickets.setDisable(false);
-		
-	}
+		tabTickets.setDisable(false);
 
+	}
 
 	// I18N Teil
 	@FXML
