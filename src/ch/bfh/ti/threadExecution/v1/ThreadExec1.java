@@ -37,8 +37,9 @@ public class ThreadExec1 extends Thread {
     public void run() {
         Random r = new Random();
         while (isRunning) {
+            int randomSleep = r.nextInt(milSecsHigh - milSecsLow) + milSecsLow;
             try {
-                Thread.sleep(r.nextInt(milSecsHigh - milSecsLow) + milSecsLow);
+                Thread.sleep(randomSleep);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -46,6 +47,7 @@ public class ThreadExec1 extends Thread {
             if (PrimeChecker.isPrime(counter)) {
                 highestPrime = counter;
             }
+            System.out.println(threadName + " did a ckeck with number \"" + counter + "\" (RandomSleeper: " + randomSleep + "[ms])");
         }
     }
 }

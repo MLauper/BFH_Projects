@@ -76,7 +76,16 @@ public class StartThreadExec1 {
         System.out.println("");
         System.out.println("Start calculation within main...");
         for (int i = 0; i < m; i++) {
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             PrimeChecker.isPrime(i);
+            /*for (ThreadExec1 thread : threadExec1ArrayList){
+                System.out.print(thread.getThreadName() + ": ");
+                System.out.println(thread.getState());
+            }*/
         }
 
         // stop all other threads and list highest num of each thread
@@ -84,12 +93,18 @@ public class StartThreadExec1 {
         System.out.print("Stopping thread(s): ");
         for (ThreadExec1 thread : threadExec1ArrayList){
             System.out.print(thread.getThreadName() + ", ");
-            thread.stopThread();
+            thread.stop();
+
         }
         System.out.println("");
 
         System.out.println("");
         for (ThreadExec1 thread : threadExec1ArrayList){
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.print("Highest prime of thread " + thread.getThreadName() + ": " + thread.getHighestPrime());
             System.out.println("");
         }
