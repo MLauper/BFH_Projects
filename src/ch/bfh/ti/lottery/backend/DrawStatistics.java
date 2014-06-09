@@ -163,8 +163,8 @@ public class DrawStatistics {
                     checkedTickets++;
                 }
             }
-            System.out.println("");
-            System.out.println("Checked Tickets in this draw: " + checkedTickets);
+            //System.out.println("");
+            //	System.out.println("Checked Tickets in this draw: " + checkedTickets);
             isDrawn = true;
         }
     }

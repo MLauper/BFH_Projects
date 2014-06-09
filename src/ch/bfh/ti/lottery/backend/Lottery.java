@@ -11,8 +11,8 @@ import java.util.ArrayList;
  */
 public class Lottery {
 
-    private String xsdTicketFile = "/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets/ticket.xsd";
-    private String xsdTicketsFile = "/Users/alain/Documents/GitHub/BFH/projects/src/ch/bfh/ti/lottery/tickets/tickets.xsd";
+    private String xsdTicketFile = "src/ch/bfh/ti/lottery/tickets/ticket.xsd";
+    private String xsdTicketsFile = "src/ch/bfh/ti/lottery/tickets/tickets.xsd";
     private Tickets lotteryTicketPool = null;
     private int[] luckyNumbers = new int[5];
     private int[] luckyStars = new int[2];
@@ -44,9 +44,9 @@ public class Lottery {
         }
     }
 
-    public void draw() {
+    public int[] draw() {
         this.drawStatisticsArrayList.get(0).drawLottery(lotteryTicketPool, luckySuperStars, luckyNumbers, luckyStars);
-        this.drawStatisticsArrayList.get(0).printStatistics();
+        return this.drawStatisticsArrayList.get(0).getStatistics();
     }
 
     public void setSetLuckyNumbers(int a, int b, int c, int d, int e) {
@@ -104,5 +104,9 @@ public class Lottery {
 
     public Tickets getLotteryTicketPool() {
         return lotteryTicketPool;
+    }
+    public void printStats()
+    {
+    	this.drawStatisticsArrayList.get(0).printStatistics();
     }
 }

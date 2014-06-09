@@ -119,6 +119,10 @@ public class Tickets {
         public void setTicketId(int value) {
             this.ticketId = value;
         }
+        public String toString() {
+			return "Ticket Nr." + ticketId;
+			
+		}
 
     }
 
