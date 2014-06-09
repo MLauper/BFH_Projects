@@ -85,16 +85,14 @@ public class Controller {
     @FXML
     void mazeLoad(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
     	
-    	LabyrinthModel l = new LabyrinthModel(28,59);
-    	
-    	l.loadMaze();
+    	Tile[][] maze = Main.loadMaze();
 		
 		GraphicsContext mazecanvas = cvsMaze.getGraphicsContext2D();
 		
 		try {
-			for (int i = 0; i < l.getFinalMaze().length; i++){
-				for (int j = 0; j < l.getFinalMaze()[i].length; j++){
-					if (l.getFinalMaze()[i][j].type == 0){
+			for (int i = 0; i < maze.length; i++){
+				for (int j = 0; j < maze[i].length; j++){
+					if (maze[i][j].type == 0){
 						mazecanvas.setFill(Color.BLACK);
 						mazecanvas.fillRect((j*10), (i*10), 10, 10);
 					}
@@ -116,7 +114,7 @@ public class Controller {
 
     @FXML
     void mazeClose(ActionEvent event) {
-
+    	System.exit(1);
     }
     
     @FXML
@@ -166,6 +164,5 @@ public class Controller {
         assert root != null : "fx:id=\"root\" was not injected: check your FXML file 'Main.fxml'.";
         assert menuClose != null : "fx:id=\"menuClose\" was not injected: check your FXML file 'Main.fxml'.";
         assert menuLoad != null : "fx:id=\"menuLoad\" was not injected: check your FXML file 'Main.fxml'.";
-
     }
 }
