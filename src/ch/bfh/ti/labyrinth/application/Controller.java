@@ -118,7 +118,7 @@ public class Controller {
     }
     
     @FXML
-    void mazeSolve(ActionEvent event) throws FileNotFoundException {
+    void mazeSolve(ActionEvent event) throws FileNotFoundException, InterruptedException {
     	
     	int x = Integer.parseInt(txfX.getText());
     	int y = Integer.parseInt(txfY.getText());
@@ -135,8 +135,8 @@ public class Controller {
 			for (int i = 0; i < path.length; i++){
 				for (int j = 0; j < path[i].length; j++){
 					if (path[i][j]){
-						pathcanvas.setFill(Color.BLUE);
-						pathcanvas.fillOval((j*10)+3, (i*10)+3, 4, 4);
+						pathcanvas.setFill(Color.RED);
+						pathcanvas.fillOval((j*10)+2, (i*10)+2, 6, 6);
 					}
 				}
 			}
@@ -148,7 +148,7 @@ public class Controller {
     		GraphicsContext pathcanvas = cvsPath.getGraphicsContext2D();
         	pathcanvas.clearRect(0, 0, 610, 300);    		
     		lblMessage.setTextFill(Color.RED);
-    		lblMessage.setText("There is a wall, choose another tile.");
+    		lblMessage.setText("You hit a wall, choose another tile.");
     	}	
     }
 

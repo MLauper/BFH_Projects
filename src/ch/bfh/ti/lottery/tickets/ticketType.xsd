@@ -1,10 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema
-        xmlns:ticketType="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType"
-        xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType"
-        elementFormDefault="qualified"
-        >
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:ticketType="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType">
 
     <xs:complexType name="ticketType">
         <xs:sequence>
@@ -54,10 +49,8 @@
                             <xs:complexType>
                                 <xs:simpleContent>
                                     <xs:extension base="ticketType:superStarType">
-                                        <xs:attribute default="false" name="selected"
-                                                      type="xs:boolean" use="optional"/>
-                                        <xs:attribute name="superStarId"
-                                                      type="xs:int" use="required"/>
+                                        <xs:attribute default="false" name="selected" type="xs:boolean" use="optional"/>
+                                        <xs:attribute name="superStarId" type="xs:int" use="required"/>
                                     </xs:extension>
                                 </xs:simpleContent>
                             </xs:complexType>
@@ -74,7 +67,7 @@
                 </xs:unique>
             </xs:element>
             <xs:element name="validity" type="ticketType:validityType"/>
-            <xs:element name="drawn" type="xs:int" default="0"/>
+            <xs:element default="0" name="drawn" type="xs:int"/>
             <xs:element name="timeStamp">
                 <xs:complexType>
                     <xs:sequence>

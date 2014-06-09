@@ -23,14 +23,12 @@ public class Solver
 	}
 	
 	private void solveMaze() throws FileNotFoundException {
-	    // Will leave you with a boolean array (correctPath) 
-	    // with the path indicated by true values.
-	    // If b is false, there is no solution to the maze
 		
-        // Sets boolean Arrays to default values
+		//this leaves a booleanarray with the correct path
 		
 		maze = loadMaze();
-			
+		
+		//set booleanarrays to default values	
 		visited = new boolean[rows][cols];
 		mazepath = new boolean[rows][cols];
 		
@@ -42,7 +40,7 @@ public class Solver
 	    @SuppressWarnings("unused")
 		boolean b = recursiveSolve(startX, startY); //start recursive solving
 	    
-	    //print out map of path
+	    //print out treasuremap
 		for (int i = 0; i < mazepath.length;i++){
 			for (int j = 0; j < mazepath[i].length; j++){
 				if (mazepath[i][j])
@@ -99,10 +97,10 @@ public class Solver
 		//if wall or already visited
 		if (maze[x][y].type == 0 || visited[x][y])
 	    	return false;
-		
-		//set visited true
-	    visited[x][y] = true;
 	    
+	    //set visited true
+	    visited[x][y] = true;
+		
 	    //check left field
 	    if (x != 0) //not left edge
 	        if (recursiveSolve(x-1, y)) { // Recalls method one to the left
@@ -127,6 +125,7 @@ public class Solver
 	            mazepath[x][y] = true;
 	            return true;
 	        }
+	    
 	    return false;
 	}
 

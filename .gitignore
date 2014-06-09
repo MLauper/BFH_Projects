@@ -9,3 +9,5 @@ RemoteSystemsTempFiles
 .metadata/
 
 *.fxbuild
+
+representations.aird

@@ -1,14 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema
-        xmlns:ticketType="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType"
-        xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticket"
-        elementFormDefault="qualified"
-        >
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:ticketType="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticket">
 
-    <xs:import
-            namespace="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType"
-            schemaLocation="ticketType.xsd"/>
+    <xs:import namespace="https://raw.githubusercontent.com/akeusen/BFH_Projects/master/src/ch/bfh/ti/lottery/tickets/ticketType" schemaLocation="ticketType.xsd"/>
 
     <xs:element name="ticket">
         <xs:complexType>
