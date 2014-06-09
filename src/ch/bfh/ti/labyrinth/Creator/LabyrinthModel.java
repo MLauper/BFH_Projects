@@ -1,11 +1,13 @@
 package ch.bfh.ti.labyrinth.Creator;
 
-import java.io.File;
+/**
+ * Created by FirstROW on 07.05.14.
+*/
+
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class LabyrinthModel {
 		

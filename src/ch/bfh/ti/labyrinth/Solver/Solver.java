@@ -1,5 +1,9 @@
 package ch.bfh.ti.labyrinth.Solver;
 
+/**
+ * Created by FirstROW on 07.05.14.
+*/
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;

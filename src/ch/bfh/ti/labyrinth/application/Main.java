@@ -1,5 +1,9 @@
 package ch.bfh.ti.labyrinth.application;
-	
+
+/**
+ * Created by FirstROW on 07.05.14.
+*/
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -11,7 +15,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
-
 
 public class Main extends Application {
 	@Override

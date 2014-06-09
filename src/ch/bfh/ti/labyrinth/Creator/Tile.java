@@ -1,5 +1,9 @@
 package ch.bfh.ti.labyrinth.Creator;
 
+/**
+ * Created by FirstROW on 07.05.14.
+*/
+
 public class Tile{
 
 	public Integer row;
