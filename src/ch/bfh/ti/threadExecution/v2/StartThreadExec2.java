@@ -137,7 +137,7 @@ public class StartThreadExec2 {
         Boolean isFirstRound = true;
         for (Future<ArrayList<Integer>> fut : list) {
             try {
-                //print the return value of Future, notice the output delay in console
+                // return value of Future -> main() will wait here
                 // because Future.get() waits for task to get completed
                 calculatedPrimesThreaded.addAll(fut.get());
                 if (isFirstRound) {
@@ -165,8 +165,7 @@ public class StartThreadExec2 {
                     System.out.print("Index " + i + " is NOT ok!");
                     System.out.println(" --> " + calculatedPrimes.get(i) + " is not " + calculatedPrimesThreaded.get(i));
                     isOK = false;
-                }
-                ;
+                };
             }
             if (isOK) {
                 System.out.println(" Everything is fine - well done!");
