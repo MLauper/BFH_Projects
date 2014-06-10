@@ -18,7 +18,7 @@ public class RandomNameProvider {
 
         String strLine;
         // Open the file
-        FileInputStream fstream = new FileInputStream("projects/src/ch/bfh/ti/threadExecution/tools/firstNameList.txt");
+        FileInputStream fstream = new FileInputStream("src/ch/bfh/ti/threadExecution/tools/firstNameList.txt");
         BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
         //Read File Line By Line
         while ((strLine = br.readLine()) != null) {
