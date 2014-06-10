@@ -7,6 +7,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
+
 import ch.bfh.ti.lottery.backend.Lottery;
 import ch.bfh.ti.lottery.tickets.TicketType.Plays.Play;
 import ch.bfh.ti.lottery.tickets.Tickets;
@@ -35,6 +37,7 @@ public class UiController {
 	final ObservableList<Tickets.Ticket> observableListTickets = FXCollections
 			.observableArrayList();
 	ArrayList<ArrayList<TextField>> textFields = new ArrayList<>();
+	ArrayList<ArrayList<TextField>> textFieldsTreffer = new ArrayList<>();
 
 	@FXML
 	private TextField txtMomTickStarNr10;
@@ -406,6 +409,25 @@ public class UiController {
 		textFields.get(7).add(txtMomTickSuperStarNr01);
 		textFields.get(7).add(txtMomTickSuperStarNr02);
 		textFields.get(7).add(txtMomTickSuperStarNr03);
+		
+		textFieldsTreffer.add(new ArrayList<TextField>());
+		textFieldsTreffer.get(0).add(txtTreffer0);
+		textFieldsTreffer.get(0).add(txtTreffer1);
+		textFieldsTreffer.get(0).add(txtTreffer2);
+		textFieldsTreffer.get(0).add(txtTreffer3);
+		textFieldsTreffer.get(0).add(txtTreffer4);
+		textFieldsTreffer.get(0).add(txtTreffer5);
+		textFieldsTreffer.get(0).add(txtTreffer6);
+		textFieldsTreffer.add(new ArrayList<TextField>());
+		textFieldsTreffer.get(1).add(txtStarTreffer0);
+		textFieldsTreffer.get(1).add(txtStarTreffer1);
+		textFieldsTreffer.get(1).add(txtStarTreffer2);
+		textFieldsTreffer.get(1).add(txtStarTreffer3);
+		textFieldsTreffer.get(1).add(txtStarTreffer4);
+		textFieldsTreffer.get(1).add(txtStarTreffer5);
+		textFieldsTreffer.get(1).add(txtStarTreffer6);
+		textFieldsTreffer.add(new ArrayList<TextField>());
+		textFieldsTreffer.get(2).add(txtSuperStarTreffer0);
 
 	}
 
@@ -478,7 +500,7 @@ public class UiController {
 
 	private void fillInNumbers(Ticket curTicket) {
 		int i = 0, j = 0, k;
-
+		textFieldsTreffer.get(2).get(0).setText(Integer.toString(lottery.compareSuperStars(curTicket)));
 		for (Play play : curTicket.getPlays().getPlay()) {
 			for (j = 0; j < 5; j++) {
 				textFields
@@ -489,6 +511,7 @@ public class UiController {
 										.get(j)));
 
 			}
+			
 			k = 0;
 			for (j = 5; j < 7; j++) {
 				textFields
@@ -500,6 +523,10 @@ public class UiController {
 				k++;
 
 			}
+			
+			
+			textFieldsTreffer.get(0).get(i).setText(Integer.toString(lottery.compareNumbers(play)));
+			textFieldsTreffer.get(1).get(i).setText(Integer.toString(lottery.compareStars(play)));
 			i++;
 		}
 		i = 0;
@@ -513,6 +540,7 @@ public class UiController {
 			i++;
 
 		}
+		
 
 	}
 

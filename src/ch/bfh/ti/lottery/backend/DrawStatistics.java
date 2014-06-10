@@ -1,6 +1,8 @@
 package ch.bfh.ti.lottery.backend;
 
+import ch.bfh.ti.lottery.tickets.TicketType.Plays.Play;
 import ch.bfh.ti.lottery.tickets.Tickets;
+import ch.bfh.ti.lottery.tickets.Tickets.Ticket;
 
 /**
  * Created by alain on 01.06.14.
@@ -28,7 +30,7 @@ public class DrawStatistics {
     public DrawStatistics() {
     }
 
-
+    
     public void drawLottery(Tickets lotteryTickets,
                             String[] luckySuperStars,
                             int[] luckyNumbers,
@@ -36,7 +38,7 @@ public class DrawStatistics {
 
         if (!isDrawn) {
             int checkedTickets = 0;
-
+            correctSuperStars = 0;
             for (Tickets.Ticket tic : lotteryTickets.getTicket()) {
 
                 if (tic.getDrawn() < tic.getValidity()) {
@@ -46,22 +48,11 @@ public class DrawStatistics {
                         int correctNum = 0;
                         int correctStars = 0;
 
-                        for (Integer num : play.getNumbers().getNumber()) {
+                        correctNum = compareNumbers(play, luckyNumbers);
+                        
+                        correctStars = compareStars(play, luckyStars);
 
-                            for (int i = 0; i < luckyNumbers.length; i++) {
-                                if (luckyNumbers[i] == num) {
-                                    correctNum++;
-                                }
-                            }
-                        }
-
-                        for (Integer star : play.getStars().getStar()) {
-                            for (int i = 0; i < luckyStars.length; i++) {
-                                if (luckyStars[i] == star) {
-                                    correctStars++;
-                                }
-                            }
-                        }
+                        
                         switch (correctNum) {
                             case 1: {
                                 switch (correctStars) {
@@ -149,16 +140,9 @@ public class DrawStatistics {
                         }
                     }
 
-                    for (Tickets.Ticket.SuperStars.SuperStar superStars : tic.getSuperStars().getSuperStar()) {
-
-                        if (superStars.isSelected()) {
-                            for (int i = 0; i < luckySuperStars.length; i++) {
-                                if (luckySuperStars[i].toUpperCase().equals(superStars.getValue().toUpperCase())) {
-                                    correctSuperStars++;
-                                }
-                            }
-                        }
-                    }
+                    correctSuperStars += compareSuperStars(tic, luckySuperStars);
+                   
+                    
                     tic.setDrawn(tic.getDrawn() + 1);
                     checkedTickets++;
                 }
@@ -170,7 +154,50 @@ public class DrawStatistics {
     }
 
 
-    public void printStatistics() {
+    public int compareSuperStars(Ticket tic, String[] luckySuperStars) {
+    	int correct = 0;
+    	for (Tickets.Ticket.SuperStars.SuperStar superStars : tic.getSuperStars().getSuperStar()) {
+
+            if (superStars.isSelected()) {
+                for (int i = 0; i < luckySuperStars.length; i++) {
+                    if (luckySuperStars[i].toUpperCase().equals(superStars.getValue().toUpperCase())) {
+                        correct++;
+                    }
+                }
+            }
+        }
+		return correct;
+	}
+
+
+	public int compareStars(Play play, int[] luckyStars) {
+    	int correct = 0;
+    	for (Integer star : play.getStars().getStar()) {
+            for (int i = 0; i < luckyStars.length; i++) {
+                if (luckyStars[i] == star) {
+                    correct++;
+                }
+            }
+        }
+    	return correct;
+	}
+
+
+	public int compareNumbers(Play play, int[] luckyNumbers) {
+		int correct = 0;
+    	for (Integer num : play.getNumbers().getNumber()) {
+
+        for (int i = 0; i < luckyNumbers.length; i++) {
+            if (luckyNumbers[i] == num) {
+                correct++;
+            }
+        }
+    }
+		return correct;
+	}
+
+
+	public void printStatistics() {
         System.out.println("");
         System.out.println("5 + ** : " + tot5NumOkAnd2StarOk);
         System.out.println("5 + *  : " + tot5NumOkAnd1StarOk);
