@@ -16,29 +16,28 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class UiMain extends Application{
+public class UiMain extends Application {
 
-	private static Locale locale =  new Locale("de", "CH");  
+	private static Locale locale = new Locale("de", "CH");
 	private static ResourceBundle resources;
-	
-	
+
 	@Override
 	public void start(Stage primaryStage) {
-		  FileInputStream fstream;
+		FileInputStream fstream;
 		try {
 			fstream = new FileInputStream("lang.config");
-			  // Get the object of DataInputStream
-			  DataInputStream in = new DataInputStream(fstream);
-			  BufferedReader br = new BufferedReader(new InputStreamReader(in));
-			  String strLine;
-			  ArrayList<String> strings = new ArrayList<String>();
-			while ((strLine = br.readLine()) != null)   {
-				  // Print the content on the console
-				  strings.add(strLine);
-				  }
-				  //Close the input stream
-				  in.close();
-			  locale = new Locale(strings.get(0), strings.get(1));
+			// Get the object of DataInputStream
+			DataInputStream in = new DataInputStream(fstream);
+			BufferedReader br = new BufferedReader(new InputStreamReader(in));
+			String strLine;
+			ArrayList<String> strings = new ArrayList<String>();
+			while ((strLine = br.readLine()) != null) {
+				// Print the content on the console
+				strings.add(strLine);
+			}
+			// Close the input stream
+			in.close();
+			locale = new Locale(strings.get(0), strings.get(1));
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -46,23 +45,22 @@ public class UiMain extends Application{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
-		
 		try {
-			resources = ResourceBundle.getBundle("ch.bfh.ti.lottery.ui.resources.langFile", locale);
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("UILottery.fxml"), resources);
+			resources = ResourceBundle.getBundle(
+					"ch.bfh.ti.lottery.ui.resources.langFile", locale);
+			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass()
+					.getResource("UILottery.fxml"), resources);
 			Scene scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(
+					getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Lottery");
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}		
+		}
 	}
-	
-	
 
 	public static void main(String[] args) {
 		launch(args);

@@ -1,7 +1,3 @@
-/**
- * Sample Skeleton for 'UILottery.fxml' Controller Class
- */
-
 package ch.bfh.ti.lottery.ui;
 
 import java.io.BufferedWriter;
@@ -9,9 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 import ch.bfh.ti.lottery.backend.Lottery;
 import ch.bfh.ti.lottery.tickets.TicketType.Plays.Play;
