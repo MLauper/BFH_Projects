@@ -349,6 +349,19 @@ public class UiController {
 	@FXML
 	// This method is called by the FXMLLoader when initialization is complete
 	void initialize() {
+		
+		txtEinstNr0.setText("25");
+		txtEinstNr1.setText("32");
+		txtEinstNr2.setText("42");
+		txtEinstNr3.setText("10");
+		txtEinstNr4.setText("48");
+		txtStarNr0.setText("12");
+		txtStarNr1.setText("33");
+		txtSuperStarNr0.setText("D12AS");
+		txtSuperStarNr1.setText("IE23L");
+		txtSuperStarNr2.setText("D12AS");
+		txtSuperStarNr3.setText("W432K");
+		
 		textFields.add(new ArrayList<TextField>());
 		textFields.get(0).add(txtMomTickNr00);
 		textFields.get(0).add(txtMomTickNr01);
@@ -482,7 +495,7 @@ public class UiController {
 			@Override
 			public String toString(Ticket object) {
 				
-				return "Ticket" + object.getTicketId();
+				return "Ticket: " + object.getTicketId();
 			}
 			
 			@Override
