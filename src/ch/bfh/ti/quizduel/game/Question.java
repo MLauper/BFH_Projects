@@ -1,7 +1,7 @@
 package ch.bfh.ti.quizduel.game;
 
 /**
- * This class represents one question.
+ * This class represents one question..
  */
 public class Question {
     private String question = "";

@@ -1,6 +1,7 @@
 package ch.bfh.ti.quizduel.game;
 
 import java.util.ArrayList;
+import ch.bfh.ti.quizduel.jaxb.Quiz;
 
 /**
  * Game engine. Central class to manage all operations of bla
