@@ -458,6 +458,7 @@ public class UiController {
 		if (file != null) {
 			txtXSD.setText(file.toString());
 		}
+		butAktXSD.setDisable(false);
 
 	}
 
