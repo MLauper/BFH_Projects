@@ -20,7 +20,7 @@ public class UiMain extends Application {
 
 	private static Locale locale = new Locale("de", "CH");
 	private static ResourceBundle resources;
-
+ 
 	@Override
 	public void start(Stage primaryStage) {
 		FileInputStream fstream;
