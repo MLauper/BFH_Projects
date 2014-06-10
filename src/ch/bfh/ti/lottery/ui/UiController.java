@@ -30,6 +30,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 
 public class UiController {
 
@@ -476,6 +477,20 @@ public class UiController {
 		observableListTickets
 				.addAll(lottery.getLotteryTicketPool().getTicket());
 		chbTickets.setItems(observableListTickets);
+		chbTickets.setConverter(new StringConverter<Tickets.Ticket>() {
+			
+			@Override
+			public String toString(Ticket object) {
+				
+				return "Ticket" + object.getTicketId();
+			}
+			
+			@Override
+			public Ticket fromString(String string) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+		});
 		chbTickets.getSelectionModel().select(0);
 		fillInNumbers(observableListTickets.get(0));
 		chbTickets.valueProperty().addListener(
