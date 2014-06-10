@@ -1,6 +1,5 @@
 package ch.bfh.ti.lottery.tickets;
 
-import ch.bfh.ti.lottery.backend.Lottery;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;

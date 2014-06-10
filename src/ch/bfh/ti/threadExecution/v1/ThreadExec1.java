@@ -9,12 +9,12 @@ import java.util.Random;
  */
 public class ThreadExec1 extends Thread {
 
+    int milSecsLow = 10;
+    int milSecsHigh = 1001;
     private String threadName = null;
     private Boolean isRunning = true;
     private int counter = 0;
     private int highestPrime = 0;
-    int milSecsLow = 10;
-    int milSecsHigh = 1001;
 
     public ThreadExec1(String threadName) {
         this.threadName = threadName;

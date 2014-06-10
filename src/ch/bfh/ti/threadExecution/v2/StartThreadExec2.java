@@ -140,7 +140,7 @@ public class StartThreadExec2 {
                 //print the return value of Future, notice the output delay in console
                 // because Future.get() waits for task to get completed
                 calculatedPrimesThreaded.addAll(fut.get());
-                if (isFirstRound){
+                if (isFirstRound) {
                     endThreadedCalc = System.currentTimeMillis();
                     isFirstRound = false;
                 }

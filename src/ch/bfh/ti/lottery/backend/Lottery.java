@@ -2,8 +2,8 @@ package ch.bfh.ti.lottery.backend;
 
 import ch.bfh.ti.lottery.tickets.Marshall;
 import ch.bfh.ti.lottery.tickets.TicketTools;
-import ch.bfh.ti.lottery.tickets.Tickets;
 import ch.bfh.ti.lottery.tickets.TicketType.Plays.Play;
+import ch.bfh.ti.lottery.tickets.Tickets;
 import ch.bfh.ti.lottery.tickets.Tickets.Ticket;
 
 import java.util.ArrayList;
@@ -96,28 +96,31 @@ public class Lottery {
         }
     }
 
-    public void writeTicketPoolToXml(String xmlFile){
+    public void writeTicketPoolToXml(String xmlFile) {
         Marshall.marshall(this.lotteryTicketPool, xmlFile);
     }
 
-    public int getTotalTicketsInPool(){
+    public int getTotalTicketsInPool() {
         return this.lotteryTicketPool.getTicket().size();
     }
 
     public Tickets getLotteryTicketPool() {
         return lotteryTicketPool;
     }
+
     public int compareNumbers(Play play) {
-  		return drawStatisticsArrayList.get(0).compareNumbers(play, luckyNumbers);
-  	}
+        return drawStatisticsArrayList.get(0).compareNumbers(play, luckyNumbers);
+    }
+
     public int compareStars(Play play) {
-  		return drawStatisticsArrayList.get(0).compareStars(play, luckyStars);
-  	}
+        return drawStatisticsArrayList.get(0).compareStars(play, luckyStars);
+    }
+
     public int compareSuperStars(Ticket tic) {
-  		return drawStatisticsArrayList.get(0).compareSuperStars(tic, luckySuperStars);
-  	}
-    public void printStats()
-    {
-    	this.drawStatisticsArrayList.get(0).printStatistics();
+        return drawStatisticsArrayList.get(0).compareSuperStars(tic, luckySuperStars);
+    }
+
+    public void printStats() {
+        this.drawStatisticsArrayList.get(0).printStatistics();
     }
 }

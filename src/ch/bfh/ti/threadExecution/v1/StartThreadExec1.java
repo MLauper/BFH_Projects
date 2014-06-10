@@ -68,7 +68,7 @@ public class StartThreadExec1 {
             threadExec1ArrayList.add(new ThreadExec1(RandomNameProvider.getRandomName()));
         }
         System.out.println("");
-        for (ThreadExec1 thread : threadExec1ArrayList){
+        for (ThreadExec1 thread : threadExec1ArrayList) {
             System.out.println("Starting thread: " + thread.getThreadName());
             thread.start();
         }
@@ -91,7 +91,7 @@ public class StartThreadExec1 {
         // stop all other threads and list highest num of each thread
         System.out.println("");
         System.out.print("Stopping thread(s): ");
-        for (ThreadExec1 thread : threadExec1ArrayList){
+        for (ThreadExec1 thread : threadExec1ArrayList) {
             System.out.print(thread.getThreadName() + ", ");
             thread.stop();
 
@@ -99,7 +99,7 @@ public class StartThreadExec1 {
         System.out.println("");
 
         System.out.println("");
-        for (ThreadExec1 thread : threadExec1ArrayList){
+        for (ThreadExec1 thread : threadExec1ArrayList) {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
