@@ -11,3 +11,5 @@ RemoteSystemsTempFiles
 *.fxbuild
 
 representations.aird
+
+maze.txt
