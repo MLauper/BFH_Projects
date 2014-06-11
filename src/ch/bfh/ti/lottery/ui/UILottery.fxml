@@ -25,11 +25,6 @@
                         <MenuItem mnemonicParsing="false" onAction="#changeLangEN" text="%mnuEnglish" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="%mneHilfe">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="%mnuUber" />
-                  </items>
-                </Menu>
               </menus>
             </MenuBar>
             <TabPane prefHeight="445.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
@@ -1076,12 +1071,10 @@
                     <content>
                       <AnchorPane fx:id="acpGewinnerInfo" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="acpGewinnerInfo">
                            <children>
-                              <Label fx:id="lblGewinninfo" alignment="TOP_LEFT" layoutX="419.0" layoutY="223.0" prefHeight="130.0" prefWidth="91.0" styleClass="lblGewinnInfo" text="Label" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="419.0" AnchorPane.rightAnchor="290.0" AnchorPane.topAnchor="223.0">
-                                 <font>
-                                    <Font name="System Bold" size="10.0" />
-                                 </font></Label>
-                              <Label fx:id="lblGewinnZahlen" alignment="CENTER" layoutX="343.0" layoutY="190.0" prefHeight="16.0" prefWidth="158.0" styleClass="lblGewinnZahlen" text="Label" textAlignment="CENTER" />
-                              <Label fx:id="lblZiehungVom" layoutX="429.0" layoutY="162.0" styleClass="lblZiehungVom" text="Label" />
+                              <Label fx:id="lblGewinninfo" alignment="TOP_LEFT" layoutX="431.0" layoutY="229.0" prefHeight="163.0" prefWidth="91.0" styleClass="lblGewinnInfo" text="Label" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="431.0" AnchorPane.rightAnchor="278.0" AnchorPane.topAnchor="229.0">
+                              </Label>
+                              <Label fx:id="lblGewinnZahlen" alignment="CENTER" layoutX="340.0" layoutY="190.0" prefHeight="16.0" prefWidth="158.0" styleClass="lblGewinnZahlen" text="Label" textAlignment="CENTER" />
+                              <Label fx:id="lblZiehungvom" layoutX="431.0" layoutY="151.0" styleClass="lblZiehungvom" text="Label" />
                            </children></AnchorPane>
                     </content>
                   </Tab>
@@ -1092,8 +1085,11 @@
             </HBox>
             <HBox prefHeight="21.0" prefWidth="800.0">
                <children>
-                  <Label text="%lblNachricht" />
-                  <TextField fx:id="txtNachricht" />
+                  <Label text="%lblNachricht">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin></Label>
+                  <TextField fx:id="txtNachricht" prefHeight="26.0" prefWidth="617.0" />
                </children>
             </HBox>
          </children>

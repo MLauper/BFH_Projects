@@ -53,6 +53,7 @@ public class UiMain extends Application {
 			scene.getStylesheets().add(
 					getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
+		    primaryStage.setResizable(false);
 			primaryStage.setTitle("Lottery");
 			primaryStage.show();
 		} catch (Exception e) {

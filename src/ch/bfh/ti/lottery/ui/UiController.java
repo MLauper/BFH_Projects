@@ -1,10 +1,14 @@
 package ch.bfh.ti.lottery.ui;
 
+import java.awt.Desktop;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -455,7 +459,8 @@ public class UiController {
 		textFieldsTreffer.add(new ArrayList<TextField>());
 		textFieldsTreffer.get(2).add(txtSuperStarTreffer0);
 		
-		
+		txtNachricht.setText("FXML geladen und konfiguriert.	");
+
 
 	}
 
@@ -473,11 +478,12 @@ public class UiController {
 			txtXSD.setText(file.toString());
 		}
 		butAktXSD.setDisable(false);
-
+		txtNachricht.setText("XSD ausgewaehlt");
 	}
 
 	@FXML
 	private void activateXSD() {
+		txtNachricht.setText("XSD aktiviert");
 
 	}
 
@@ -490,6 +496,7 @@ public class UiController {
 			txtXML.setText(file.toString());
 		}
 		butAktXML.setDisable(false);
+		txtNachricht.setText("XML ausgewaehlt");
 
 	}
 
@@ -584,6 +591,7 @@ public class UiController {
 
 		}
 		
+		txtNachricht.setText("Nummern gesetzt");
 
 	}
 
@@ -605,6 +613,8 @@ public class UiController {
 		string += "\n " + list[12];
 
 		lblGewinninfo.setText(string);
+		txtNachricht.setText("Gewinner gesetzt");
+
 	}
 
 	@FXML
@@ -639,10 +649,12 @@ public class UiController {
 		txtCurSuperStarWinNr3.setText(superstarnr3);
 		lblGewinnZahlen.setText(txtEinstNr0.getText()+ " " +txtEinstNr1.getText()+ " " +txtEinstNr2.getText()+ " " +txtEinstNr3.getText()+ " " +txtEinstNr4.getText()+ " *" +txtStarNr0.getText()+ " " +txtStarNr1.getText());
 		 SimpleDateFormat formatter = new SimpleDateFormat( 
-	                " yyyy.MM.dd"); 
+	                " dd.MM.yyyy"); 
 	        Date currentDate = new Date(); 	        
 		lblZiehungvom.setText(formatter.format(currentDate));
 		tabTickets.setDisable(false);
+		txtNachricht.setText("Gewinn Nummern gesetzt");
+
 
 	}
 
@@ -652,14 +664,18 @@ public class UiController {
 		changeLangFile("de", "CH");
 		showStage("Bitte starten Sie die Applikation neu!");
 		System.out.println(e.toString());
+
 	}
 
 	@FXML
 	private void changeLangEN(ActionEvent e) {
 		changeLangFile("en", "US");
 		showStage("Please restart the application!");
+
 	}
 
+	
+	
 	private void changeLangFile(String lang, String country) {
 		File langFile = new File("lang.config");
 		BufferedWriter writer = null;
@@ -677,6 +693,8 @@ public class UiController {
 			}
 
 		}
+		txtNachricht.setText("Sprach File angepasst");
+
 	}
 
 	public void showStage(String mesString) {
@@ -699,5 +717,7 @@ public class UiController {
 				newStage.hide();
 			}
 		});
+		txtNachricht.setText("Popup angezeigt");
+
 	}
 }
