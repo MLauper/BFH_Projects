@@ -371,11 +371,11 @@ public class UiController {
 		txtEinstNr2.setText("42");
 		txtEinstNr3.setText("10");
 		txtEinstNr4.setText("48");
-		txtStarNr0.setText("12");
-		txtStarNr1.setText("33");
-		txtSuperStarNr0.setText("D12AS");
-		txtSuperStarNr1.setText("IE23L");
-		txtSuperStarNr2.setText("D12AS");
+		txtStarNr0.setText("1");
+		txtStarNr1.setText("9");
+		txtSuperStarNr0.setText("D124S");
+		txtSuperStarNr1.setText("I523L");
+		txtSuperStarNr2.setText("D123S");
 		txtSuperStarNr3.setText("W432K");
 		
 		textFields.add(new ArrayList<TextField>());
