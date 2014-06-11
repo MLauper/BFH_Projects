@@ -12,17 +12,17 @@ public class StartLottery {
         Lottery lottery = new Lottery();
 
 
-        //lottery.generateTickets(100, 3);
-        //lottery.writeTicketPoolToXml("src/ch/bfh/ti/lottery/ticPool.xml");
-        lottery.addXmlTickets("src/ch/bfh/ti/lottery/ticPool.xml", true);
+        lottery.generateTickets(1000, 4);
+        lottery.writeTicketPoolToXml("src/ch/bfh/ti/lottery/ticPool.xml");
+        //lottery.addXmlTickets("src/ch/bfh/ti/lottery/ticPool.xml", true);
 
        lottery.setSetLuckyNumbers(28,16,7,30,13);
        lottery.setSetLuckyStars(10,9);
        lottery.setSetLuckySuperStars("L994R","V252G","R835F","B923C");
 
 
-        lottery.draw();
-        lottery.printStats();
+        //lottery.draw();
+        //lottery.printStats();
         //lottery.writeTicketPoolToXml("ch/bfh/ti/lottery/ticPool.xml");
 
 
