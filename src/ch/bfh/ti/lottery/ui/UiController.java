@@ -5,7 +5,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
@@ -27,6 +29,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -71,7 +74,16 @@ public class UiController {
 	private TextField txtTreffer5;
 
 	@FXML
+	private AnchorPane acpGewinnerInfo;
+	
+	@FXML
 	private TextField txtTreffer6;
+	
+	@FXML
+	private Label lblZiehungvom;
+	
+	@FXML
+	private Label lblGewinnZahlen;
 
 	@FXML
 	private TextField txtMomTickNr62;
@@ -442,6 +454,8 @@ public class UiController {
 		textFieldsTreffer.get(1).add(txtStarTreffer6);
 		textFieldsTreffer.add(new ArrayList<TextField>());
 		textFieldsTreffer.get(2).add(txtSuperStarTreffer0);
+		
+		
 
 	}
 
@@ -576,21 +590,19 @@ public class UiController {
 	private void getWinner(int[] list) {
 
 		String string = ("");
-		string = "5 + ** : " + list[0];
-		string += "\n 5 + *  : " + list[1];
-		string += "\n 5      : " + list[2];
-		string += "\n 4 + ** : " + list[3];
-		string += "\n 4 + *  : " + list[4];
-		string += "\n 4      : " + list[5];
-		string += "\n 3 + ** : " + list[6];
-		string += "\n 2 + ** : " + list[7];
-		string += "\n 3 + *  : " + list[8];
-		string += "\n 3      : " + list[9];
-		string += "\n 1 + ** : " + list[10];
-		string += "\n 2 + *  : " + list[11];
-		string += "\n 2      : " + list[12];
-		string += "\n ";
-		string += "\n Super* : " + list[13];
+		string = " " + list[0];
+		string += "\n " + list[1];
+		string += "\n " + list[2];
+		string += "\n " + list[3];
+		string += "\n " + list[4];
+		string += "\n " + list[5];
+		string += "\n " + list[6];
+		string += "\n " + list[7];
+		string += "\n " + list[8];
+		string += "\n " + list[9];
+		string += "\n " + list[10];
+		string += "\n " + list[11];
+		string += "\n " + list[12];
 
 		lblGewinninfo.setText(string);
 	}
@@ -625,7 +637,11 @@ public class UiController {
 		txtCurSuperStarWinNr1.setText(superstarnr1);
 		txtCurSuperStarWinNr2.setText(superstarnr2);
 		txtCurSuperStarWinNr3.setText(superstarnr3);
-
+		lblGewinnZahlen.setText(txtEinstNr0.getText()+ " " +txtEinstNr1.getText()+ " " +txtEinstNr2.getText()+ " " +txtEinstNr3.getText()+ " " +txtEinstNr4.getText()+ " *" +txtStarNr0.getText()+ " " +txtStarNr1.getText());
+		 SimpleDateFormat formatter = new SimpleDateFormat( 
+	                " yyyy.MM.dd"); 
+	        Date currentDate = new Date(); 	        
+		lblZiehungvom.setText(formatter.format(currentDate));
 		tabTickets.setDisable(false);
 
 	}

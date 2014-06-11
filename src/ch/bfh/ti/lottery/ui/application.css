@@ -1,0 +1,19 @@
+.acpGewinnerInfo {
+	-fx-background-image: url("resources/Gewinninfo.png");
+	-fx-background-position: center;
+	-fx-background-size: 260;
+	-fx-background-repeat: no-repeat;
+}
+
+.lblGewinnInfo {
+	-fx-text-alignment: left;
+	-fx-content-display: top;
+}
+
+.lblGewinnZahlen {
+	-fx-font: 11px "Serif";
+}
+
+.lblZiehungVom {
+	-fx-font: 11px "Serif";
+}

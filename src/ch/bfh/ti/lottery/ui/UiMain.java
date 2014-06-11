@@ -39,11 +39,9 @@ public class UiMain extends Application {
 			in.close();
 			locale = new Locale(strings.get(0), strings.get(1));
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			//DO Nothing
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			// Do Nothing
 		}
 
 		try {
